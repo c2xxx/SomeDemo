@@ -1,3 +1,5 @@
+# Created by .ignore support plugin (hsz.mobi)
+### Android template
 # Built application files
 *.apk
 *.ap_
@@ -25,3 +27,14 @@ proguard/
 
 # Log Files
 *.log
+
+.idea/
+*.iml
+
+
+gradle.properties
+.gitignore
+gradlew
+gradlew.bat
+build.gradle
+.settings/
