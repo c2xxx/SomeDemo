@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.basedamo"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="19" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@android:style/Theme.Black.NoTitleBar" >
+
+        <!-- android:theme="@style/AppTheme" > -->
+        <activity
+            android:name="com.basedamo.MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.basedamo.activity.BaseControlActivity" />
+        <activity android:name="com.basedamo.activity.BitMapActivity" />
+        <activity android:name="com.basedamo.activity.HardWareActivity" />
+     	<activity android:name="com.basedamo.activity.HardWareActivity2" />
+        <activity android:name="com.basedamo.activity.NiceButton" />
+     	<activity android:name="com.basedamo.activity.ProteryAnimation1" />
+     	<activity android:name="com.basedamo.activity.ProteryAnimation2" />
+        <activity android:name="com.basedamo.activity.ProteryAnimation3" />
+        <activity android:name="com.basedamo.activity.ShowImageViewActivity" />
+        <activity android:name="com.basedamo.activity.VolumActivity" />
+        <activity android:name="com.basedamo.slideviewpaper.ViewPaperActivity" />
+        <activity android:name="com.basedamo.volley.VolleyDemoActivity" />
+        <activity android:name="com.basedamo.listview.ListViewTestActivity" />
+        <activity android:name="com.basedamo.activity.XUtilsActivity" />
+        <activity android:name="com.basedamo.view.MyViewDemoActivity" />
+        <activity android:name="com.basedamo.view.CircleImageActivity" />
+        <activity android:name="com.basedamo.activity.ExpendGridViewActivity" />
+        <activity android:name="com.basedamo.activity.GridViewActivity" />
+        <activity android:name="com.basedamo.activity.WebViewActivity" />
+        <activity android:name="com.basedamo.activity.DesktopLogoNumberActivity" />
+
+    </application>
+
+</manifest>

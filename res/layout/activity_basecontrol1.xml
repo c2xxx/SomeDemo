@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="可拖动进度条" >
+    </TextView>
+
+    <SeekBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="自动填充文本框 (尝试输入a或b)" >
+    </TextView>
+
+    <AutoCompleteTextView
+        android:id="@+id/actv_demo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:completionThreshold="1" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="推送消息Nocifiction" >
+    </TextView>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="showNocifiction"
+        android:text="推送" >
+    </Button>
+    
+    
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="数字提示" >
+    </TextView>
+    <TextView
+        android:id="@+id/tv_basecontrol_badge"
+        android:layout_width="match_parent"
+        android:text="新的消息"
+        android:padding="8dp"
+        android:background="@android:color/white"
+        android:layout_height="wrap_content">
+    </TextView>
+</LinearLayout>

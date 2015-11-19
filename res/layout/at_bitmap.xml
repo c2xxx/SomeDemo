@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FF00FFDD" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:id="@+id/iv_bitmap"
+            android:layout_width="300dip"
+            android:layout_height="260dip" />
+
+        <SeekBar
+            android:id="@+id/sb_seekbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="100"
+            android:maxHeight="5dip"
+            android:progress="15" />
+
+        <Button
+            android:id="@+id/bt_reload"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="bt_reload"
+            android:text="重新加载" />
+
+        <Button
+            android:id="@+id/bt_blur"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="bt_blur"
+            android:text="模糊" />
+
+        <Button
+            android:id="@+id/bt_black_white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="bt_black_white"
+            android:text="黑白" />
+
+        <Button
+            android:id="@+id/bt_conner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="bt_conner"
+            android:text="圆角" />
+
+        <Button
+            android:id="@+id/bt_light"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="bt_light"
+            android:text="改亮度" />
+    </LinearLayout>
+
+</ScrollView>

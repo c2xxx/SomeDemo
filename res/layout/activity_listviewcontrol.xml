@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <Button
+        android:id="@+id/bt_listview_up"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="往上滚" />
+
+    <Button
+        android:id="@+id/bt_listview_down"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="往下滚" />
+    
+    <Button 
+        android:id="@+id/bt_listview_toTop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="回到顶部"/>
+    
+    <Button
+        android:id="@+id/bt_listview_addpage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="加一页" />
+
+    <ListView
+        android:id="@+id/lv_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+    </ListView>
+
+</LinearLayout>

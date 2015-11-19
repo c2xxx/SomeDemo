@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <Button
+            android:id="@+id/btn_property_btn1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="垂直掉落,加速后减速" />
+
+        <Button
+            android:id="@+id/btn_property_btn2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="垂直掉落,只加速" />
+
+        <Button
+            android:id="@+id/btn_property_btn3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="垂直掉落后反弹" />
+
+        <Button
+            android:id="@+id/btn_property_btn4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="垂直掉落，自定加速度" />
+
+        <Button
+            android:id="@+id/btn_property_btn5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="移动1" />
+
+        <Button
+            android:id="@+id/btn_property_btn6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="移动2" />
+
+        <Button
+            android:id="@+id/btn_property_btn7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="复原" />
+    </LinearLayout>
+
+    <com.basedamo.protertyanimation.MyAnimView
+        android:id="@+id/mav_test"
+        android:layout_width="match_parent"
+        android:layout_height="200dip"
+        android:background="@android:color/white" />
+
+</LinearLayout>
