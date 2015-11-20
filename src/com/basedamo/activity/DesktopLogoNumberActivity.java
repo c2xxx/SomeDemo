@@ -1,5 +1,6 @@
 package com.basedamo.activity;
 
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -9,6 +10,8 @@ import com.basedamo.BaseActivity;
 import com.basedamo.R;
 import com.basedamo.helper.LauncherBadgeHelper;
 import com.basedamo.utils.ToastUtil;
+
+import org.w3c.dom.Text;
 
 /**
  * Created by hui on 2015/11/19.
@@ -41,13 +44,15 @@ public class DesktopLogoNumberActivity extends BaseActivity implements View.OnCl
         switch (view.getId()) {
             case R.id.btn_desktop_logo_number_shownum:
                 String numText = editText.getText().toString().trim();
-                int num = Integer.parseInt(numText);
-                LauncherBadgeHelper.setBadgeCount(this, num);
-                ToastUtil.show(this,"请查看桌面图标右上角是否有数字");
+                if (!TextUtils.isEmpty(numText)) {
+                    int num = Integer.parseInt(numText);
+                    LauncherBadgeHelper.setBadgeCount(this, num);
+                    ToastUtil.show("请查看桌面图标右上角是否有数字");
+                }
                 break;
             case R.id.btn_desktop_logo_number_clearnum:
                 LauncherBadgeHelper.resetBadgeCount(this);
-                ToastUtil.show(this, "请查看桌面图标是否有变化");
+                ToastUtil.show("请查看桌面图标是否有变化");
                 break;
         }
     }
