@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.basedamo"
     android:versionCode="1"
-    android:versionName="1.0" >
+    android:versionName="1.0">
 
     <uses-sdk
         android:minSdkVersion="14"
@@ -16,15 +16,16 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
+        android:name=".MyApplication"
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@android:style/Theme.Black.NoTitleBar" >
+        android:theme="@android:style/Theme.Black.NoTitleBar">
 
         <!-- android:theme="@style/AppTheme" > -->
         <activity
             android:name="com.basedamo.MainActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -34,10 +35,10 @@
         <activity android:name="com.basedamo.activity.BaseControlActivity" />
         <activity android:name="com.basedamo.activity.BitMapActivity" />
         <activity android:name="com.basedamo.activity.HardWareActivity" />
-     	<activity android:name="com.basedamo.activity.HardWareActivity2" />
+        <activity android:name="com.basedamo.activity.HardWareActivity2" />
         <activity android:name="com.basedamo.activity.NiceButton" />
-     	<activity android:name="com.basedamo.activity.ProteryAnimation1" />
-     	<activity android:name="com.basedamo.activity.ProteryAnimation2" />
+        <activity android:name="com.basedamo.activity.ProteryAnimation1" />
+        <activity android:name="com.basedamo.activity.ProteryAnimation2" />
         <activity android:name="com.basedamo.activity.ProteryAnimation3" />
         <activity android:name="com.basedamo.activity.ShowImageViewActivity" />
         <activity android:name="com.basedamo.activity.VolumActivity" />
