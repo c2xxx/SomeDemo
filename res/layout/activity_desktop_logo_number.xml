@@ -19,11 +19,13 @@
         android:inputType="number" />
 
     <Button
+        android:id="@+id/btn_desktop_logo_number_shownum"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="显示数字" />
 
     <Button
+        android:id="@+id/btn_desktop_logo_number_clearnum"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="清除数字" />
