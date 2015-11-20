@@ -17,20 +17,20 @@ import android.graphics.drawable.NinePatchDrawable;
 /**
  * 
  * @author Author CH
- * @version CreateTime 2015-6-11 ÉÏÎç11:00:55
+ * @version CreateTime 2015-6-11 ä¸Šåˆ11:00:55
  */
 public class BitMapAccess {
 
 	/**
-	 * ½«²ÊÉ«Í¼×ª»»ÎªºÚ°×Í¼
+	 * å°†å½©è‰²å›¾è½¬æ¢ä¸ºé»‘ç™½å›¾
 	 * 
-	 * @param Î»Í¼
-	 * @return ·µ»Ø×ª»»ºÃµÄÎ»Í¼
+	 * @param ä½å›¾
+	 * @return è¿”å›è½¬æ¢å¥½çš„ä½å›¾
 	 */
 	public static Bitmap convertToBlackWhite(Bitmap bmp) {
-		int width = bmp.getWidth(); // »ñÈ¡Î»Í¼µÄ¿í
-		int height = bmp.getHeight(); // »ñÈ¡Î»Í¼µÄ¸ß
-		int[] pixels = new int[width * height]; // Í¨¹ıÎ»Í¼µÄ´óĞ¡´´½¨ÏñËØµãÊı×é
+		int width = bmp.getWidth(); // è·å–ä½å›¾çš„å®½
+		int height = bmp.getHeight(); // è·å–ä½å›¾çš„é«˜
+		int[] pixels = new int[width * height]; // é€šè¿‡ä½å›¾çš„å¤§å°åˆ›å»ºåƒç´ ç‚¹æ•°ç»„
 		bmp.getPixels(pixels, 0, width, 0, 0, width, height);
 		int alpha = 0xFF << 24;
 		for (int i = 0; i < height; i++) {
@@ -50,7 +50,7 @@ public class BitMapAccess {
 	}
 
 	/**
-	 * ×ª»»³ÉÔ²½Ç
+	 * è½¬æ¢æˆåœ†è§’
 	 * 
 	 * @param bmp
 	 * @param roundPx
@@ -59,7 +59,7 @@ public class BitMapAccess {
 	public static Bitmap convertToRoundedCorner(Bitmap bmp, float roundPx) {
 		Bitmap newBmp = Bitmap.createBitmap(bmp.getWidth(), bmp.getHeight(),
 				Config.ARGB_8888);
-		// µÃµ½»­²¼
+		// å¾—åˆ°ç”»å¸ƒ
 		Canvas canvas = new Canvas(newBmp);
 		final int color = 0xff424242;
 		final Paint paint = new Paint();
@@ -68,7 +68,7 @@ public class BitMapAccess {
 		paint.setAntiAlias(true);
 		canvas.drawARGB(0, 0, 0, 0);
 		paint.setColor(color);
-		// µÚ¶ş¸öºÍµÚÈı¸ö²ÎÊıÒ»ÑùÔò»­µÄÊÇÕıÔ²µÄÒ»½Ç£¬·ñÔòÊÇÍÖÔ²µÄÒ»½Ç
+		// ç¬¬äºŒä¸ªå’Œç¬¬ä¸‰ä¸ªå‚æ•°ä¸€æ ·åˆ™ç”»çš„æ˜¯æ­£åœ†çš„ä¸€è§’ï¼Œå¦åˆ™æ˜¯æ¤­åœ†çš„ä¸€è§’
 		canvas.drawRoundRect(rectF, roundPx, roundPx, paint);
 		paint.setXfermode(new PorterDuffXfermode(Mode.SRC_IN));
 		canvas.drawBitmap(bmp, rect, rect, paint);
@@ -76,13 +76,13 @@ public class BitMapAccess {
 	}
 
 	/**
-	 * ¸ßË¹Ä£ºı
+	 * é«˜æ–¯æ¨¡ç³Š
 	 * 
 	 * @param bmp
 	 * @return
 	 */
 	public static Bitmap convertToBlur(Bitmap bmp, Integer... delta1) {
-		// ¸ßË¹¾ØÕó
+		// é«˜æ–¯çŸ©é˜µ
 		int[] gauss = new int[] { 1, 2, 1, 2, 4, 2, 1, 2, 1 };
 		int width = bmp.getWidth();
 		int height = bmp.getHeight();
@@ -95,7 +95,7 @@ public class BitMapAccess {
 		int newR = 0;
 		int newG = 0;
 		int newB = 0;
-		int delta = delta1.length > 0 ? delta1[0] : 16; // ÖµÔ½Ğ¡Í¼Æ¬»áÔ½ÁÁ£¬Ô½´óÔòÔ½°µ
+		int delta = delta1.length > 0 ? delta1[0] : 16; // å€¼è¶Šå°å›¾ç‰‡ä¼šè¶Šäº®ï¼Œè¶Šå¤§åˆ™è¶Šæš—
 		int idx = 0;
 		int[] pixels = new int[width * height];
 		bmp.getPixels(pixels, 0, width, 0, 0, width, height);
@@ -131,7 +131,7 @@ public class BitMapAccess {
 	}
 
 	/**
-	 * drawable ×ª Bitmap
+	 * drawable è½¬ Bitmap
 	 * 
 	 * @param drawable
 	 * @return
