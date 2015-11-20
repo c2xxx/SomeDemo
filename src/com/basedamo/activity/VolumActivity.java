@@ -18,7 +18,7 @@ import android.widget.SeekBar;
 
 /**
  * @author chen:
- * @version ´´½¨Ê±¼ä£º2015-6-16 ÏÂÎç8:53:30
+ * @version åˆ›å»ºæ—¶é—´ï¼š2015-6-16 ä¸‹åˆ8:53:30
  */
 public class VolumActivity extends Activity {
 	private SeekBar seekbar;
@@ -34,64 +34,64 @@ public class VolumActivity extends Activity {
 		seekbar = (SeekBar) findViewById(R.id.seekbar);
 	}
 
-	// Æô¶¯Õñ¶¯
+	// å¯åŠ¨æŒ¯åŠ¨
 	public void zhengdong(View v) {
 		/*
-		 * ÏëÉèÖÃÕğ¶¯´óĞ¡¿ÉÒÔÍ¨¹ı¸Ä±äpatternÀ´Éè¶¨£¬Èç¹û¿ªÆôÊ±¼äÌ«¶Ì£¬Õğ¶¯Ğ§¹û¿ÉÄÜ¸Ğ¾õ²»µ½
+		 * æƒ³è®¾ç½®éœ‡åŠ¨å¤§å°å¯ä»¥é€šè¿‡æ”¹å˜patternæ¥è®¾å®šï¼Œå¦‚æœå¼€å¯æ—¶é—´å¤ªçŸ­ï¼Œéœ‡åŠ¨æ•ˆæœå¯èƒ½æ„Ÿè§‰ä¸åˆ°
 		 */
 		Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-		long[] pattern = { 100, 400, 100, 400 }; // Í£Ö¹ ¿ªÆô Í£Ö¹ ¿ªÆô
+		long[] pattern = { 100, 400, 100, 400 }; // åœæ­¢ å¼€å¯ åœæ­¢ å¼€å¯
 		int x = 0;
-		if (x == 0) {// ¼ä¸ôÕñ¶¯
-			vibrator.vibrate(pattern, -1); // ÖØ¸´Á½´ÎÉÏÃæµÄpattern´ÎÊı Èç¹ûÏë²»Í£Õğ¶¯£¬indexÉèÎª-1
-		} else {// Á¬ĞøÕñ¶¯
-			// Æô¶¯Õğ¶¯£¬²¢³ÖĞøÖ¸¶¨µÄÊ±¼ä
+		if (x == 0) {// é—´éš”æŒ¯åŠ¨
+			vibrator.vibrate(pattern, -1); // é‡å¤ä¸¤æ¬¡ä¸Šé¢çš„patternæ¬¡æ•° å¦‚æœæƒ³ä¸åœéœ‡åŠ¨ï¼Œindexè®¾ä¸º-1
+		} else {// è¿ç»­æŒ¯åŠ¨
+			// å¯åŠ¨éœ‡åŠ¨ï¼Œå¹¶æŒç»­æŒ‡å®šçš„æ—¶é—´
 			vibrator.vibrate(500);
 		}
 	}
 
 	public void zhengdongCancel(View v) {
 		/*
-		 * ÏëÉèÖÃÕğ¶¯´óĞ¡¿ÉÒÔÍ¨¹ı¸Ä±äpatternÀ´Éè¶¨£¬Èç¹û¿ªÆôÊ±¼äÌ«¶Ì£¬Õğ¶¯Ğ§¹û¿ÉÄÜ¸Ğ¾õ²»µ½
+		 * æƒ³è®¾ç½®éœ‡åŠ¨å¤§å°å¯ä»¥é€šè¿‡æ”¹å˜patternæ¥è®¾å®šï¼Œå¦‚æœå¼€å¯æ—¶é—´å¤ªçŸ­ï¼Œéœ‡åŠ¨æ•ˆæœå¯èƒ½æ„Ÿè§‰ä¸åˆ°
 		 */
 		Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
 		vibrator.cancel();
 	}
 
-	// ÄÖÖÓÒôÁ¿
+	// é—¹é’ŸéŸ³é‡
 	public void volumeClock(View v) {
-		// ÒôÁ¿¿ØÖÆ,³õÊ¼»¯¶¨Òå
+		// éŸ³é‡æ§åˆ¶,åˆå§‹åŒ–å®šä¹‰
 		AudioManager mAudioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
-		// ×î´óÒôÁ¿
+		// æœ€å¤§éŸ³é‡
 		int maxVolume = mAudioManager
 				.getStreamMaxVolume(AudioManager.STREAM_ALARM);
 		float volume = ((1.0f * seekbar.getProgress()) / seekbar.getMax());
 		int targetVolume = (int) (maxVolume * volume);
 		mAudioManager.setStreamVolume(AudioManager.STREAM_ALARM, targetVolume,
-				0); // tempVolume:ÒôÁ¿¾ø¶ÔÖµ
+				0); // tempVolume:éŸ³é‡ç»å¯¹å€¼
 		mAudioManager.adjustStreamVolume(AudioManager.STREAM_ALARM,
 				AudioManager.ADJUST_LOWER, AudioManager.FX_FOCUS_NAVIGATION_UP);
 	}
 
-	// Ã½ÌåÒôÁ¿
+	// åª’ä½“éŸ³é‡
 	public void volumeMedia(View v) {
-		// ÒôÁ¿¿ØÖÆ,³õÊ¼»¯¶¨Òå
+		// éŸ³é‡æ§åˆ¶,åˆå§‹åŒ–å®šä¹‰
 		AudioManager mAudioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
-		// ×î´óÒôÁ¿
+		// æœ€å¤§éŸ³é‡
 		int maxVolume = mAudioManager
 				.getStreamMaxVolume(AudioManager.STREAM_MUSIC);
 		float volume = ((1.0f * seekbar.getProgress()) / seekbar.getMax());
 		int targetVolume = (int) (maxVolume * volume);
 		mAudioManager.setStreamVolume(AudioManager.STREAM_MUSIC, targetVolume,
-				0); // tempVolume:ÒôÁ¿¾ø¶ÔÖµ
+				0); // tempVolume:éŸ³é‡ç»å¯¹å€¼
 		mAudioManager.adjustStreamVolume(AudioManager.STREAM_MUSIC,
 				AudioManager.ADJUST_LOWER, AudioManager.FX_FOCUS_NAVIGATION_UP);
 	}
 
-	// ÒÔÍ¨»°ÉùÒô²¥·Å
+	// ä»¥é€šè¯å£°éŸ³æ’­æ”¾
 	public void playTongHua(View v) {
 		final MediaPlayer player = new MediaPlayer();
-		// ÒôÁ¿¿ØÖÆ,³õÊ¼»¯¶¨Òå
+		// éŸ³é‡æ§åˆ¶,åˆå§‹åŒ–å®šä¹‰
 		AudioManager audio = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
 		try {
 			AssetFileDescriptor afd = getResources().openRawResourceFd(
@@ -100,7 +100,7 @@ public class VolumActivity extends Activity {
 			int streamType = AudioManager.STREAM_VOICE_CALL;
 			int max = audio.getStreamMaxVolume(streamType);
 			audio.setStreamVolume(streamType, max, 1);
-			player.setAudioStreamType(streamType);// ÔÚprepareÇ°ÉèÖÃ£¬ËùÒÔÍ¨¹ıMediaPlayer.createµÃµ½µÄplayerÊÇ²»ĞĞµÄ
+			player.setAudioStreamType(streamType);// åœ¨prepareå‰è®¾ç½®ï¼Œæ‰€ä»¥é€šè¿‡MediaPlayer.createå¾—åˆ°çš„playeræ˜¯ä¸è¡Œçš„
 			player.prepare();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -116,10 +116,10 @@ public class VolumActivity extends Activity {
 		player.start();
 	}
 
-	// ÒÔÄÖÖÓÉùÒô²¥·Å
+	// ä»¥é—¹é’Ÿå£°éŸ³æ’­æ”¾
 	public void playAlarm(View v) {
 		final MediaPlayer player = new MediaPlayer();
-		// ÒôÁ¿¿ØÖÆ,³õÊ¼»¯¶¨Òå
+		// éŸ³é‡æ§åˆ¶,åˆå§‹åŒ–å®šä¹‰
 		AudioManager audio = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
 		try {
 			AssetFileDescriptor afd = getResources().openRawResourceFd(
@@ -128,7 +128,7 @@ public class VolumActivity extends Activity {
 			int streamType = AudioManager.STREAM_ALARM;
 			int max = audio.getStreamMaxVolume(streamType);
 			audio.setStreamVolume(streamType, max, 1);
-			player.setAudioStreamType(streamType);// ÔÚprepareÇ°ÉèÖÃ£¬ËùÒÔÍ¨¹ıMediaPlayer.createµÃµ½µÄplayerÊÇ²»ĞĞµÄ
+			player.setAudioStreamType(streamType);// åœ¨prepareå‰è®¾ç½®ï¼Œæ‰€ä»¥é€šè¿‡MediaPlayer.createå¾—åˆ°çš„playeræ˜¯ä¸è¡Œçš„
 			player.prepare();
 		} catch (Exception e) {
 			e.printStackTrace();

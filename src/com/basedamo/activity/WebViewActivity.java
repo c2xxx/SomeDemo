@@ -27,34 +27,34 @@ public class WebViewActivity extends Activity {
 	}
 
 	private void initDatas() {
-		// wv_webview.loadUrl("file:///android_asset/demo.html");//¼ÓÔØ±¾µØhtml
+		// wv_webview.loadUrl("file:///android_asset/demo.html");//åŠ è½½æœ¬åœ°html
 		wv_webview.loadUrl("http://www.shoujikanbing.com");
 	}
 
 	private void initViews() {
 		wv_webview = (WebView) findViewById(R.id.wv_webview);
 
-		// Ö§³Öjavascript//±ØĞë
+		// æ”¯æŒjavascript//å¿…é¡»
 		wv_webview.getSettings().setJavaScriptEnabled(true);
-		// ÉèÖÃ¿ÉÒÔÖ§³ÖËõ·Å
+		// è®¾ç½®å¯ä»¥æ”¯æŒç¼©æ”¾
 		wv_webview.getSettings().setSupportZoom(true);
 		wv_webview.getSettings().setBuiltInZoomControls(true);
 
-		// °ÑËùÓĞÄÚÈİ·ÅÔÚwebviewµÈ¿íµÄÒ»ÁĞÖĞ¡££¨¿ÉÄÜ»á³öÏÖÒ³ÃæÖĞÁ´½ÓÊ§Ğ§£©
+		// æŠŠæ‰€æœ‰å†…å®¹æ”¾åœ¨webviewç­‰å®½çš„ä¸€åˆ—ä¸­ã€‚ï¼ˆå¯èƒ½ä¼šå‡ºç°é¡µé¢ä¸­é“¾æ¥å¤±æ•ˆï¼‰
 		wv_webview.getSettings().setLayoutAlgorithm(LayoutAlgorithm.SINGLE_COLUMN);
-		// À©´ó±ÈÀıµÄËõ·Å,ÉèÖÃ´ËÊôĞÔ£¬¿ÉÈÎÒâ±ÈÀıËõ·Å¡£
+		// æ‰©å¤§æ¯”ä¾‹çš„ç¼©æ”¾,è®¾ç½®æ­¤å±æ€§ï¼Œå¯ä»»æ„æ¯”ä¾‹ç¼©æ”¾ã€‚
 		wv_webview.getSettings().setUseWideViewPort(true);
-		// ×ÔÊÊÓ¦ÆÁÄ»
+		// è‡ªé€‚åº”å±å¹•
 		wv_webview.getSettings().setLoadWithOverviewMode(true);
 
-		// ¼àÌı¼ÓÔØ£¬Ìø×ªµÄurl
+		// ç›‘å¬åŠ è½½ï¼Œè·³è½¬çš„url
 		wv_webview.setWebViewClient(new WebViewClient() {
 			@Override
 			public void onPageStarted(WebView view, String targetURL,
 					Bitmap favicon) {
 				super.onPageStarted(view, targetURL, favicon);
-				Log.d(TAG, "targetURL=" + targetURL);// ¼ÓÔØ»òÕßÌø×ªµÄurl
+				Log.d(TAG, "targetURL=" + targetURL);// åŠ è½½æˆ–è€…è·³è½¬çš„url
 			}
-		});// Ê¹ÓÃµ±Ç°Webview´ò¿ªÁ´½Ó
+		});// ä½¿ç”¨å½“å‰Webviewæ‰“å¼€é“¾æ¥
 	}
 }

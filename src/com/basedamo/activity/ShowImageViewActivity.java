@@ -15,7 +15,7 @@ import com.basedamo.imageshow.ImageControl;
 import com.basedamo.imageshow.ImageControl.ICustomMethod; 
 
 /**
- * Í¼Æ¬Õ¹Ê¾
+ * å›¾ç‰‡å±•ç¤º
  * @author hui
  *
  */
@@ -57,7 +57,7 @@ public class ShowImageViewActivity extends Activity {
 		}
 		else
 		{
-			Toast.makeText(ShowImageViewActivity.this, "Í¼Æ¬¼ÓÔØÊ§°Ü£¬ÇëÉÔºòÔÙÊÔ£¡", Toast.LENGTH_SHORT)
+			Toast.makeText(ShowImageViewActivity.this, "å›¾ç‰‡åŠ è½½å¤±è´¥ï¼Œè¯·ç¨å€™å†è¯•ï¼", Toast.LENGTH_SHORT)
 					.show();
 		}
 	}

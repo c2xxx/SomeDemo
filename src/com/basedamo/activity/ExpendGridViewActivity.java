@@ -1,8 +1,5 @@
 package com.basedamo.activity;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import android.app.Activity;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
@@ -15,6 +12,9 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.basedamo.R;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class ExpendGridViewActivity extends Activity {
 	private GridView gv_expand;
@@ -40,7 +40,7 @@ public class ExpendGridViewActivity extends Activity {
 		
 		
 
-		// ¼ÆËãGridView¿í¶È£¬
+		// è®¡ç®—GridViewå®½åº¦ï¼Œ
 		int size = list.size();
 		int horizontalSpacing = 5;
 		int columnWidth = 150;
@@ -52,8 +52,8 @@ public class ExpendGridViewActivity extends Activity {
 				* density + 40* density);
 		LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
 				gridviewWidth, LinearLayout.LayoutParams.MATCH_PARENT);
-		gv_expand.setLayoutParams(params); // ÉèÖÃGirdView²¼¾Ö²ÎÊı,ºáÏò²¼¾ÖµÄ¹Ø¼ü
-		gv_expand.setNumColumns(size); // ÉèÖÃÁĞÊıÁ¿=ÁĞ±í¼¯ºÏÊı
+		gv_expand.setLayoutParams(params); // è®¾ç½®GirdViewå¸ƒå±€å‚æ•°,æ¨ªå‘å¸ƒå±€çš„å…³é”®
+		gv_expand.setNumColumns(size); // è®¾ç½®åˆ—æ•°é‡=åˆ—è¡¨é›†åˆæ•°
 	}
 
 	private void initView() {

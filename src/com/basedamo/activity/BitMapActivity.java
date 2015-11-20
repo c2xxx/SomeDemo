@@ -11,17 +11,14 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.SeekBar;
 
+import com.basedamo.R;
 import com.chen.utils.BitMapAccess;
 import com.chen.utils.FastBlur;
-import com.basedamo.R;
-import com.basedamo.R.drawable;
-import com.basedamo.R.id;
-import com.basedamo.R.layout;
 
 /**
  * 
  * @author Author CH
- * @version CreateTime 2015-6-11 ÉÏÎç10:56:30
+ * @version CreateTime 2015-6-11 ä¸Šåˆ10:56:30
  */
 public class BitMapActivity extends Activity {
 	private ImageView iv_bitmap;
@@ -37,7 +34,7 @@ public class BitMapActivity extends Activity {
 		iv_bitmap.setImageResource(R.drawable.bg);
 	}
 
-	// ÁÁ¶È
+	// äº®åº¦
 	public void bt_light(View v) {
 		Bitmap bm = getBitMap();
 		Bitmap newB = ba.convertToBlur(bm, sb_seekbar.getProgress());
@@ -45,7 +42,7 @@ public class BitMapActivity extends Activity {
 
 	}
 
-	// µÃµ½Í¼Æ¬
+	// å¾—åˆ°å›¾ç‰‡
 	private Bitmap getBitMap() {
 		Drawable drawable = iv_bitmap.getDrawable();
 		Bitmap bm = ba.drawable2Bitmap(drawable);
@@ -55,7 +52,7 @@ public class BitMapActivity extends Activity {
 		return bm;
 	}
 
-	// Ä£ºı
+	// æ¨¡ç³Š
 	public void bt_blur(View v) {
 		Bitmap bm = BitmapFactory.decodeResource(getResources(), R.drawable.bg);
 		bm = blur(bm, sb_seekbar.getProgress());
@@ -70,7 +67,7 @@ public class BitMapActivity extends Activity {
 		return FastBlur.doBlur(overlay, radius, true);
 	}
 
-	// Ô²½Ç
+	// åœ†è§’
 	public void bt_conner(View v) {
 		Drawable drawable = iv_bitmap.getDrawable();
 		Bitmap bm = ba.drawable2Bitmap(drawable);
@@ -79,7 +76,7 @@ public class BitMapActivity extends Activity {
 		iv_bitmap.setImageBitmap(newB);
 	}
 
-	// ºÚ°×
+	// é»‘ç™½
 	public void bt_black_white(View v) {
 		Drawable drawable = iv_bitmap.getDrawable();
 		Bitmap bm = ba.drawable2Bitmap(drawable);
@@ -87,7 +84,7 @@ public class BitMapActivity extends Activity {
 		iv_bitmap.setImageBitmap(newB);
 	}
 
-	// ÖØĞÂ¼ÓÔØ
+	// é‡æ–°åŠ è½½
 	public void bt_reload(View v) {
 		iv_bitmap.setImageResource(R.drawable.bg);
 	}

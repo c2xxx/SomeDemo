@@ -24,13 +24,13 @@ import android.widget.Toast;
 
 /**
  * @author chen:
- * @version ´´½¨Ê±¼ä£º2015-6-16 ÏÂÎç10:34:24
+ * @version åˆ›å»ºæ—¶é—´ï¼š2015-6-16 ä¸‹åˆ10:34:24
  */
 public class HardWareActivity2 extends Activity implements SensorEventListener {
 	private static final String TAG = null;
-	private SensorManager mManager;// ´«¸ĞÆ÷¹ÜÀí¶ÔÏó
+	private SensorManager mManager;// ä¼ æ„Ÿå™¨ç®¡ç†å¯¹è±¡
 	private TextView tv_distance;
-	private SoundRecorder recorder;// Â¼Òô
+	private SoundRecorder recorder;// å½•éŸ³
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -48,8 +48,8 @@ public class HardWareActivity2 extends Activity implements SensorEventListener {
 
 	private void register() {
 		mManager.registerListener(this,
-				mManager.getDefaultSensor(Sensor.TYPE_PROXIMITY),// ¾àÀë¸ĞÓ¦Æ÷
-				SensorManager.SENSOR_DELAY_NORMAL);// ×¢²á´«¸ĞÆ÷£¬µÚÒ»¸ö²ÎÊıÎª¾àÀë¼àÌıÆ÷£¬µÚ¶ş¸öÊÇ´«¸ĞÆ÷ÀàĞÍ£¬µÚÈı¸öÊÇÑÓ³ÙÀàĞÍ
+				mManager.getDefaultSensor(Sensor.TYPE_PROXIMITY),// è·ç¦»æ„Ÿåº”å™¨
+				SensorManager.SENSOR_DELAY_NORMAL);// æ³¨å†Œä¼ æ„Ÿå™¨ï¼Œç¬¬ä¸€ä¸ªå‚æ•°ä¸ºè·ç¦»ç›‘å¬å™¨ï¼Œç¬¬äºŒä¸ªæ˜¯ä¼ æ„Ÿå™¨ç±»å‹ï¼Œç¬¬ä¸‰ä¸ªæ˜¯å»¶è¿Ÿç±»å‹
 
 	}
 
@@ -59,17 +59,17 @@ public class HardWareActivity2 extends Activity implements SensorEventListener {
 		mManager.unregisterListener(this);
 	}
 
-	// ¿ªÊ¼Â¼Òô
+	// å¼€å§‹å½•éŸ³
 	public void recoder_Start(View v) {
 		recorder.startRecording();
 	}
 
-	// ½áÊøÂ¼Òô
+	// ç»“æŸå½•éŸ³
 	public void recoder_Stop(View v) {
 		recorder.stopRecording();
 	}
 
-	// ²¥·ÅÂ¼Òô
+	// æ’­æ”¾å½•éŸ³
 	public void recoder_Play(View v) {
 		recorder.play();
 	}
@@ -80,9 +80,9 @@ public class HardWareActivity2 extends Activity implements SensorEventListener {
 		case Sensor.TYPE_PROXIMITY:
 			float distance = event.values[0];
 			if (distance < event.sensor.getMaximumRange()) {
-				tv_distance.setText("¿¿½üÁË");
+				tv_distance.setText("é è¿‘äº†");
 			} else {
-				tv_distance.setText("Ã»ÓĞ¿¿½ü");
+				tv_distance.setText("æ²¡æœ‰é è¿‘");
 			}
 			break;
 		}
@@ -95,7 +95,7 @@ public class HardWareActivity2 extends Activity implements SensorEventListener {
 	}
 
 	/**
-	 * Âó¿Ë·çÂ¼Òô
+	 * éº¦å…‹é£å½•éŸ³
 	 * 
 	 * @author hui
 	 * 
@@ -126,7 +126,7 @@ public class HardWareActivity2 extends Activity implements SensorEventListener {
 				mRecorder.prepare();
 				mRecorder.start();
 			} catch (IOException e) {
-				Toast.makeText(getApplicationContext(), "±¨´íÁË1£¡£¡£¡", 0).show();
+				Toast.makeText(getApplicationContext(), "æŠ¥é”™äº†1ï¼ï¼ï¼", 0).show();
 				Log.e(TAG, "prepare() failed:" + e.getMessage());
 			}
 		}
@@ -138,7 +138,7 @@ public class HardWareActivity2 extends Activity implements SensorEventListener {
 				mPlayer.prepare();
 				mPlayer.start();
 			} catch (IOException e) {
-				Toast.makeText(getApplicationContext(), "±¨´íÁË2£¡£¡£¡", 0).show();
+				Toast.makeText(getApplicationContext(), "æŠ¥é”™äº†2ï¼ï¼ï¼", 0).show();
 				Log.e(TAG, "prepare() failed" + e.getMessage());
 			}
 		}

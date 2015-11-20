@@ -1,23 +1,14 @@
 package com.basedamo.activity;
 
-import com.basedamo.R;
-import com.basedamo.R.id;
-import com.basedamo.R.layout;
-import com.basedamo.protertyanimation.MyAnimView;
-
-import android.animation.ObjectAnimator;
-import android.animation.TypeEvaluator;
 import android.animation.ValueAnimator;
 import android.app.Activity;
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.Paint;
 import android.os.Bundle;
-import android.util.AttributeSet;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+
+import com.basedamo.R;
+import com.basedamo.protertyanimation.MyAnimView;
 
 public class ProteryAnimation2 extends Activity implements OnClickListener {
 	private Button btn_property2_FloatEvaluator;

@@ -27,7 +27,7 @@ import android.widget.TextView;
 
 /**
  * @author chen:
- * @version ´´½¨Ê±¼ä£º2015-6-16 ÏÂÎç10:34:24
+ * @version åˆ›å»ºæ—¶é—´ï¼š2015-6-16 ä¸‹åˆ10:34:24
  */
 public class HardWareActivity extends Activity {
 	private static final String TAG = "HardWareActivity";
@@ -52,16 +52,16 @@ public class HardWareActivity extends Activity {
 	}
 
 	private void register() {
-		// µç³Ø
+		// ç”µæ± 
 		this.registerReceiver(this.chargeReceiver, new IntentFilter(
 				Intent.ACTION_BATTERY_CHANGED));
-		// ÖØÁ¦¸ĞÓ¦
+		// é‡åŠ›æ„Ÿåº”
 		sensor_manager.registerListener(mySensorEvent, sensor_accelerometer,
 				SensorManager.SENSOR_DELAY_NORMAL);
 
-		// WIFIĞÅÏ¢
+		// WIFIä¿¡æ¯
 		tv_text_wifi.setText(getWifiInfo());
-		//°æ±¾ĞÅÏ¢
+		//ç‰ˆæœ¬ä¿¡æ¯
 		getVersionInfo();
 
 	}
@@ -91,9 +91,9 @@ public class HardWareActivity extends Activity {
 		mySensorEvent = new MySensorEventListener();
 	}
 
-	// °æ±¾ĞÅÏ¢
+	// ç‰ˆæœ¬ä¿¡æ¯
 	private void getVersionInfo() {
-		String phoneInfo = "²úÆ·ĞÍºÅ: " + android.os.Build.PRODUCT;
+		String phoneInfo = "äº§å“å‹å·: " + android.os.Build.PRODUCT;
 		phoneInfo += "\r\n USER: " + android.os.Build.USER;
 		phoneInfo += "\r\n CPU_ABI: " + android.os.Build.CPU_ABI;
 		phoneInfo += "\r\n TAGS: " + android.os.Build.TAGS;
@@ -114,7 +114,7 @@ public class HardWareActivity extends Activity {
 
 	public void clear(View v) {
 		tv_text.setText("");
-		// WIFIĞÅÏ¢
+		// WIFIä¿¡æ¯
 		tv_text_wifi.setText("");
 		tv_version.setText("");
 	}
@@ -123,7 +123,7 @@ public class HardWareActivity extends Activity {
 		register();
 	}
 
-	// ´«¸ĞÆ÷¼àÌı
+	// ä¼ æ„Ÿå™¨ç›‘å¬
 	public class MySensorEventListener implements SensorEventListener {
 
 		@Override
@@ -137,7 +137,7 @@ public class HardWareActivity extends Activity {
 				// iv_proxi.setVisibility(View.VISIBLE);
 				// }
 				// break;
-			case Sensor.TYPE_ACCELEROMETER:// ÖØÁ¦´«¸ĞÆ÷ĞÅÏ¢
+			case Sensor.TYPE_ACCELEROMETER:// é‡åŠ›ä¼ æ„Ÿå™¨ä¿¡æ¯
 				float[] distances = event.values;
 				tv_gravity_pb_x.setText("" + distances[0]);
 				tv_gravity_pb_y.setText("" + distances[1]);
@@ -158,7 +158,7 @@ public class HardWareActivity extends Activity {
 	}
 
 	/**
-	 * µç³ØĞÅÏ¢¼àÌı
+	 * ç”µæ± ä¿¡æ¯ç›‘å¬
 	 * 
 	 * @author hui
 	 */
@@ -226,12 +226,12 @@ public class HardWareActivity extends Activity {
 					acString = "USB";
 					break;
 				}
-				String temp = "\r\nµç³ØĞÅÏ¢£º\r\n present:" + present + "\r\n level"
-						+ level + "\r\n scale×î´óµçÁ¿" + scale + " plugged"
-						+ plugged + "\r\n temperatureÎÂ¶È" + temperature
-						+ "\r\n technologyµç³ØÖÖÀà" + technology + "\r\n ×´Ì¬"
-						+ statusString + "\r\n Çé¿ö" + healthString + "\r\n ²å°Î"
-						+ acString + "\r\n µçÑ¹" + voltage;
+				String temp = "\r\nç”µæ± ä¿¡æ¯ï¼š\r\n present:" + present + "\r\n level"
+						+ level + "\r\n scaleæœ€å¤§ç”µé‡" + scale + " plugged"
+						+ plugged + "\r\n temperatureæ¸©åº¦" + temperature
+						+ "\r\n technologyç”µæ± ç§ç±»" + technology + "\r\n çŠ¶æ€"
+						+ statusString + "\r\n æƒ…å†µ" + healthString + "\r\n æ’æ‹”"
+						+ acString + "\r\n ç”µå‹" + voltage;
 
 				Log.i(TAG, temp);
 				if (tv_text != null)
@@ -255,7 +255,7 @@ public class HardWareActivity extends Activity {
 		int networkID = info.getNetworkId();
         String bssid = info.getBSSID();
         int rssi = info.getRssi();
-		String temp = "\r\nWIFIĞÅÏ¢\r\n ip: " + ipText
+		String temp = "\r\nWIFIä¿¡æ¯\r\n ip: " + ipText
 				+ "\r\n wifi status :" + status 
 				+ "\r\n SSID :" + SSID 
 				+ "\r\n net work id :" + networkID 
@@ -266,8 +266,8 @@ public class HardWareActivity extends Activity {
 
 		List<ScanResult> wifiSs = wifi.getScanResults();
 
-		temp += "¿ÉÓÃWIFI/ĞÅºÅÇ¿¶È:";
-		// µ±Ç°¿ÉÓÃµÄwifiĞÅÏ¢
+		temp += "å¯ç”¨WIFI/ä¿¡å·å¼ºåº¦:";
+		// å½“å‰å¯ç”¨çš„wifiä¿¡æ¯
 		for (int i = 0; i < wifiSs.size(); i++) {
 			temp += "\r\n" + wifiSs.get(i).SSID + "/" + wifiSs.get(i).level
 					+ "dB";
