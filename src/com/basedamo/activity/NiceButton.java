@@ -9,7 +9,7 @@ import android.os.Bundle;
 /**
  * 
  * @author Author CH
- * @version CreateTime 2015-6-8  ÉÏÎç12:18:58
+ * @version CreateTime 2015-6-8  ä¸Šåˆ12:18:58
  */
 public class NiceButton extends Activity {
 	@Override

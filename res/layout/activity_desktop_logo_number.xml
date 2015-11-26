@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <include layout="@layout/title_bar" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="仅支持小米、三星、索尼机型" />
+
+    <EditText
+        android:id="@+id/et_desktop_logo_number_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number" />
+
+    <Button
+        android:id="@+id/btn_desktop_logo_number_shownum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="显示数字" />
+
+    <Button
+        android:id="@+id/btn_desktop_logo_number_clearnum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="清除数字" />
+</LinearLayout>

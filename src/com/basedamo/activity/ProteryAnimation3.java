@@ -1,9 +1,5 @@
 package com.basedamo.activity;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import android.animation.ValueAnimator;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
@@ -11,9 +7,10 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 
 import com.basedamo.R;
-import com.basedamo.R.id;
-import com.basedamo.R.layout;
 import com.basedamo.protertyanimation.MyAnimView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class ProteryAnimation3 extends Activity implements OnClickListener {
 	private MyAnimView mav_test;

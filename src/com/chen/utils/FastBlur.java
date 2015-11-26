@@ -4,7 +4,7 @@ import android.graphics.Bitmap;
 /**
  * 
  * @author Author CH
- * @version CreateTime 2015-6-11  ÏÂÎç12:21:39
+ * @version CreateTime 2015-6-11  ä¸‹åˆ12:21:39
  */
 public class FastBlur {
 

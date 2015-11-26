@@ -1,9 +1,5 @@
 package com.basedamo.activity;
 
-import com.basedamo.R;
-import com.basedamo.R.id;
-import com.basedamo.R.layout;
-
 import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
 import android.app.Activity;
@@ -11,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+
+import com.basedamo.R;
 
 public class ProteryAnimation1 extends Activity implements OnClickListener {
 	private Button btn_property_scale;

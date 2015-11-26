@@ -1,8 +1,5 @@
 package com.basedamo.activity;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
@@ -10,11 +7,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
-import android.widget.LinearLayout;
-import android.widget.LinearLayout.LayoutParams;
 import android.widget.TextView;
 
 import com.basedamo.R;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class GridViewActivity extends Activity {
 	private GridView gv_expand;
