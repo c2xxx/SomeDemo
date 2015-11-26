@@ -65,7 +65,7 @@ public class MainActivity extends Activity implements OnItemClickListener {
 		addItem("属性动画（上）", ProteryAnimation1.class);
 		addItem("属性动画（中）", ProteryAnimation2.class);
 		addItem("属性动画（下）", ProteryAnimation3.class);
-		addItem("图片放大...(未完成)", ShowImageViewActivity.class);
+		addItem("图片放大", ShowImageViewActivity.class);
 		addItem("Volley使用", com.basedamo.volley.VolleyDemoActivity.class);
 		addItem("轮播图", com.basedamo.slideviewpaper.ViewPaperActivity.class);
 		addItem("ListView控制", com.basedamo.listview.ListViewTestActivity.class);
