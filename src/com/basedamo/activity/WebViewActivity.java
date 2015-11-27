@@ -12,26 +12,27 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Toast;
 
+import com.basedamo.BaseActivity;
 import com.basedamo.R;
 
-public class WebViewActivity extends Activity {
+public class WebViewActivity extends BaseActivity {
 	protected static final String TAG = WebViewActivity.class.getSimpleName();
 	private WebView wv_webview;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_webview);
-		initViews();
-		initDatas();
+		super.onCreate(savedInstanceState);
 	}
 
-	private void initDatas() {
+	@Override
+	protected void initData() {
 		// wv_webview.loadUrl("file:///android_asset/demo.html");//加载本地html
 		wv_webview.loadUrl("http://www.shoujikanbing.com");
 	}
 
-	private void initViews() {
+	@Override
+	protected void initViews() {
 		wv_webview = (WebView) findViewById(R.id.wv_webview);
 
 		// 支持javascript//必须
@@ -57,4 +58,5 @@ public class WebViewActivity extends Activity {
 			}
 		});// 使用当前Webview打开链接
 	}
+
 }

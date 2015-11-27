@@ -76,7 +76,7 @@ public class ListViewTestActivity extends Activity implements OnClickListener {
 		});
 		lvFootView=new TextView(this);
 		lvFootView.setHeight(100);
-		lvFootView.setText("正在加载剩余条目");
+		lvFootView.setText("姝ｅ湪鍔犺浇鍓╀綑鏉＄洰");
 		lv_list.addFooterView(lvFootView);
 	}
 
@@ -88,7 +88,7 @@ public class ListViewTestActivity extends Activity implements OnClickListener {
 
 	private void refreshPage() {
 		if(index>=100){
-			lvFootView.setText("加载完成");
+			lvFootView.setText("鍔犺浇瀹屾垚");
 			return;
 		}
 		int len = 10;

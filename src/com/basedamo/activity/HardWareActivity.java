@@ -2,6 +2,7 @@ package com.basedamo.activity;
 
 import java.util.List;
 
+import com.basedamo.BaseActivity;
 import com.basedamo.R;
 import com.basedamo.R.id;
 import com.basedamo.R.layout;
@@ -29,7 +30,7 @@ import android.widget.TextView;
  * @author chen:
  * @version 创建时间：2015-6-16 下午10:34:24
  */
-public class HardWareActivity extends Activity {
+public class HardWareActivity extends BaseActivity {
 	private static final String TAG = "HardWareActivity";
 	private TextView tv_text, tv_text_wifi, tv_gravity_pb_x,
 			tv_gravity_pb_y, tv_gravity_pb_z;
@@ -44,11 +45,17 @@ public class HardWareActivity extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
 		setContentView(R.layout.hardware);
-		init();
+		super.onCreate(savedInstanceState);
 		chargeReceiver = new ChargingReceiver();
 		register();
+	}
+
+
+
+	@Override
+	protected void initData() {
+
 	}
 
 	private void register() {
@@ -71,8 +78,8 @@ public class HardWareActivity extends Activity {
 		super.onDestroy();
 		unregisterReceiver(chargeReceiver);
 	}
-
-	private void init() {
+	@Override
+	protected void initViews() {
 		tv_version = (TextView) findViewById(R.id.tv_version);
 
 		pb_gravity_pb_x = (ProgressBar) findViewById(R.id.pb_gravity_pb_x);

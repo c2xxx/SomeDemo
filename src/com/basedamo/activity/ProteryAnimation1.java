@@ -8,9 +8,10 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
+import com.basedamo.BaseActivity;
 import com.basedamo.R;
 
-public class ProteryAnimation1 extends Activity implements OnClickListener {
+public class ProteryAnimation1 extends BaseActivity implements OnClickListener {
 	private Button btn_property_scale;
 	private Button btn_property_alpha;
 	private Button btn_property_translationX;
@@ -20,16 +21,12 @@ public class ProteryAnimation1 extends Activity implements OnClickListener {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_proteryanimation1);
-		initViews();
-		initDates();
+		super.onCreate(savedInstanceState);
 	}
 
-	private void initDates() {
-	}
 
-	private void initViews() {
+	protected void initViews() {
 		btn_property_scale = (Button) findViewById(R.id.btn_property_scale);
 		btn_property_alpha = (Button) findViewById(R.id.btn_property_alpha);
 		btn_property_translationX = (Button) findViewById(R.id.btn_property_translationX);
@@ -39,6 +36,11 @@ public class ProteryAnimation1 extends Activity implements OnClickListener {
 		btn_property_scale.setOnClickListener(this);
 		btn_property_translationX.setOnClickListener(this);
 		btn_property_rotation.setOnClickListener(this);
+	}
+
+	@Override
+	protected void initData() {
+
 	}
 
 	@Override

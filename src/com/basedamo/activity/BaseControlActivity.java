@@ -1,5 +1,6 @@
 package com.basedamo.activity;
 
+import com.basedamo.BaseActivity;
 import com.basedamo.R;
 import com.basedamo.R.drawable;
 import com.basedamo.R.id;
@@ -22,11 +23,11 @@ import android.widget.TextView;
  * @author chen:
  * @version 创建时间：2015-6-13 下午11:25:45
  */
-public class BaseControlActivity extends Activity {
+public class BaseControlActivity extends BaseActivity{
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_basecontrol1);
+		super.onCreate(savedInstanceState);
 		// 自动填充对话框
 		AutoCompleteTextView actv_demo = (AutoCompleteTextView) findViewById(R.id.actv_demo);
 		String[] strs = { "aaaa", "bbbb", "CBA", "ABC", "abc", "中国", "中华", "福建" };
@@ -35,6 +36,16 @@ public class BaseControlActivity extends Activity {
 		actv_demo.setAdapter(adapter);
 		
 		showBadgeView();
+	}
+
+	@Override
+	protected void initViews() {
+
+	}
+
+	@Override
+	protected void initData() {
+
 	}
 
 	private void showBadgeView() {

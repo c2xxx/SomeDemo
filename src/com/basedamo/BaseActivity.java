@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import com.umeng.analytics.MobclickAgent;
+
 /**
  * Created by hui on 2015/11/19.
  */
@@ -12,28 +14,24 @@ public abstract class BaseActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(getLayoutID());
+        setLeftbutton(true);
         initViews();
         initData();
     }
 
-    /**
-     * @return ÉèÖÃlayout
-     */
-    protected abstract int getLayoutID();
 
     /**
-     * ³õÊ¼»¯½çÃæ
+     * åˆå§‹åŒ–ç•Œé¢
      */
     protected abstract void initViews();
 
     /**
-     * ³õÊ¼»¯Êı¾İ
+     * åˆå§‹åŒ–æ•°æ®
      */
     protected abstract void initData();
 
     /**
-     * @param enable ·µ»Ø¼üÊÇ·ñ¿ÉÓÃ
+     * @param enable è¿”å›é”®æ˜¯å¦å¯ç”¨
      */
     protected void setLeftbutton(boolean enable) {
         View view = findViewById(R.id.iv_title_bar_left);
@@ -54,7 +52,7 @@ public abstract class BaseActivity extends Activity {
     }
 
     /**
-     * @param title ±êÌâ
+     * @param title æ ‡é¢˜
      */
     protected void setTitleText(CharSequence title) {
         TextView view = (TextView) findViewById(R.id.tv_title_bar_title);
@@ -63,4 +61,14 @@ public abstract class BaseActivity extends Activity {
         }
     }
 
+
+    public void onResume() {
+        super.onResume();
+        MobclickAgent.onResume(this);
+    }
+
+    public void onPause() {
+        super.onPause();
+        MobclickAgent.onPause(this);
+    }
 }

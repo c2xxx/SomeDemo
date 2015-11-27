@@ -7,6 +7,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.widget.ImageView;
 
+import com.basedamo.BaseActivity;
 import com.basedamo.R;
 import com.basedamo.R.id;
 
@@ -15,16 +16,25 @@ import com.basedamo.R.id;
  *
  * @author hui
  */
-public class ShowImageViewActivity extends Activity {
+public class ShowImageViewActivity extends BaseActivity {
 
     private ImageView photoView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_common_image_view);
+        super.onCreate(savedInstanceState);
+    }
+
+    @Override
+    protected void initViews() {
         photoView = (ImageView) findViewById(id.photoview);
         photoView.setImageResource(R.drawable.photo);
+    }
+
+    @Override
+    protected void initData() {
+
     }
 
     @Override

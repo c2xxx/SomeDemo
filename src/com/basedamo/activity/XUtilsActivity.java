@@ -6,25 +6,36 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
+import com.basedamo.BaseActivity;
 import com.basedamo.R;
 import com.lidroid.xutils.HttpUtils;
 import com.lidroid.xutils.exception.HttpException;
 import com.lidroid.xutils.http.ResponseInfo;
 import com.lidroid.xutils.http.callback.RequestCallBack;
 
-public class XUtilsActivity extends Activity{
+public class XUtilsActivity extends BaseActivity {
 	
 	protected static final String TAG = "XUtilsActivity";
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_xutils);
+		super.onCreate(savedInstanceState);
 	}
-	
+
+	@Override
+	protected void initViews() {
+
+	}
+
+	@Override
+	protected void initData() {
+
+	}
+
 	public void utilGet(View v)
 	{
-		//get´ø»º´æ£¬·ÃÎÊÒ»´Îºó£¬¹Ø±ÕÍøÂçÒ²ÄÜ·ÃÎÊµ½»º´æµÄÊý¾Ý
+		//getï¿½ï¿½ï¿½ï¿½ï¿½æ£¬ï¿½ï¿½ï¿½ï¿½Ò»ï¿½Îºó£¬¹Ø±ï¿½ï¿½ï¿½ï¿½ï¿½Ò²ï¿½Ü·ï¿½ï¿½Êµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		HttpUtils http = new HttpUtils();
 		http.send(com.lidroid.xutils.http.client.HttpRequest.HttpMethod.GET,
 		    "http://www.lidroid.com",

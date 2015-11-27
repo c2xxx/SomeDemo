@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.SeekBar;
 
+import com.basedamo.BaseActivity;
 import com.basedamo.R;
 import com.chen.utils.BitMapAccess;
 import com.chen.utils.FastBlur;
@@ -20,18 +21,27 @@ import com.chen.utils.FastBlur;
  * @author Author CH
  * @version CreateTime 2015-6-11 上午10:56:30
  */
-public class BitMapActivity extends Activity {
+public class BitMapActivity extends BaseActivity {
 	private ImageView iv_bitmap;
 	private SeekBar sb_seekbar;
 	BitMapAccess ba = new BitMapAccess();
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
 		setContentView(R.layout.at_bitmap);
+		super.onCreate(savedInstanceState);
+	}
+
+	@Override
+	protected void initViews() {
 		sb_seekbar = (SeekBar) this.findViewById(R.id.sb_seekbar);
 		iv_bitmap = (ImageView) this.findViewById(R.id.iv_bitmap);
 		iv_bitmap.setImageResource(R.drawable.bg);
+	}
+
+	@Override
+	protected void initData() {
+
 	}
 
 	// 亮度

@@ -1,5 +1,6 @@
 package com.basedamo.activity;
 
+import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
@@ -21,9 +22,11 @@ public class DesktopLogoNumberActivity extends BaseActivity implements View.OnCl
     private EditText editText;
 
     @Override
-    protected int getLayoutID() {
-        return R.layout.activity_desktop_logo_number;
+    protected void onCreate(Bundle savedInstanceState) {
+        setContentView(R.layout.activity_desktop_logo_number);
+        super.onCreate(savedInstanceState);
     }
+
 
     @Override
     protected void initViews() {

@@ -1,5 +1,6 @@
 package com.basedamo.activity;
 
+import com.basedamo.BaseActivity;
 import com.basedamo.R;
 import com.basedamo.R.id;
 import com.basedamo.R.layout;
@@ -20,17 +21,23 @@ import android.widget.SeekBar;
  * @author chen:
  * @version 创建时间：2015-6-16 下午8:53:30
  */
-public class VolumActivity extends Activity {
+public class VolumActivity extends BaseActivity {
 	private SeekBar seekbar;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
 		setContentView(R.layout.volum);
-		init();
+		super.onCreate(savedInstanceState);
 	}
 
-	private void init() {
+
+	@Override
+	protected void initData() {
+
+	}
+
+	@Override
+	protected void initViews() {
 		seekbar = (SeekBar) findViewById(R.id.seekbar);
 	}
 
