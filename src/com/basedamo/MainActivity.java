@@ -31,8 +31,12 @@ import com.basedamo.activity.UmengFeedBackActivity;
 import com.basedamo.activity.VolumActivity;
 import com.basedamo.activity.WebViewActivity;
 import com.basedamo.activity.XUtilsActivity;
+import com.basedamo.activity.XunFeiVoiceInputActivity;
+import com.basedamo.activity.XunFeiVoiceReaderActivity;
 import com.basedamo.view.CircleImageActivity;
 import com.basedamo.view.MyViewDemoActivity;
+import com.iflytek.cloud.SpeechConstant;
+import com.iflytek.cloud.SpeechUtility;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -75,7 +79,8 @@ public class MainActivity extends BaseActivity implements OnItemClickListener {
         addItem("桌面图标右上角数字", DesktopLogoNumberActivity.class);
         addItem("友盟反馈", UmengFeedBackActivity.class);
         addItem("分享功能（未完成）", EmptyActivity.class);
-        addItem("语音输入（未完成）", EmptyActivity.class);
+        addItem("科大讯飞——语音输入", XunFeiVoiceInputActivity.class);
+        addItem("科大讯飞——语音合成", XunFeiVoiceReaderActivity.class);
     }
 
     @Override

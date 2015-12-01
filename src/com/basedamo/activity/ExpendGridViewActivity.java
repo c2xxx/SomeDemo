@@ -31,7 +31,7 @@ public class ExpendGridViewActivity extends BaseActivity {
     protected void initData() {
 
         List<String> list = new ArrayList<>();
-        for (int i = 0; i < 50; i++) {
+        for (int i = 0; i < 5; i++) {
             list.add("" + i);
         }
         adapter = new MyAdapter(list);
@@ -41,14 +41,13 @@ public class ExpendGridViewActivity extends BaseActivity {
 
         // 计算GridView宽度，
         int size = list.size();
-        int horizontalSpacing = 5;
+        int horizontalSpacing = 10;
         int columnWidth = 150;
         DisplayMetrics dm = new DisplayMetrics();
         this.getWindowManager().getDefaultDisplay().getMetrics(dm);
 
         float density = dm.density;
-        int gridviewWidth = (int) (size * (columnWidth + horizontalSpacing)
-                * density + 40 * density);
+        int gridviewWidth = (int) (size * (columnWidth + horizontalSpacing)* density);
         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
                 gridviewWidth, LinearLayout.LayoutParams.MATCH_PARENT);
         gv_expand.setLayoutParams(params); // 设置GirdView布局参数,横向布局的关键

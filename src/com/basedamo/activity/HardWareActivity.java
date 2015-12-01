@@ -1,13 +1,5 @@
 package com.basedamo.activity;
 
-import java.util.List;
-
-import com.basedamo.BaseActivity;
-import com.basedamo.R;
-import com.basedamo.R.id;
-import com.basedamo.R.layout;
-
-import android.app.Activity;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -25,6 +17,11 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+
+import com.basedamo.BaseActivity;
+import com.basedamo.R;
+
+import java.util.List;
 
 /**
  * @author chen:
@@ -45,6 +42,7 @@ public class HardWareActivity extends BaseActivity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
+		this.setTheme(R.style.NoTitleBar);
 		setContentView(R.layout.hardware);
 		super.onCreate(savedInstanceState);
 		chargeReceiver = new ChargingReceiver();

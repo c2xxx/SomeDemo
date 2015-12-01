@@ -59,7 +59,7 @@ public class MyAnimView extends View {
 	}
 
 	/**
-	 * Î»ÖÃ´Ó×óÉÏ½Çµ½ÓÒÏÂ½Ç
+	 * ä½ç½®ä»å·¦ä¸Šè§’åˆ°å³ä¸‹è§’
 	 */
 	public void startAnimation() {
 		Point startPoint = new Point(RADIUS, RADIUS);
@@ -78,7 +78,7 @@ public class MyAnimView extends View {
 	}
 
 	/**
-	 * Î»ÖÃ´Ó×óÉÏ½Çµ½ÓÒÏÂ½Ç£¬ÇÒ±äÉ«
+	 * ä½ç½®ä»å·¦ä¸Šè§’åˆ°å³ä¸‹è§’ï¼Œä¸”å˜è‰²
 	 */
 	public void startAnimation2() {
 		Point startPoint = new Point(RADIUS, RADIUS);
@@ -101,7 +101,7 @@ public class MyAnimView extends View {
 	}
 
 	/**
-	 * ´¹Ö±µôÂä,¼ÓËÙºó¼õËÙ
+	 * å‚ç›´æ‰è½,åŠ é€Ÿåå‡é€Ÿ
 	 */
 	public void startAnimation_vertical() {
 		Point startPoint = new Point(getWidth() / 2, RADIUS);
@@ -119,7 +119,7 @@ public class MyAnimView extends View {
 		anim.start();
 	}
 	/**
-	 * ´¹Ö±µôÂä,¼ÓËÙÏÂÂä
+	 * å‚ç›´æ‰è½,åŠ é€Ÿä¸‹è½
 	 */
 	public void startAnimation_vertical2() {
 	    Point startPoint = new Point(getWidth() / 2, RADIUS);
@@ -137,7 +137,7 @@ public class MyAnimView extends View {
 	    anim.start();
 	}
 	/**
-	 * ´¹Ö±µôÂäºó·´µ¯
+	 * å‚ç›´æ‰è½ååå¼¹
 	 */
 	public void startAnimation_vertical3() {
 	    Point startPoint = new Point(getWidth() / 2, RADIUS);
@@ -155,7 +155,7 @@ public class MyAnimView extends View {
 	    anim.start();
 	}
 	/**
-	 * ×Ô¶¨Òå¼ÓËÙºó¼õËÙ
+	 * è‡ªå®šä¹‰åŠ é€Ÿåå‡é€Ÿ
 	 */
 	public void startAnimation_vertical4() {
 	    Point startPoint = new Point(getWidth() / 2, RADIUS);

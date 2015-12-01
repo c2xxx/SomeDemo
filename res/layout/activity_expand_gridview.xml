@@ -20,7 +20,6 @@
 		        android:background="@android:color/holo_orange_light"
 		        android:numColumns="100"
 		        android:padding="0dp"
-		        android:horizontalSpacing="5dp"
 		        android:verticalSpacing="20dp" >
 		    </GridView>
         </LinearLayout>

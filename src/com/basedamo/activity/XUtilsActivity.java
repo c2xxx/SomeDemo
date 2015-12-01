@@ -1,7 +1,6 @@
 package com.basedamo.activity;
 
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -35,7 +34,6 @@ public class XUtilsActivity extends BaseActivity {
 
 	public void utilGet(View v)
 	{
-		//get�����棬����һ�κ󣬹ر�����Ҳ�ܷ��ʵ����������
 		HttpUtils http = new HttpUtils();
 		http.send(com.lidroid.xutils.http.client.HttpRequest.HttpMethod.GET,
 		    "http://www.lidroid.com",

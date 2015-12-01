@@ -88,8 +88,8 @@ public class BaseControlActivity extends BaseActivity{
 		Intent notificationIntent = new Intent(this, NiceButton.class);
 		PendingIntent contentIntent = PendingIntent.getActivity(this, 0,
 				notificationIntent, 0);
-		notification.setLatestEventInfo(context, contentTitle, contentText,
-				contentIntent);
+//		notification.setLatestEventInfo(context, contentTitle, contentText,
+//				contentIntent);
 		// Pass the Notification to the NotificationManager:显示
 		final int HELLO_ID = 1;
 		mNotificationManager.notify(HELLO_ID, notification);

@@ -22,12 +22,22 @@
     <uses-permission android:name="android.permission.READ_PHONE_STATE"></uses-permission>
     <!--友盟SDK   end-->
 
+    <!--科大讯飞   start-->
+    <!--获取手机录音机使用权限，听写、识别、语义理解需要用到此权限 -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <!--允许程序改变网络连接状态 -->
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+    <!--读取联系人权限，上传联系人需要用到此权限 -->
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <!--科大讯飞   end-->
+
+
     <application
         android:name=".MyApplication"
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@android:style/Theme.Black.NoTitleBar">
+        android:theme="@style/AppTheme">
 
         <meta-data
             android:name="UMENG_APPKEY"
@@ -35,6 +45,8 @@
         <meta-data
             android:name="UMENG_CHANNEL"
             android:value="baidu" />
+
+
         <!-- android:theme="@style/AppTheme" > -->
         <activity
             android:name="com.basedamo.MainActivity"
@@ -67,6 +79,8 @@
         <activity android:name="com.basedamo.activity.DesktopLogoNumberActivity" />
         <activity android:name="com.basedamo.activity.UmengFeedBackActivity" />
         <activity android:name="com.basedamo.activity.EmptyActivity" />
+        <activity android:name="com.basedamo.activity.XunFeiVoiceInputActivity" />
+        <activity android:name="com.basedamo.activity.XunFeiVoiceReaderActivity" />
     </application>
 
 </manifest>
