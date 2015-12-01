@@ -13,7 +13,7 @@ public class MyViewDemo extends LinearLayout {
 	public MyViewDemo(Context context, AttributeSet attrs) {
 		super(context, attrs);
 
-		// ÔÚ¹¹Ôìº¯ÊıÖĞ½«XmlÖĞ¶¨ÒåµÄ²¼¾Ö½âÎö³öÀ´¡£
+		// åœ¨æ„é€ å‡½æ•°ä¸­å°†Xmlä¸­å®šä¹‰çš„å¸ƒå±€è§£æå‡ºæ¥ã€‚
 		LayoutInflater.from(context).inflate(R.layout.view_myview, this, true);
 		init();
 	}

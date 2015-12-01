@@ -3,7 +3,7 @@ package com.basedamo.protertyanimation;
 import android.animation.TimeInterpolator;
 
 /**
- * ×Ô¶¨Òå TimeInterpolator
+ * è‡ªå®šä¹‰ TimeInterpolator
  * @author hui
  *
  */

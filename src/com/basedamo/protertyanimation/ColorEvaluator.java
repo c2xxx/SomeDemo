@@ -20,7 +20,7 @@ public class ColorEvaluator implements TypeEvaluator {
 		int endRed = Integer.parseInt(endColor.substring(1, 3), 16);
 		int endGreen = Integer.parseInt(endColor.substring(3, 5), 16);
 		int endBlue = Integer.parseInt(endColor.substring(5, 7), 16);
-		// ³õÊ¼»¯ÑÕÉ«µÄÖµ
+		// åˆå§‹åŒ–é¢œè‰²çš„å€¼
 		if (mCurrentRed == -1) {
 			mCurrentRed = startRed;
 		}
@@ -30,7 +30,7 @@ public class ColorEvaluator implements TypeEvaluator {
 		if (mCurrentBlue == -1) {
 			mCurrentBlue = startBlue;
 		}
-		// ¼ÆËã³õÊ¼ÑÕÉ«ºÍ½áÊøÑÕÉ«Ö®¼äµÄ²îÖµ
+		// è®¡ç®—åˆå§‹é¢œè‰²å’Œç»“æŸé¢œè‰²ä¹‹é—´çš„å·®å€¼
 		int redDiff = Math.abs(startRed - endRed);
 		int greenDiff = Math.abs(startGreen - endGreen);
 		int blueDiff = Math.abs(startBlue - endBlue);
@@ -45,14 +45,14 @@ public class ColorEvaluator implements TypeEvaluator {
 			mCurrentBlue = getCurrentColor(startBlue, endBlue, colorDiff,
 					redDiff + greenDiff, fraction);
 		}
-		// ½«¼ÆËã³öµÄµ±Ç°ÑÕÉ«µÄÖµ×é×°·µ»Ø
+		// å°†è®¡ç®—å‡ºçš„å½“å‰é¢œè‰²çš„å€¼ç»„è£…è¿”å›
 		String currentColor = "#" + getHexString(mCurrentRed)
 				+ getHexString(mCurrentGreen) + getHexString(mCurrentBlue);
 		return currentColor;
 	}
 
 	/**
-	 * ¸ù¾İfractionÖµÀ´¼ÆËãµ±Ç°µÄÑÕÉ«¡£
+	 * æ ¹æ®fractionå€¼æ¥è®¡ç®—å½“å‰çš„é¢œè‰²ã€‚
 	 */
 	private int getCurrentColor(int startColor, int endColor, int colorDiff,
 			int offset, float fraction) {
@@ -72,7 +72,7 @@ public class ColorEvaluator implements TypeEvaluator {
 	}
 	
 	/**
-	 * ½«10½øÖÆÑÕÉ«Öµ×ª»»³É16½øÖÆ¡£
+	 * å°†10è¿›åˆ¶é¢œè‰²å€¼è½¬æ¢æˆ16è¿›åˆ¶ã€‚
 	 */
 	private String getHexString(int value) {
 		String hexString = Integer.toHexString(value);

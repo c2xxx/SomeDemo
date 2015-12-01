@@ -20,7 +20,7 @@ public class CircleImageActivity extends Activity {
 
 	private void initData() {
 		civ_test.setBackgroundResource(R.drawable.bg);
-		for (int i = 0; i < 1000; i++) {//¿´Ð§ÂÊ
+		for (int i = 0; i < 1000; i++) {//çœ‹æ•ˆçŽ‡
 			civ_test2.setImageResource(R.drawable.bg);
 		}
 		civ_test2.setBackgroundColor(0x55ddcc00);;

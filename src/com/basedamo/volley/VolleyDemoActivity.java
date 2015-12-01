@@ -53,7 +53,7 @@ public class VolleyDemoActivity extends Activity{
 
 
 	/**
-	 * ÏÔÊ¾ÎÄ±¾
+	 * æ˜¾ç¤ºæ–‡æœ¬
 	 * @param response
 	 */
 	private void showText(String response) {
@@ -65,7 +65,7 @@ public class VolleyDemoActivity extends Activity{
 	}
 
 	/**
-	 * ·ÃÎÊÎÄ±¾×ÊÔ´
+	 * è®¿é—®æ–‡æœ¬èµ„æº
 	 */
 	public void requestForString(View v) {
 
@@ -89,7 +89,7 @@ public class VolleyDemoActivity extends Activity{
 	}
 
 	/**
-	 * ·ÃÎÊÎÄ±¾×ÊÔ´(post)
+	 * è®¿é—®æ–‡æœ¬èµ„æº(post)
 	 */
 	public void requestForStringPost(View v) {
 
@@ -114,7 +114,7 @@ public class VolleyDemoActivity extends Activity{
 			}
 
 			/*
-			 * ÉèÖÃÓÅÏÈ¼¶
+			 * è®¾ç½®ä¼˜å…ˆçº§
 			 */
 			@Override
 			public com.android.volley.Request.Priority getPriority() {
@@ -128,7 +128,7 @@ public class VolleyDemoActivity extends Activity{
 	}
 
 	/**
-	 * ·ÃÎÊJSON×ÊÔ´
+	 * è®¿é—®JSONèµ„æº
 	 */
 	public void jsonRequest(View v) {
 		String url = "http://218.244.134.220:555/api/user_passport/login";
@@ -151,7 +151,7 @@ public class VolleyDemoActivity extends Activity{
 	}
 
 	/**
-	 * ·ÃÎÊÍ¼Æ¬×ÊÔ´
+	 * è®¿é—®å›¾ç‰‡èµ„æº
 	 */
 	public void imageRequest(View v) {
 		ImageRequest irequest = new ImageRequest(
@@ -172,7 +172,7 @@ public class VolleyDemoActivity extends Activity{
 	}
 
 	/**
-	 * ·ÃÎÊÍ¼Æ¬×ÊÔ´ImageLoader
+	 * è®¿é—®å›¾ç‰‡èµ„æºImageLoader
 	 */
 	public void imageLoader(View v) {
 		RequestQueue queue = Volley.newRequestQueue(this);
@@ -191,7 +191,7 @@ public class VolleyDemoActivity extends Activity{
 		imageLoader.get("http://img.blog.csdn.net/20140413205455484?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvZ3VvbGluX2Jsb2c=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast", listener,200,200);
 	}
 	/**
-	 * ·ÃÎÊÍ¼Æ¬×ÊÔ´ImageLoader(Ê¹ÓÃLruCache»º´æ)
+	 * è®¿é—®å›¾ç‰‡èµ„æºImageLoader(ä½¿ç”¨LruCacheç¼“å­˜)
 	 */
 	public void imageLoader2(View v) {
 		RequestQueue queue = Volley.newRequestQueue(this);
@@ -205,7 +205,7 @@ public class VolleyDemoActivity extends Activity{
 	
 	
 	/**
-	 * Ê¹ÓÃNetworkImageView¼ÓÔØÍ¼Æ¬
+	 * ä½¿ç”¨NetworkImageViewåŠ è½½å›¾ç‰‡
 	 */
 	int network_image_view_index=1;
 	public void networkImageView(View v) {
