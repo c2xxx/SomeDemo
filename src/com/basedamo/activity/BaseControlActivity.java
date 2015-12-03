@@ -13,7 +13,9 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.support.v4.app.NotificationCompat;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
@@ -55,43 +57,64 @@ public class BaseControlActivity extends BaseActivity{
         badgeView.show();
 	}
 
-	// 推送按钮
+	 //推送按钮
 	public void showNocifiction(View v) {
-		// Get a reference to the NotificationManager:得到服务
-		String ns = Context.NOTIFICATION_SERVICE;
-		NotificationManager mNotificationManager = (NotificationManager) getSystemService(ns);
-		// Instantiate the Notification:初始化
-		int icon = R.drawable.ic_launcher;
-		CharSequence tickerText = "Hello  tickerText";
-		long when = System.currentTimeMillis();
-		Notification notification = new Notification(icon, tickerText, when);
-		// 指定别的东西
-		// 默认声音
-		notification.defaults |= Notification.DEFAULT_SOUND;
-		// 添加振动
-		notification.defaults |= Notification.DEFAULT_VIBRATE;
+		NotificationManager mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+		NotificationCompat.Builder builder = new NotificationCompat.Builder(
+				getApplicationContext());
+		builder.setSmallIcon(R.drawable.ic_launcher);
+		builder.setDefaults(0);
+		builder.setAutoCancel(true);
+		builder.setContentTitle("title");
+		builder.setContentText("content");
 
-		// 不可清除
-		notification.flags |= Notification.FLAG_NO_CLEAR;
-		// 通知被点击后，自动消失
-		notification.flags |= Notification.FLAG_AUTO_CANCEL;
-		// 自定义闪光灯的方式
-		notification.ledARGB = 0xff0000ff;
-		notification.ledOnMS = 500;
-		notification.ledOffMS = 500;
-		notification.flags |= Notification.FLAG_SHOW_LIGHTS;
+		Uri uri = Uri.parse("http://baidu.com");
+		Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+		intent.setComponent(null);
 
-		// Define the notification's message and PendingIntent: 创建PendingIntent
-		Context context = getApplicationContext();
-		CharSequence contentTitle = "My notification Title";
-		CharSequence contentText = "Hello World!";
-		Intent notificationIntent = new Intent(this, NiceButton.class);
-		PendingIntent contentIntent = PendingIntent.getActivity(this, 0,
-				notificationIntent, 0);
+		PendingIntent pendingIntent = PendingIntent.getActivity(
+				getApplicationContext(), 0, intent, 0);
+		builder.setContentIntent(pendingIntent);
+
+		mNotificationManager.notify(1000, builder.build());
+	}
+//	 //推送按钮
+//	public void showNocifiction(View v) {
+//		// Get a reference to the NotificationManager:得到服务
+//		String ns = Context.NOTIFICATION_SERVICE;
+//		NotificationManager mNotificationManager = (NotificationManager) getSystemService(ns);
+//		// Instantiate the Notification:初始化
+//		int icon = R.drawable.ic_launcher;
+//		CharSequence tickerText = "Hello  tickerText";
+//		long when = System.currentTimeMillis();
+//		Notification notification = new Notification(icon, tickerText, when);
+//		// 指定别的东西
+//		// 默认声音
+//		notification.defaults |= Notification.DEFAULT_SOUND;
+//		// 添加振动
+//		notification.defaults |= Notification.DEFAULT_VIBRATE;
+//
+//		// 不可清除
+//		notification.flags |= Notification.FLAG_NO_CLEAR;
+//		// 通知被点击后，自动消失
+//		notification.flags |= Notification.FLAG_AUTO_CANCEL;
+//		// 自定义闪光灯的方式
+//		notification.ledARGB = 0xff0000ff;
+//		notification.ledOnMS = 500;
+//		notification.ledOffMS = 500;
+//		notification.flags |= Notification.FLAG_SHOW_LIGHTS;
+//
+//		// Define the notification's message and PendingIntent: 创建PendingIntent
+//		Context context = getApplicationContext();
+//		CharSequence contentTitle = "My notification Title";
+//		CharSequence contentText = "Hello World!";
+//		Intent notificationIntent = new Intent(this, NiceButton.class);
+//		PendingIntent contentIntent = PendingIntent.getActivity(this, 0,
+//				notificationIntent, 0);
 //		notification.setLatestEventInfo(context, contentTitle, contentText,
 //				contentIntent);
-		// Pass the Notification to the NotificationManager:显示
-		final int HELLO_ID = 1;
-		mNotificationManager.notify(HELLO_ID, notification);
-	}
+//		// Pass the Notification to the NotificationManager:显示
+//		final int HELLO_ID = 1;
+//		mNotificationManager.notify(HELLO_ID, notification);
+//	}
 }

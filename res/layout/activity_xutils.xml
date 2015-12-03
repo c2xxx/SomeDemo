@@ -9,7 +9,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:onClick="utilGet"
-        android:text="普通get方法(结果看LOG)"
+        android:text="普通get方法"
         android:textSize="22sp" />
 
     <TextView
@@ -17,7 +17,14 @@
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:onClick="utilPost"
-        android:text="普通post方法(结果看LOG)"
+        android:text="普通post方法"
         android:textSize="22sp" />
 
+    <TextView
+        android:id="@+id/tv_xutils_result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text=""
+        android:textSize="22sp" />
 </LinearLayout>

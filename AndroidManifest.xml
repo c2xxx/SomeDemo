@@ -24,11 +24,11 @@
 
     <!--科大讯飞   start-->
     <!--获取手机录音机使用权限，听写、识别、语义理解需要用到此权限 -->
-    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <!--允许程序改变网络连接状态 -->
-    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
     <!--读取联系人权限，上传联系人需要用到此权限 -->
-    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
     <!--科大讯飞   end-->
 
 
@@ -57,6 +57,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="com.basedamo.slideviewpaper.ViewPaperActivity" />
+        <activity android:name="com.basedamo.volley.VolleyDemoActivity" />
+        <activity android:name="com.basedamo.view.MyViewDemoActivity" />
+        <activity android:name="com.basedamo.view.CircleImageActivity" />
+        <activity android:name="com.basedamo.listview.ListViewTestActivity" />
         <activity android:name="com.basedamo.activity.BaseControlActivity" />
         <activity android:name="com.basedamo.activity.BitMapActivity" />
         <activity android:name="com.basedamo.activity.HardWareActivity" />
@@ -67,12 +72,7 @@
         <activity android:name="com.basedamo.activity.ProteryAnimation3" />
         <activity android:name="com.basedamo.activity.ShowImageViewActivity" />
         <activity android:name="com.basedamo.activity.VolumActivity" />
-        <activity android:name="com.basedamo.slideviewpaper.ViewPaperActivity" />
-        <activity android:name="com.basedamo.volley.VolleyDemoActivity" />
-        <activity android:name="com.basedamo.listview.ListViewTestActivity" />
         <activity android:name="com.basedamo.activity.XUtilsActivity" />
-        <activity android:name="com.basedamo.view.MyViewDemoActivity" />
-        <activity android:name="com.basedamo.view.CircleImageActivity" />
         <activity android:name="com.basedamo.activity.ExpendGridViewActivity" />
         <activity android:name="com.basedamo.activity.GridViewActivity" />
         <activity android:name="com.basedamo.activity.WebViewActivity" />
@@ -81,6 +81,11 @@
         <activity android:name="com.basedamo.activity.EmptyActivity" />
         <activity android:name="com.basedamo.activity.XunFeiVoiceInputActivity" />
         <activity android:name="com.basedamo.activity.XunFeiVoiceReaderActivity" />
+        <activity android:name="com.basedamo.activity.RecyclerViewActivity" />
+        <activity android:name="com.basedamo.activity.RecyclerViewActivity2" />
+        <activity android:name="com.basedamo.activity.RecyclerViewActivity3" />
+        <activity android:name="com.basedamo.activity.RecyclerViewActivity4" />
+        <activity android:name="com.basedamo.activity.CardViewActivity" />
     </application>
 
 </manifest>
