@@ -17,6 +17,8 @@ import android.widget.TextView;
 import com.basedamo.activity.BaseControlActivity;
 import com.basedamo.activity.BitMapActivity;
 import com.basedamo.activity.CardViewActivity;
+import com.basedamo.activity.CutImageActivity;
+import com.basedamo.activity.CutImageActivity2;
 import com.basedamo.activity.DesktopLogoNumberActivity;
 import com.basedamo.activity.EmptyActivity;
 import com.basedamo.activity.ExpendGridViewActivity;
@@ -31,6 +33,7 @@ import com.basedamo.activity.RecyclerViewActivity;
 import com.basedamo.activity.RecyclerViewActivity2;
 import com.basedamo.activity.RecyclerViewActivity3;
 import com.basedamo.activity.RecyclerViewActivity4;
+import com.basedamo.activity.SelectPhotosActivity;
 import com.basedamo.activity.ShowImageViewActivity;
 import com.basedamo.activity.UmengFeedBackActivity;
 import com.basedamo.activity.VolumActivity;
@@ -89,6 +92,9 @@ public class MainActivity extends BaseActivity implements OnItemClickListener {
         addItem("RecyclerView(二)", RecyclerViewActivity2.class);
         addItem("RecyclerView(三)", RecyclerViewActivity3.class);
         addItem("RecyclerView(四)", RecyclerViewActivity4.class);
+        addItem("获取图片", SelectPhotosActivity.class);
+        addItem("裁剪图片(系统功能)", CutImageActivity.class);
+        addItem("裁剪图片(自己实现)", CutImageActivity2.class);
     }
 
     @Override
@@ -146,7 +152,7 @@ public class MainActivity extends BaseActivity implements OnItemClickListener {
     }
 
     @Override
-    public void onItemClick(AdapterView<?> parent, View view, int position,long id) {
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         Intent intent = listIntents.get(position);
         startActivity(intent);
     }

@@ -10,7 +10,7 @@ import com.umeng.analytics.MobclickAgent;
 /**
  * Created by hui on 2015/11/19.
  */
-public abstract class BaseActivity extends Activity {
+public abstract class BaseActivity extends Activity implements View.OnClickListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,5 +70,10 @@ public abstract class BaseActivity extends Activity {
     public void onPause() {
         super.onPause();
         MobclickAgent.onPause(this);
+    }
+
+    @Override
+    public void onClick(View v) {
+
     }
 }

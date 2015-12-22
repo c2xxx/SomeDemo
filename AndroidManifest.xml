@@ -86,6 +86,9 @@
         <activity android:name="com.basedamo.activity.RecyclerViewActivity3" />
         <activity android:name="com.basedamo.activity.RecyclerViewActivity4" />
         <activity android:name="com.basedamo.activity.CardViewActivity" />
+        <activity android:name="com.basedamo.activity.CutImageActivity" />
+        <activity android:name="com.basedamo.activity.CutImageActivity2" />
+        <activity android:name="com.basedamo.activity.SelectPhotosActivity" />
     </application>
 
 </manifest>
