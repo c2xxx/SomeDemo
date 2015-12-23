@@ -18,7 +18,6 @@ import com.basedamo.activity.BaseControlActivity;
 import com.basedamo.activity.BitMapActivity;
 import com.basedamo.activity.CardViewActivity;
 import com.basedamo.activity.CutImageActivity;
-import com.basedamo.activity.CutImageActivity2;
 import com.basedamo.activity.DesktopLogoNumberActivity;
 import com.basedamo.activity.EmptyActivity;
 import com.basedamo.activity.ExpendGridViewActivity;
@@ -35,6 +34,7 @@ import com.basedamo.activity.RecyclerViewActivity2;
 import com.basedamo.activity.RecyclerViewActivity3;
 import com.basedamo.activity.RecyclerViewActivity4;
 import com.basedamo.activity.ShowImageViewActivity;
+import com.basedamo.activity.SlidingActivity;
 import com.basedamo.activity.UmengFeedBackActivity;
 import com.basedamo.activity.VolumActivity;
 import com.basedamo.activity.WebViewActivity;
@@ -94,6 +94,7 @@ public class MainActivity extends BaseActivity implements OnItemClickListener {
         addItem("RecyclerView(四)", RecyclerViewActivity4.class);
         addItem("裁剪图片(系统功能)", CutImageActivity.class);
         addItem("PopMenu、PopWindow", PopViewActivity.class);
+        addItem("侧滑", SlidingActivity.class);
     }
 
     @Override

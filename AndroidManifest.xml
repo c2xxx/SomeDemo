@@ -90,6 +90,8 @@
         <activity android:name="com.basedamo.activity.CutImageActivity2" />
         <activity android:name="com.basedamo.activity.PopViewActivity"
             android:theme="@style/Theme.AppCompat"/>
+        <activity android:name="com.basedamo.activity.SlidingActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
     </application>
 
 </manifest>
