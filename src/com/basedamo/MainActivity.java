@@ -14,6 +14,7 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.basedamo.activity.AsyncTaskActivity;
 import com.basedamo.activity.BaseControlActivity;
 import com.basedamo.activity.BitMapActivity;
 import com.basedamo.activity.CardViewActivity;
@@ -95,6 +96,8 @@ public class MainActivity extends BaseActivity implements OnItemClickListener {
         addItem("裁剪图片(系统功能)", CutImageActivity.class);
         addItem("PopMenu、PopWindow", PopViewActivity.class);
         addItem("侧滑", SlidingActivity.class);
+        addItem("AsyncTask", AsyncTaskActivity.class);
+
     }
 
     @Override

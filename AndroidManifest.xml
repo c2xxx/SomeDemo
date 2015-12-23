@@ -92,6 +92,7 @@
             android:theme="@style/Theme.AppCompat"/>
         <activity android:name="com.basedamo.activity.SlidingActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity android:name="com.basedamo.activity.AsyncTaskActivity"/>
     </application>
 
 </manifest>
