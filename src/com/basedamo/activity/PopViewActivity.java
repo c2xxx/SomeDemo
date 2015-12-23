@@ -2,10 +2,8 @@ package com.basedamo.activity;
 
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
 import android.support.v7.internal.view.menu.MenuPopupHelper;
 import android.support.v7.widget.PopupMenu;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -13,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.PopupWindow;
 import android.widget.TextView;
 
+import com.basedamo.BaseActivity;
 import com.basedamo.R;
 import com.basedamo.utils.ToastUtil;
 
@@ -21,15 +20,14 @@ import java.lang.reflect.Field;
 /**
  * Created by hui on 2015/12/22.
  */
-public class PopViewActivity extends ActionBarActivity implements View.OnClickListener {
+public class PopViewActivity extends BaseActivity implements View.OnClickListener {
 
     private PopupWindow popupWindow;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_popview);
-        initViews();
+        super.onCreate(savedInstanceState);
     }
 
     protected void initViews() {
