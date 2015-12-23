@@ -88,7 +88,8 @@
         <activity android:name="com.basedamo.activity.CardViewActivity" />
         <activity android:name="com.basedamo.activity.CutImageActivity" />
         <activity android:name="com.basedamo.activity.CutImageActivity2" />
-        <activity android:name="com.basedamo.activity.SelectPhotosActivity" />
+        <activity android:name="com.basedamo.activity.PopViewActivity"
+            android:theme="@style/Theme.AppCompat"/>
     </application>
 
 </manifest>

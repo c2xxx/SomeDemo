@@ -26,6 +26,7 @@ import com.basedamo.activity.GridViewActivity;
 import com.basedamo.activity.HardWareActivity;
 import com.basedamo.activity.HardWareActivity2;
 import com.basedamo.activity.NiceButton;
+import com.basedamo.activity.PopViewActivity;
 import com.basedamo.activity.ProteryAnimation1;
 import com.basedamo.activity.ProteryAnimation2;
 import com.basedamo.activity.ProteryAnimation3;
@@ -33,7 +34,6 @@ import com.basedamo.activity.RecyclerViewActivity;
 import com.basedamo.activity.RecyclerViewActivity2;
 import com.basedamo.activity.RecyclerViewActivity3;
 import com.basedamo.activity.RecyclerViewActivity4;
-import com.basedamo.activity.SelectPhotosActivity;
 import com.basedamo.activity.ShowImageViewActivity;
 import com.basedamo.activity.UmengFeedBackActivity;
 import com.basedamo.activity.VolumActivity;
@@ -92,9 +92,8 @@ public class MainActivity extends BaseActivity implements OnItemClickListener {
         addItem("RecyclerView(二)", RecyclerViewActivity2.class);
         addItem("RecyclerView(三)", RecyclerViewActivity3.class);
         addItem("RecyclerView(四)", RecyclerViewActivity4.class);
-        addItem("获取图片", SelectPhotosActivity.class);
         addItem("裁剪图片(系统功能)", CutImageActivity.class);
-        addItem("裁剪图片(自己实现)", CutImageActivity2.class);
+        addItem("PopMenu、PopWindow", PopViewActivity.class);
     }
 
     @Override

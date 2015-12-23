@@ -9,7 +9,9 @@ import com.basedamo.MyApplication;
  * Created by hui on 2015/11/20.
  */
 public class ToastUtil {
+    private static Toast toast=Toast.makeText(MyApplication.getContext(), "", Toast.LENGTH_LONG);
     public static void show(String msg){
-        Toast.makeText(MyApplication.getContext(),msg,Toast.LENGTH_LONG).show();
+        toast.setText(msg);
+        toast.show();
     }
 }
