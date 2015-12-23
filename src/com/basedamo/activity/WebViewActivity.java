@@ -48,6 +48,9 @@ public class WebViewActivity extends BaseActivity {
 		// 自适应屏幕
 		wv_webview.getSettings().setLoadWithOverviewMode(true);
 
+
+		wv_webview.getSettings().setCacheMode(WebSettings.LOAD_DEFAULT);//缓存方式，建议使用LOAD_DEFAULT
+
 		// 监听加载，跳转的url
 		wv_webview.setWebViewClient(new WebViewClient() {
 			@Override

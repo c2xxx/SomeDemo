@@ -1,6 +1,5 @@
 package com.basedamo.activity;
 
-import android.app.Activity;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
@@ -9,7 +8,6 @@ import android.widget.TextView;
 import com.basedamo.BaseActivity;
 import com.basedamo.R;
 import com.basedamo.utils.LogController;
-import com.basedamo.utils.ToastUtil;
 
 /**
  * Created by hui on 2015/12/23.
