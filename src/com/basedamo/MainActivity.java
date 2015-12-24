@@ -34,9 +34,11 @@ import com.basedamo.activity.RecyclerViewActivity;
 import com.basedamo.activity.RecyclerViewActivity2;
 import com.basedamo.activity.RecyclerViewActivity3;
 import com.basedamo.activity.RecyclerViewActivity4;
+import com.basedamo.activity.RingToneActivity;
 import com.basedamo.activity.ShowImageViewActivity;
 import com.basedamo.activity.SlidingActivity;
 import com.basedamo.activity.UmengFeedBackActivity;
+import com.basedamo.activity.ViewStubActivity;
 import com.basedamo.activity.VolumActivity;
 import com.basedamo.activity.WebViewActivity;
 import com.basedamo.activity.XUtilsActivity;
@@ -97,6 +99,8 @@ public class MainActivity extends BaseActivity implements OnItemClickListener {
         addItem("PopMenu、PopWindow", PopViewActivity.class);
         addItem("侧滑", SlidingActivity.class);
         addItem("AsyncTask", AsyncTaskActivity.class);
+        addItem("ViewStub", ViewStubActivity.class);
+        addItem("铃音播放", RingToneActivity.class);
 
     }
 

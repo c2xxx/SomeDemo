@@ -93,6 +93,8 @@
         <activity android:name="com.basedamo.activity.SlidingActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity android:name="com.basedamo.activity.AsyncTaskActivity"/>
+        <activity android:name="com.basedamo.activity.ViewStubActivity"/>
+        <activity android:name="com.basedamo.activity.RingToneActivity"/>
     </application>
 
 </manifest>
