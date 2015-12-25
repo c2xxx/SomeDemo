@@ -7,6 +7,7 @@ import com.basedamo.BaseActivity;
 import com.basedamo.R;
 import com.basedamo.R.id;
 import com.basedamo.R.layout;
+import com.basedamo.utils.ToastUtil;
 
 import android.app.Activity;
 import android.content.Context;
@@ -111,7 +112,7 @@ public class HardWareActivity2 extends BaseActivity implements SensorEventListen
         public SoundRecorder() {
             String mFileName = Environment.getExternalStorageDirectory()
                     .getAbsolutePath();
-            mFileName += File.separator + "rcd_music.3gp";
+            mFileName += File.separator + "rcd_music.pcm";
             Log.i(TAG, "mFileName==" + mFileName);
             fineName = mFileName;
         }
@@ -132,7 +133,7 @@ public class HardWareActivity2 extends BaseActivity implements SensorEventListen
                 mRecorder.prepare();
                 mRecorder.start();
             } catch (IOException e) {
-                Toast.makeText(getApplicationContext(), "报错了1！！！", 0).show();
+                ToastUtil.show("报错了1！！！");
                 Log.e(TAG, "prepare() failed:" + e.getMessage());
             }
         }
@@ -144,7 +145,7 @@ public class HardWareActivity2 extends BaseActivity implements SensorEventListen
                 mPlayer.prepare();
                 mPlayer.start();
             } catch (IOException e) {
-                Toast.makeText(getApplicationContext(), "报错了2！！！", 0).show();
+                ToastUtil.show("报错了2！！！");
                 Log.e(TAG, "prepare() failed" + e.getMessage());
             }
         }

@@ -1,38 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".HardWareActivity2" >
+    android:orientation="vertical">
 
-    <include layout="@layout/title_bar"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="距离感应器:" />
+    <include layout="@layout/title_bar" />
+
 
     <TextView
-        android:id="@+id/tv_distance"
+        android:id="@+id/view_state"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
     <Button
+        android:id="@+id/btn_start"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="recoder_Start"
         android:text="开始录音" />
 
     <Button
+        android:id="@+id/btn_stop"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="recoder_Stop"
-        android:text="结束录音" />
+        android:text="停止录音" />
 
     <Button
+        android:id="@+id/btn_play"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="recoder_Play"
-        android:text="播放录音" />
+        android:text="开始播放" />
+
+    <Button
+        android:id="@+id/btn_finish"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="结束播放" />
+
+    <Button
+        android:id="@+id/btn_click"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="音频文件信息" />
 
 </LinearLayout>

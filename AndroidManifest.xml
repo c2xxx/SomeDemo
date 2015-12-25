@@ -95,6 +95,7 @@
         <activity android:name="com.basedamo.activity.AsyncTaskActivity"/>
         <activity android:name="com.basedamo.activity.ViewStubActivity"/>
         <activity android:name="com.basedamo.activity.RingToneActivity"/>
+        <activity android:name=".activity.AudioRecoderActivity"/>
     </application>
 
 </manifest>
