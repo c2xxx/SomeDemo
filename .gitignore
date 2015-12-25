@@ -36,5 +36,5 @@ gradle.properties
 .gitignore
 gradlew
 gradlew.bat
-build.gradle
+//build.gradle
 .settings/
