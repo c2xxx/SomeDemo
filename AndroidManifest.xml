@@ -96,6 +96,7 @@
         <activity android:name="com.basedamo.activity.ViewStubActivity"/>
         <activity android:name="com.basedamo.activity.RingToneActivity"/>
         <activity android:name=".activity.AudioRecoderActivity"/>
+        <activity android:name=".activity.FileDownLoadActivity"/>
     </application>
 
 </manifest>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/title_bar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_filedownload_change_a"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="文件A(5k)" />
+
+        <Button
+            android:id="@+id/btn_filedownload_change_b"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="文件B(600k)" />
+
+        <Button
+            android:id="@+id/btn_filedownload_change_c"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="文件C(5M)" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_filedownload_fileinfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="文件信息" />
+
+    <Button
+        android:id="@+id/btn_filedownload_download"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="下载" />
+
+    <Button
+        android:id="@+id/btn_filedownload_delete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="删除" />
+
+    <TextView
+        android:id="@+id/tv_filedownload_fileinfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</LinearLayout>

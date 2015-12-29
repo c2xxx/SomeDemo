@@ -3,6 +3,7 @@ package com.basedamo;
 import android.app.Application;
 import android.content.Context;
 
+import com.basedamo.file.FileUtil;
 import com.iflytek.cloud.SpeechConstant;
 import com.iflytek.cloud.SpeechUtility;
 
@@ -15,9 +16,11 @@ public class MyApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        context=this.getApplicationContext();
+        context = this.getApplicationContext();
 
         SpeechUtility.createUtility(this, SpeechConstant.APPID + "=565807f9");//讯飞语音注册
+
+        FileUtil.init(context);
     }
 
 

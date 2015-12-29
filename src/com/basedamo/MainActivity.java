@@ -22,6 +22,7 @@ import com.basedamo.activity.CutImageActivity;
 import com.basedamo.activity.DesktopLogoNumberActivity;
 import com.basedamo.activity.EmptyActivity;
 import com.basedamo.activity.ExpendGridViewActivity;
+import com.basedamo.activity.FileDownLoadActivity;
 import com.basedamo.activity.GridViewActivity;
 import com.basedamo.activity.HardWareActivity;
 import com.basedamo.activity.HardWareActivity2;
@@ -103,6 +104,7 @@ public class MainActivity extends BaseActivity implements OnItemClickListener {
         addItem("ViewStub", ViewStubActivity.class);
         addItem("铃音播放", RingToneActivity.class);
         addItem("TEST", AudioRecoderActivity.class);
+        addItem("文件下载", FileDownLoadActivity.class);
 
     }
 
