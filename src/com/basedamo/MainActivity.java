@@ -35,6 +35,7 @@ import com.basedamo.activity.RecyclerViewActivity;
 import com.basedamo.activity.RecyclerViewActivity2;
 import com.basedamo.activity.RecyclerViewActivity3;
 import com.basedamo.activity.RecyclerViewActivity4;
+import com.basedamo.activity.RemoteAudioActivity;
 import com.basedamo.activity.RingToneActivity;
 import com.basedamo.activity.ShowImageViewActivity;
 import com.basedamo.activity.SlidingActivity;
@@ -103,8 +104,9 @@ public class MainActivity extends BaseActivity implements OnItemClickListener {
         addItem("AsyncTask", AsyncTaskActivity.class);
         addItem("ViewStub", ViewStubActivity.class);
         addItem("铃音播放", RingToneActivity.class);
-        addItem("TEST", AudioRecoderActivity.class);
+        addItem("录音", AudioRecoderActivity.class);
         addItem("文件下载", FileDownLoadActivity.class);
+        addItem("播放远程音频", RemoteAudioActivity.class);
 
     }
 
