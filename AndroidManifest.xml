@@ -10,9 +10,7 @@
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.VIBRATE" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
 
 
@@ -97,6 +95,8 @@
         <activity android:name="com.basedamo.activity.RingToneActivity"/>
         <activity android:name=".activity.AudioRecoderActivity"/>
         <activity android:name=".activity.FileDownLoadActivity"/>
+        <activity android:name=".activity.PartControlActivity"/>
+        <activity android:name=".activity.PartControl2Activity"/>
     </application>
 
 </manifest>

@@ -42,4 +42,11 @@
         android:layout_height="wrap_content"
         android:text="音频文件信息" />
 
+    <Button
+        android:id="@+id/btn_remoteaudio_play_after_load"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="播放远程音频" />
+
 </LinearLayout>

@@ -100,7 +100,7 @@ public class FileUtil {
      * @param isOnlyCallLastResult 是否只响应最后一次回调
      */
     public static void download(final String url, final DownLoadResult result, boolean isOnlyCallLastResult) {
-        final String tempPath = getTempPath(url);
+        final String tempPath = getTempPath();
         final String localPath = getLocolPath(url);
         final File fileLocol = new File(localPath);
         if (fileLocol.exists()) {
@@ -192,10 +192,9 @@ public class FileUtil {
     }
 
     /**
-     * @param remoteURL 文件远程路径
      * @return 临时文件名称
      */
-    public static String getTempPath(String remoteURL) {
+    public static String getTempPath() {
         return cacheTempDir + "/" + UUID.randomUUID().toString();
     }
 

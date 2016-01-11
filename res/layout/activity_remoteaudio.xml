@@ -8,14 +8,9 @@
 
     <Button
         android:id="@+id/btn_remoteaudio_play_after_load"
-        android:text="下载后播放"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:text="下载后播放" />
 
-    <Button
-        android:id="@+id/btn_remoteaudio_play_when_load"
-        android:text="边下载边播放"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
 
 </LinearLayout>
