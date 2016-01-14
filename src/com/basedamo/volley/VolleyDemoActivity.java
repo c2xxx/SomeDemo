@@ -156,6 +156,7 @@ public class VolleyDemoActivity extends Activity{
 	public void imageRequest(View v) {
 		ImageRequest irequest = new ImageRequest(
 				"https://www.baidu.com/img/baidu_jgylogo3.gif",
+//				"http://7xk6kd.com2.z0.glb.qiniucdn.com/pic/186266160113090335.png",
 				new Response.Listener<Bitmap>() {
 					@SuppressWarnings("deprecation")
 					@Override

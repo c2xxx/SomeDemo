@@ -2,9 +2,11 @@ package com.basedamo.activity;
 
 import android.app.Activity;
 import android.graphics.Bitmap;
+import android.net.http.SslError;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.util.Log;
+import android.webkit.SslErrorHandler;
 import android.webkit.WebSettings;
 import android.webkit.WebSettings.LayoutAlgorithm;
 import android.webkit.WebSettings.ZoomDensity;
@@ -28,7 +30,8 @@ public class WebViewActivity extends BaseActivity {
 	@Override
 	protected void initData() {
 		// wv_webview.loadUrl("file:///android_asset/demo.html");//加载本地html
-		wv_webview.loadUrl("http://www.shoujikanbing.com");
+//		wv_webview.loadUrl("http://www.shoujikanbing.com");
+		wv_webview.loadUrl("https://www.shoujikanbing.com");
 	}
 
 	@Override
@@ -53,6 +56,11 @@ public class WebViewActivity extends BaseActivity {
 
 		// 监听加载，跳转的url
 		wv_webview.setWebViewClient(new WebViewClient() {
+			@Override
+			public void onReceivedSslError(WebView view, SslErrorHandler handler, SslError error) {
+				handler.proceed();
+			}
+
 			@Override
 			public void onPageStarted(WebView view, String targetURL,
 					Bitmap favicon) {

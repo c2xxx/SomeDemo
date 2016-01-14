@@ -26,6 +26,7 @@ import com.basedamo.activity.PartControl2Activity;
 import com.basedamo.activity.PartControlActivity;
 import com.basedamo.activity.RingToneActivity;
 import com.basedamo.activity.UmengFeedBackActivity;
+import com.basedamo.activity.VoiceTalkActivity;
 import com.basedamo.activity.VolumActivity;
 import com.basedamo.activity.XUtilsActivity;
 import com.basedamo.activity.XunFeiVoiceInputActivity;
@@ -66,6 +67,7 @@ public class MainActivity extends BaseActivity implements OnItemClickListener {
         addItem("AsyncTask", AsyncTaskActivity.class);
         addItem("铃音播放", RingToneActivity.class);
         addItem("录音 AudioRecoder", AudioRecoderActivity.class);
+        addItem("录音 MediaRecoder 仿微信", VoiceTalkActivity.class);
         addItem("文件下载", FileDownLoadActivity.class);
 
     }

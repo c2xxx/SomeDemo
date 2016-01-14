@@ -97,6 +97,7 @@
         <activity android:name=".activity.FileDownLoadActivity"/>
         <activity android:name=".activity.PartControlActivity"/>
         <activity android:name=".activity.PartControl2Activity"/>
+        <activity android:name=".activity.VoiceTalkActivity"/>
     </application>
 
 </manifest>

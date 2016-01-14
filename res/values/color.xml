@@ -3,4 +3,8 @@
     <color name="background">#eaeaea</color>
     <color name="white">#ffffff</color>
     <color name="default_green">#56d1a8</color>
+
+
+    <color name="voice_button_normal">#F1F0EE</color>
+    <color name="voice_button_down">#69B848</color>
 </resources>
