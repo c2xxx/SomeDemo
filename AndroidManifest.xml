@@ -98,6 +98,8 @@
         <activity android:name=".activity.PartControlActivity"/>
         <activity android:name=".activity.PartControl2Activity"/>
         <activity android:name=".activity.VoiceTalkActivity"/>
+        <activity android:name=".activity.SupportLibraryActivity"
+            android:theme="@style/Theme.AppCompat"/>
     </application>
 
 </manifest>

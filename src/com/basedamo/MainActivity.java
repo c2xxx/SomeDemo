@@ -25,6 +25,7 @@ import com.basedamo.activity.HardWareActivity2;
 import com.basedamo.activity.PartControl2Activity;
 import com.basedamo.activity.PartControlActivity;
 import com.basedamo.activity.RingToneActivity;
+import com.basedamo.activity.SupportLibraryActivity;
 import com.basedamo.activity.UmengFeedBackActivity;
 import com.basedamo.activity.VoiceTalkActivity;
 import com.basedamo.activity.VolumActivity;
@@ -53,6 +54,7 @@ public class MainActivity extends BaseActivity implements OnItemClickListener {
     protected void initData() {
         addItem("控件1_基本控件", PartControlActivity.class);
         addItem("控件2_进阶", PartControl2Activity.class);
+        addItem("Support Library", SupportLibraryActivity.class);
         addItem("声音和振动", VolumActivity.class);
         addItem("电池、wifi、CPU信息", HardWareActivity.class);
         addItem("麦克风和距离传感器", HardWareActivity2.class);
