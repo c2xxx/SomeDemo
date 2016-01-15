@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import com.basedamo.R;
 import com.basedamo.media.MediaRecoderDialog;
+import com.basedamo.media.MediaRecoderHelper;
 import com.basedamo.utils.LogController;
 
 import java.util.Random;
@@ -23,6 +24,15 @@ public class VoiceButton extends TextView {
     private static final int DISTANCE_Y_CANCEL = 0;
     private int mCurrentState;
     private MediaRecoderDialog mediaRecoderDialog;
+    private MediaRecoderHelper mediaRecoderHelper;
+
+    /**
+     * 设置录音监听
+     * @param mediaRecoderHelper
+     */
+    public void setMediaRecoderHelper(MediaRecoderHelper mediaRecoderHelper) {
+        this.mediaRecoderHelper = mediaRecoderHelper;
+    }
 
     public MediaRecoderDialog getMediaRecoderDialog() {
         return mediaRecoderDialog;
@@ -60,11 +70,17 @@ public class VoiceButton extends TextView {
             case MotionEvent.ACTION_DOWN:
                 LogController.d("ACTION_DOWN    开始录音");
                 changeState(STATE_RECORDING);
+                if(mediaRecoderHelper!=null){
+                    mediaRecoderHelper.start();
+                }
                 break;
             case MotionEvent.ACTION_UP:
                 if (wantToCancel(x, y)) {
                     LogController.d("ACTION_UP  取消录音");
-//                } else if ("时间太短" == "x") {
+                    if(mediaRecoderHelper!=null){
+                        mediaRecoderHelper.cancel();
+                    }
+                } else if ("时间太短" == "x") {
                     if (mediaRecoderDialog != null) {
                         mediaRecoderDialog.tooShort();
                         mediaRecoderDialog.setCancelable(true);
@@ -81,8 +97,14 @@ public class VoiceButton extends TextView {
                             }
                         }.start();
                         mediaRecoderDialog = null;
+                        if(mediaRecoderHelper!=null){
+                            mediaRecoderHelper.cancel();
+                        }
                     }
                 } else {
+                    if(mediaRecoderHelper!=null){
+                        mediaRecoderHelper.finish();
+                    }
                     LogController.d("ACTION_UP  发送录音");
                 }
                 changeState(STATE_NORMAL);

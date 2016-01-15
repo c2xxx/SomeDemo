@@ -11,6 +11,7 @@
         android:padding="10dp">
 
         <com.basedamo.view.VoiceButton
+            android:id="@+id/btn_voiceButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
