@@ -57,9 +57,6 @@ public class RingToneActivity extends BaseActivity {
         }
     }
 
-    private void stop() {
-
-    }
 
     /**
      * 播放通知声音
@@ -67,6 +64,9 @@ public class RingToneActivity extends BaseActivity {
     private void playRingtone() {
         if (null == ringtonePlayer) {
             ringtonePlayer = MediaPlayer.create(this, ringtoneUri);
+            if (ringtonePlayer == null) {
+                return;
+            }
             ringtonePlayer.setLooping(true);
         }
         if (!ringtonePlayer.isPlaying()) {
