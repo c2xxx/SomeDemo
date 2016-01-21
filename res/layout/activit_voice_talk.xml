@@ -3,6 +3,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:onClick="playVoice"
+        android:text="播放远程音频" />
+
+
+    <ListView
+        android:id="@+id/lv_voice_talk_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="55dp"></ListView>
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -14,8 +29,8 @@
             android:id="@+id/btn_voiceButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
             android:background="@drawable/bg_voicebutton_normal"
+            android:gravity="center"
             android:padding="10dp"
             android:text="按住 说话"
             android:textSize="14dp" />

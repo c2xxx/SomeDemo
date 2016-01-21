@@ -22,24 +22,21 @@ public class VoiceButton extends TextView {
     private static final int STATE_RECORDING = 2;
     private static final int STATE_WANT_TO_CANCEL = 3;
     private static final int DISTANCE_Y_CANCEL = 0;
+    private static final int MIN_TIME = 500;
     private int mCurrentState;
+    private long startTime;//按下时间，用于计算最短时长
+
+    //TODO 这两个应该写单例，不用每次都new MediaRecorder 和new Dialog
     private MediaRecoderDialog mediaRecoderDialog;
     private MediaRecoderHelper mediaRecoderHelper;
 
     /**
      * 设置录音监听
+     *
      * @param mediaRecoderHelper
      */
     public void setMediaRecoderHelper(MediaRecoderHelper mediaRecoderHelper) {
         this.mediaRecoderHelper = mediaRecoderHelper;
-    }
-
-    public MediaRecoderDialog getMediaRecoderDialog() {
-        return mediaRecoderDialog;
-    }
-
-    public void setMediaRecoderDialog(MediaRecoderDialog mediaRecoderDialog) {
-        this.mediaRecoderDialog = mediaRecoderDialog;
     }
 
     public VoiceButton(Context context) {
@@ -68,41 +65,45 @@ public class VoiceButton extends TextView {
         int y = (int) event.getY();
         switch (action) {
             case MotionEvent.ACTION_DOWN:
+                LogController.d("timeNow A==" + System.currentTimeMillis());
                 LogController.d("ACTION_DOWN    开始录音");
                 changeState(STATE_RECORDING);
-                if(mediaRecoderHelper!=null){
+                if (mediaRecoderHelper != null) {
                     mediaRecoderHelper.start();
                 }
+                startTime = System.currentTimeMillis();
                 break;
             case MotionEvent.ACTION_UP:
+                LogController.d("timeNow B==" + System.currentTimeMillis());
                 if (wantToCancel(x, y)) {
                     LogController.d("ACTION_UP  取消录音");
-                    if(mediaRecoderHelper!=null){
+                    if (mediaRecoderHelper != null) {
                         mediaRecoderHelper.cancel();
                     }
-                } else if ("时间太短" == "x") {
+                } else if (System.currentTimeMillis() - startTime < MIN_TIME) {//时间太短
+                    LogController.d("ACTION_UP  时间太短");
                     if (mediaRecoderDialog != null) {
                         mediaRecoderDialog.tooShort();
                         mediaRecoderDialog.setCancelable(true);
-                        final MediaRecoderDialog dialog = mediaRecoderDialog;
-                        new Thread(){
-                            @Override
-                            public void run() {
-                                try {
-                                    Thread.sleep(1500);
-                                    dialog.dimissDialog();
-                                } catch (InterruptedException e) {
-                                    e.printStackTrace();
-                                }
-                            }
-                        }.start();
+//                        final MediaRecoderDialog dialog = mediaRecoderDialog;
+//                        new Thread() {
+//                            @Override
+//                            public void run() {
+//                                try {
+//                                    Thread.sleep(1500);
+//                                    dialog.dimissDialog();
+//                                } catch (InterruptedException e) {
+//                                    e.printStackTrace();
+//                                }
+//                            }
+//                        }.start();
                         mediaRecoderDialog = null;
-                        if(mediaRecoderHelper!=null){
+                        if (mediaRecoderHelper != null) {
                             mediaRecoderHelper.cancel();
                         }
                     }
                 } else {
-                    if(mediaRecoderHelper!=null){
+                    if (mediaRecoderHelper != null) {
                         mediaRecoderHelper.finish();
                     }
                     LogController.d("ACTION_UP  发送录音");
@@ -177,5 +178,15 @@ public class VoiceButton extends TextView {
             return true;
         }
         return false;
+    }
+
+    /**
+     * 设置dialog可以取消
+     * 防止有些情况有ACTION_DOWN事件，没有ACTION_UP
+     */
+    public void setDialogCancelAble() {
+        if (mediaRecoderDialog != null) {
+            mediaRecoderDialog.setCancelable(true);
+        }
     }
 }

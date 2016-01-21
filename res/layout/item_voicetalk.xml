@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="right|center_vertical"
+    android:orientation="horizontal"
+    android:padding="10dp">
+
+    <TextView
+        android:id="@+id/tv_item_voicetalk_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="5dp"
+        android:text="29''" />
+
+    <LinearLayout
+        android:id="@+id/ll_item_voicetalk"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/dialog_loading_bg"
+        android:gravity="right|center_vertical"
+        android:orientation="vertical"
+        android:paddingRight="20dp">
+
+        <ImageView
+            android:id="@+id/iv_item_voicetalk_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/adj" />
+    </LinearLayout>
+
+</LinearLayout>

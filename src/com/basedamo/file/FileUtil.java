@@ -27,7 +27,7 @@ public class FileUtil {
      */
     private static String packageName = null;
     private static String cacheDir;//缓存路径
-    private static String cacheTempDir;//缓存路径
+    private static String cacheTempDir;//临时文件缓存路径
     private static Map<String, FileDownLoad> loadingUrlMap = new HashMap<>();
 
 
@@ -60,6 +60,7 @@ public class FileUtil {
         }
         cacheDir = strPicCachePath;
         cacheTempDir = strPicCachePath + "/temp/";
+
     }
 
     /**
@@ -177,17 +178,17 @@ public class FileUtil {
         public abstract void onFailure(HttpException e, String s);
     }
 
-//
-//    private static void log(String msg) {
-//        ToastUtil.show(msg);
-//        LogController.d(msg);
-//    }
 
     /**
      * @param remoteURL 文件远程路径
      * @return 临时文件名称
      */
     public static String getLocolPath(String remoteURL) {
+
+        File file = new File(cacheDir);
+        if (!file.exists()) {
+            file.mkdirs();
+        }
         return cacheDir + "/" + MD5Util.MD5(packageName + remoteURL) + getExtension(remoteURL);
     }
 
@@ -195,7 +196,19 @@ public class FileUtil {
      * @return 临时文件名称
      */
     public static String getTempPath() {
+        File file = new File(cacheTempDir);
+        if (!file.exists()) {
+            file.mkdirs();
+        }
         return cacheTempDir + "/" + UUID.randomUUID().toString();
+    }
+
+    /**
+     * @param extension 文件后缀名
+     * @return 临时文件名称
+     */
+    public static String getTempPath(String extension) {
+        return getTempPath() + "." + extension;
     }
 
     /**

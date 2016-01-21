@@ -2,10 +2,14 @@ package com.basedamo.media;
 
 import android.media.MediaRecorder;
 
+import com.basedamo.utils.LogController;
+
 import java.io.File;
 import java.io.IOException;
 
 /**
+ *
+ * TODO 这个应该写单例，不用每次都new MediaRecorder 和new Dialog
  * Created by hui on 2016/1/11.
  */
 public class MediaRecoderHelper {
@@ -51,8 +55,8 @@ public class MediaRecoderHelper {
             String fileName = mListener.getTempFileName();
             voiceFile = new File(fileName);
 
-            if (!voiceFile.exists()) {
-                voiceFile.mkdirs();
+            if (voiceFile.exists()) {
+                voiceFile.delete();
             }
 
             mRecorder = new MediaRecorder();
@@ -107,7 +111,6 @@ public class MediaRecoderHelper {
             mRecorder.release();
             mRecorder = null;
         }
-
     }
 
     //
@@ -136,8 +139,16 @@ public class MediaRecoderHelper {
      * @author nickming
      */
     public interface RecoderListener {
+        /**
+         * 结束录音
+         *
+         * @param voiceFile
+         */
         void onFinish(File voiceFile);
 
+        /**
+         * @return 获取临时文件名称
+         */
         String getTempFileName();
     }
 }

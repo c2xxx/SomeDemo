@@ -150,6 +150,7 @@ public class AudioRecoderActivity extends BaseActivity {
 
         }
     }
+
     /**
      * 播放音频
      *
@@ -160,7 +161,6 @@ public class AudioRecoderActivity extends BaseActivity {
             @Override
             public void onStart() {
                 LogController.d("播放开始");
-
             }
 
             @Override

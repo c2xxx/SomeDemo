@@ -10,6 +10,8 @@ import android.widget.TextView;
 import com.basedamo.R;
 
 /**
+ *
+ * TODO 这个应该写单例，不用每次都new MediaRecorder 和new Dialog
  * Created by hui on 2016/1/11.
  */
 public class MediaRecoderDialog {
