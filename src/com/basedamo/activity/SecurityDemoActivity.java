@@ -8,6 +8,7 @@ import android.widget.TextView;
 
 import com.basedamo.BaseActivity;
 import com.basedamo.R;
+import com.basedamo.utils.LogController;
 import com.basedamo.utils.MD5Util;
 import com.basedamo.utils.SHA1Util;
 
@@ -67,10 +68,15 @@ public class SecurityDemoActivity extends BaseActivity {
 
     private void hmac_sha1() {
         String text = getText();
+        String secretKey = "MY_SECRET_KEY";
+//        text = "eyJzY29wZSI6ImMyeHh4Ondpbi5wbmciLCJkZWFkbGluZSI6MTQ1MzQ5NTQxMX0=";
+//        secretKey = "_TaNRS6TEOhrSWV_tq00s1JJ_HlkhOfhB9gRb70Z";
         try {
-            String hexString = SHA1Util.HmacSHA1_to_HexString(text, "MY_SECRET_KEY");
-            byte[] sha1 = SHA1Util.HmacSHA1(text, "MY_SECRET_KEY");
-            String strBase64 = Base64.encodeToString(sha1, Base64.DEFAULT);
+            byte[] sha1 = SHA1Util.HmacSHA1(text, secretKey);
+            String strBase64 = Base64.encodeToString(sha1, Base64.DEFAULT).trim();
+
+            String hexString = SHA1Util.HmacSHA1_to_HexString(text, secretKey);
+
             showResult1("将结果十六进制表示:\n" + hexString);
             showResult2("将结果Base64编码:\n" + strBase64);
         } catch (Exception e) {
@@ -78,6 +84,7 @@ public class SecurityDemoActivity extends BaseActivity {
             showResult2("err" + e.getMessage());
         }
     }
+
 
     private void sha1() {
         String text = getText();

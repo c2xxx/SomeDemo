@@ -10,5 +10,5 @@
         android:id="@+id/btn_qiniu_upload"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="七牛Test" />
+        android:text="选择照片上传到七牛" />
 </LinearLayout>
