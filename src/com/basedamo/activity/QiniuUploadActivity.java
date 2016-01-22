@@ -1,5 +1,7 @@
 package com.basedamo.activity;
 
+import android.content.ClipboardManager;
+import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
@@ -7,14 +9,19 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Base64;
 import android.view.View;
+import android.widget.TextView;
 
 import com.basedamo.BaseActivity;
 import com.basedamo.R;
+import com.basedamo.net.BaseRequest;
+import com.basedamo.net.OnParseHttpResponse;
 import com.basedamo.utils.LogController;
 import com.basedamo.utils.SHA1Util;
 import com.basedamo.utils.ToastUtil;
 
 import java.io.File;
+import java.util.Hashtable;
+import java.util.Map;
 
 /**
  * Created by hui on 2016/1/22.
@@ -25,6 +32,8 @@ public class QiniuUploadActivity extends BaseActivity {
     private static final String accressKey = "VZtEbyKjgZSANKSfObSqXMeaRocby1zf5wseyF_V";
     private static final String secretKey = "_TaNRS6TEOhrSWV_tq00s1JJ_HlkhOfhB9gRb70Z";
 
+    private TextView tvResult;
+    private TextView tvResult2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +44,18 @@ public class QiniuUploadActivity extends BaseActivity {
 
     @Override
     protected void initViews() {
+        setTitleText("上传文件到七牛");
         findViewById(R.id.btn_qiniu_upload).setOnClickListener(this);
+        tvResult = (TextView) findViewById(R.id.tv_qiniu_upload_result);
+        tvResult2 = (TextView) findViewById(R.id.tv_qiniu_upload_result2);
+        tvResult2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ClipboardManager cmb = (ClipboardManager) QiniuUploadActivity.this.getSystemService(Context.CLIPBOARD_SERVICE);
+                cmb.setText(tvResult2.getText().toString().trim()); //将内容放入粘贴管理器,在别的地方长按选择"粘贴"即可
+                ToastUtil.show("复制成功");
+            }
+        });
     }
 
     @Override
@@ -50,6 +70,8 @@ public class QiniuUploadActivity extends BaseActivity {
                 //从相册选择照片，不用区分版本
                 Intent i = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
                 startActivityForResult(i, RESULT_LOAD_IMAGE);
+                tvResult.setText("");
+                tvResult2.setText("");
                 break;
         }
     }
@@ -83,6 +105,7 @@ public class QiniuUploadActivity extends BaseActivity {
         File file = new File(imagePath);
         if (!file.exists()) {
             ToastUtil.show("选择的图片不存在");
+            tvResult.setText("选择的图片不存在");
             return;
         }
 
@@ -99,8 +122,11 @@ public class QiniuUploadActivity extends BaseActivity {
         String spaceName = "c2xxx";
 //        第一步:确定上传策略
         String key = file.getName();
-        String deadline = (System.currentTimeMillis() / 1000 + 60 * 60 * 12) + "";
+        String deadline = (System.currentTimeMillis() / 1000 + 60 * 60 * 24 * 7) + "";
 
+//        LogController.d("deadline=" + deadline);
+//        deadline = "1484150400";
+//        deadline = "1453519373";
 
 //        第二步:将上传策略序列化成为json格式:
         String json = String.format("{\"scope\":\"%s:%s\",\"deadline\":%s}", spaceName, key, deadline);
@@ -117,9 +143,12 @@ public class QiniuUploadActivity extends BaseActivity {
         try {
             byte[] sha1 = SHA1Util.HmacSHA1(token_step3, secretKey);
             token_step4 = Base64.encodeToString(sha1, Base64.DEFAULT).trim();
-            LogController.d("hexString=" + token_step4);
+
+            //URL安全的字符串base64编码和解码(不知道为什么这里=号不用替换)
+            token_step4 = token_step4.replace("+", "-").replace("/", "_");
         } catch (Exception e) {
             ToastUtil.show("签名错误" + e.getMessage());
+            tvResult.setText("签名错误" + e.getMessage());
             return;
         }
         LogController.d("step4=" + token_step4);
@@ -128,18 +157,23 @@ public class QiniuUploadActivity extends BaseActivity {
         String token_step5 = String.format("%s:%s:%s", accressKey, token_step4, token_step3);
         LogController.d("step5=" + token_step5);
 
-//        uploadImage(key,token_step5);
+        uploadImage(key, token_step5, file);
     }
-    /*
-    *
-<form method="post" action="http://upload.qiniu.com/"
- enctype="multipart/form-data">
-  <input name="key" type="hidden" value="<resource_key>">
-  <input name="x:<custom_name>" type="hidden" value="<custom_value>">
-  <input name="token" type="hidden" value="<upload_token>">
-  <input name="file" type="file" />
-  <input name="crc32" type="hidden" />
-  <input name="accept" type="hidden" />
-</form>
-    * */
+
+    private void uploadImage(final String key, String token, File file) {
+
+        String url = "http://upload.qiniu.com/";
+        Map<String, Object> params = new Hashtable<>();
+        params.put("key", key);
+        params.put("token", token);
+        params.put("file", file);
+        new BaseRequest().doAsyncHttpFormPost(url, params, new OnParseHttpResponse() {
+            @Override
+            public void onParseHttpResponse(String response) {
+                LogController.d("fileUrl=http://7xpgb3.com1.z0.glb.clouddn.com/" + key);
+                tvResult.setText("反馈结果：" + response + "\n" + "如果上传成功，Url=(点击可复制)\n");
+                tvResult2.setText("http://7xpgb3.com1.z0.glb.clouddn.com/" + key);
+            }
+        });
+    }
 }
