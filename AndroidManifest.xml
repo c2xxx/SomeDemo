@@ -101,6 +101,7 @@
         <activity android:name=".activity.SupportLibraryActivity"
             android:theme="@style/Theme.AppCompat"/>
         <activity android:name=".activity.BaseRequestDemoActivity"/>
+        <activity android:name=".activity.QiniuUploadActivity"/>
     </application>
 
 </manifest>

@@ -25,6 +25,7 @@ import com.basedamo.activity.HardWareActivity;
 import com.basedamo.activity.HardWareActivity2;
 import com.basedamo.activity.PartControl2Activity;
 import com.basedamo.activity.PartControlActivity;
+import com.basedamo.activity.QiniuUploadActivity;
 import com.basedamo.activity.RingToneActivity;
 import com.basedamo.activity.SupportLibraryActivity;
 import com.basedamo.activity.UmengFeedBackActivity;
@@ -73,6 +74,7 @@ public class MainActivity extends BaseActivity implements OnItemClickListener {
         addItem("录音 MediaRecoder 仿微信", VoiceTalkActivity.class);
         addItem("文件下载", FileDownLoadActivity.class);
         addItem("网络访问 BaseRequest", BaseRequestDemoActivity.class);
+        addItem("七牛上传图片", QiniuUploadActivity.class);
 
     }
 
