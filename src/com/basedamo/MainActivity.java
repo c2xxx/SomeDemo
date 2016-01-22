@@ -27,6 +27,7 @@ import com.basedamo.activity.PartControl2Activity;
 import com.basedamo.activity.PartControlActivity;
 import com.basedamo.activity.QiniuUploadActivity;
 import com.basedamo.activity.RingToneActivity;
+import com.basedamo.activity.SecurityDemoActivity;
 import com.basedamo.activity.SupportLibraryActivity;
 import com.basedamo.activity.UmengFeedBackActivity;
 import com.basedamo.activity.VoiceTalkActivity;
@@ -75,6 +76,7 @@ public class MainActivity extends BaseActivity implements OnItemClickListener {
         addItem("文件下载", FileDownLoadActivity.class);
         addItem("网络访问 BaseRequest", BaseRequestDemoActivity.class);
         addItem("七牛上传图片", QiniuUploadActivity.class);
+        addItem("安全机制（加密解密）", SecurityDemoActivity.class);
 
     }
 
