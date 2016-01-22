@@ -9,9 +9,23 @@ import com.basedamo.BuildConfig;
  */
 public class LogController {
     private static final String TAG = "BASEDEMO";
-    private static boolean isDebug=BuildConfig.DEBUG;
-    public static void d(String msg){
-        Log.d(TAG,msg);
+    private static boolean isDebug = BuildConfig.DEBUG;
+
+    public static void d(String tag, String msg) {
+        Log.d(TAG, tag + "\n" + msg);
+    }
+
+    public static void d(String msg) {
+        Log.d(TAG, msg);
+    }
+
+
+    public static void e(String tag, String msg) {
+        Log.e(TAG, tag + "\n" + msg);
+    }
+
+    public static void e(String msg) {
+        Log.e(TAG, msg);
     }
 
 

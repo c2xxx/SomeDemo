@@ -16,6 +16,7 @@ import android.widget.TextView;
 
 import com.basedamo.activity.AsyncTaskActivity;
 import com.basedamo.activity.AudioRecoderActivity;
+import com.basedamo.activity.BaseRequestDemoActivity;
 import com.basedamo.activity.CutImageActivity;
 import com.basedamo.activity.DesktopLogoNumberActivity;
 import com.basedamo.activity.EmptyActivity;
@@ -71,6 +72,7 @@ public class MainActivity extends BaseActivity implements OnItemClickListener {
         addItem("录音 AudioRecoder", AudioRecoderActivity.class);
         addItem("录音 MediaRecoder 仿微信", VoiceTalkActivity.class);
         addItem("文件下载", FileDownLoadActivity.class);
+        addItem("网络访问 BaseRequest", BaseRequestDemoActivity.class);
 
     }
 

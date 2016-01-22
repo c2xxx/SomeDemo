@@ -100,6 +100,7 @@
         <activity android:name=".activity.VoiceTalkActivity"/>
         <activity android:name=".activity.SupportLibraryActivity"
             android:theme="@style/Theme.AppCompat"/>
+        <activity android:name=".activity.BaseRequestDemoActivity"/>
     </application>
 
 </manifest>
