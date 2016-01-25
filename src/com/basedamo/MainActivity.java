@@ -21,6 +21,7 @@ import com.basedamo.activity.CutImageActivity;
 import com.basedamo.activity.DesktopLogoNumberActivity;
 import com.basedamo.activity.EmptyActivity;
 import com.basedamo.activity.FileDownLoadActivity;
+import com.basedamo.activity.GifActivity;
 import com.basedamo.activity.HardWareActivity;
 import com.basedamo.activity.HardWareActivity2;
 import com.basedamo.activity.PartControl2Activity;
@@ -57,7 +58,6 @@ public class MainActivity extends BaseActivity implements OnItemClickListener {
     protected void initData() {
         addItem("控件1_基本控件", PartControlActivity.class);
         addItem("控件2_进阶", PartControl2Activity.class);
-        addItem("Support Library", SupportLibraryActivity.class);
         addItem("声音和振动", VolumActivity.class);
         addItem("电池、wifi、CPU信息", HardWareActivity.class);
         addItem("麦克风和距离传感器", HardWareActivity2.class);
@@ -65,7 +65,7 @@ public class MainActivity extends BaseActivity implements OnItemClickListener {
         addItem("XUtils使用", XUtilsActivity.class);
         addItem("桌面图标右上角数字", DesktopLogoNumberActivity.class);
         addItem("友盟反馈", UmengFeedBackActivity.class);
-        addItem("分享功能（未完成）", EmptyActivity.class);
+//        addItem("分享功能（未完成）", EmptyActivity.class);
         addItem("科大讯飞——语音输入", XunFeiVoiceInputActivity.class);
         addItem("科大讯飞——语音合成", XunFeiVoiceReaderActivity.class);
         addItem("裁剪图片(系统功能)", CutImageActivity.class);
@@ -76,7 +76,11 @@ public class MainActivity extends BaseActivity implements OnItemClickListener {
         addItem("文件下载", FileDownLoadActivity.class);
         addItem("网络访问 BaseRequest", BaseRequestDemoActivity.class);
         addItem("七牛上传图片", QiniuUploadActivity.class);
-        addItem("安全机制（加密解密）", SecurityDemoActivity.class);
+        addItem("安全机制（加密解密）（未完成RSA,DES）", SecurityDemoActivity.class);
+        addItem("Gif图片播放（未完成）", GifActivity.class);
+        addItem("视频播放（未完成）", EmptyActivity.class);
+        addItem("JNI编程（未完成）", EmptyActivity.class);
+        addItem("Support Library（未完成）", SupportLibraryActivity.class);
 
     }
 

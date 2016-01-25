@@ -106,6 +106,7 @@
         <activity android:name=".activity.BaseRequestDemoActivity" />
         <activity android:name=".activity.QiniuUploadActivity" />
         <activity android:name=".activity.SecurityDemoActivity" />
+        <activity android:name=".activity.GifActivity" />
     </application>
 
 </manifest>
