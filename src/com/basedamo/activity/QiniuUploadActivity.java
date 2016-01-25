@@ -29,6 +29,7 @@ import java.util.Map;
 public class QiniuUploadActivity extends BaseActivity {
 
     private static final int RESULT_LOAD_IMAGE = 1001;
+    private static final String spaceName = "c2xxx";
     private static final String accressKey = "VZtEbyKjgZSANKSfObSqXMeaRocby1zf5wseyF_V";
     private static final String secretKey = "_TaNRS6TEOhrSWV_tq00s1JJ_HlkhOfhB9gRb70Z";
 
@@ -110,23 +111,56 @@ public class QiniuUploadActivity extends BaseActivity {
         }
 
 
-        /*
-        *
-第一步:确定上传策略
-第二步:将上传策略序列化成为json格式:
-第三步:对json序列化后的上传策略进行URL安全的Base64编码,得到如下encoded:
-第四步:用SecretKey对编码后的上传策略进行HMAC-SHA1加密，并且做URL安全的Base64编码,得到如下的encoded_signed:
-第五步:将 AccessKey、encode_signed 和 encoded 用 “:” 连接起来,得到如下的UploadToken:
-*/
-
-        String spaceName = "c2xxx";
-//        第一步:确定上传策略
         String key = file.getName();
-        String deadline = (System.currentTimeMillis() / 1000 + 60 * 60 * 24 * 7) + "";
+        String token = getToken(spaceName, key, accressKey, secretKey);
+        if (token == null) {
+            ToastUtil.show("获取token失败");
+            tvResult.setText("获取token失败");
+            return;
+        }
+        uploadImage(key, token, file);
+    }
 
-//        LogController.d("deadline=" + deadline);
-//        deadline = "1484150400";
-//        deadline = "1453519373";
+    /**
+     * 上传图片
+     * @param key
+     * @param token
+     * @param file
+     */
+    private void uploadImage(final String key, String token, File file) {
+
+        String url = "http://upload.qiniu.com/";
+        Map<String, Object> params = new Hashtable<>();
+        params.put("key", key);
+        params.put("token", token);
+        params.put("file", file);
+        new BaseRequest().doAsyncHttpFormPost(url, params, new OnParseHttpResponse() {
+            @Override
+            public void onParseHttpResponse(String response) {
+                LogController.d("fileUrl=http://7xpgb3.com1.z0.glb.clouddn.com/" + key);
+                tvResult.setText("反馈结果：" + response + "\n" + "如果上传成功，Url=(点击可复制)\n");
+                tvResult2.setText("http://7xpgb3.com1.z0.glb.clouddn.com/" + key);
+            }
+        });
+    }
+
+    /**
+     * @param spaceName 空间名
+     * @param key       存放到空间的文件名
+     * @return
+     */
+    private String getToken(String spaceName, String key, String accressKey, String secretKey) {
+         /*
+        第一步:确定上传策略
+        第二步:将上传策略序列化成为json格式:
+        第三步:对json序列化后的上传策略进行URL安全的Base64编码,得到如下encoded:
+        第四步:用SecretKey对编码后的上传策略进行HMAC-SHA1加密，并且做URL安全的Base64编码,得到如下的encoded_signed:
+        第五步:将 AccessKey、encode_signed 和 encoded 用 “:” 连接起来,得到如下的UploadToken:
+        */
+
+
+//        第一步:确定上传策略
+        String deadline = (System.currentTimeMillis() / 1000 + 60 * 60 * 24 * 7) + "";
 
 //        第二步:将上传策略序列化成为json格式:
         String json = String.format("{\"scope\":\"%s:%s\",\"deadline\":%s}", spaceName, key, deadline);
@@ -144,36 +178,17 @@ public class QiniuUploadActivity extends BaseActivity {
             byte[] sha1 = SHA1Util.HmacSHA1(token_step3, secretKey);
             token_step4 = Base64.encodeToString(sha1, Base64.DEFAULT).trim();
 
-            //URL安全的字符串base64编码和解码(不知道为什么这里=号不用替换)
+            //URL安全的字符串base64编码和解码(这里=号不用替换)
             token_step4 = token_step4.replace("+", "-").replace("/", "_");
         } catch (Exception e) {
-            ToastUtil.show("签名错误" + e.getMessage());
-            tvResult.setText("签名错误" + e.getMessage());
-            return;
+            LogController.d("签名错误" + e.getMessage());
+            return null;
         }
         LogController.d("step4=" + token_step4);
 
 //        第五步:将 AccessKey、encode_signed 和 encoded 用 “:” 连接起来,得到如下的UploadToken:
         String token_step5 = String.format("%s:%s:%s", accressKey, token_step4, token_step3);
         LogController.d("step5=" + token_step5);
-
-        uploadImage(key, token_step5, file);
-    }
-
-    private void uploadImage(final String key, String token, File file) {
-
-        String url = "http://upload.qiniu.com/";
-        Map<String, Object> params = new Hashtable<>();
-        params.put("key", key);
-        params.put("token", token);
-        params.put("file", file);
-        new BaseRequest().doAsyncHttpFormPost(url, params, new OnParseHttpResponse() {
-            @Override
-            public void onParseHttpResponse(String response) {
-                LogController.d("fileUrl=http://7xpgb3.com1.z0.glb.clouddn.com/" + key);
-                tvResult.setText("反馈结果：" + response + "\n" + "如果上传成功，Url=(点击可复制)\n");
-                tvResult2.setText("http://7xpgb3.com1.z0.glb.clouddn.com/" + key);
-            }
-        });
+        return token_step5;
     }
 }
