@@ -82,8 +82,8 @@ public class MainActivity extends BaseActivity implements OnItemClickListener {
         addItem("JNI编程（未完成）", EmptyActivity.class);
         addItem("图片选择（未完成）", EmptyActivity.class);
         addItem("ImageCache（未完成）", EmptyActivity.class);
+        addItem("gradle配置（未完成）", EmptyActivity.class);
         addItem("Support Library（未完成）", SupportLibraryActivity.class);
-
     }
 
     @Override
