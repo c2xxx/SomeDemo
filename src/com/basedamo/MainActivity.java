@@ -22,6 +22,7 @@ import com.basedamo.activity.DesktopLogoNumberActivity;
 import com.basedamo.activity.EmptyActivity;
 import com.basedamo.activity.FileDownLoadActivity;
 import com.basedamo.activity.GifActivity;
+import com.basedamo.activity.GradleStudyActivity;
 import com.basedamo.activity.HardWareActivity;
 import com.basedamo.activity.HardWareActivity2;
 import com.basedamo.activity.PartControl2Activity;
@@ -82,7 +83,7 @@ public class MainActivity extends BaseActivity implements OnItemClickListener {
         addItem("JNI编程（未完成）", EmptyActivity.class);
         addItem("图片选择（未完成）", EmptyActivity.class);
         addItem("ImageCache（未完成）", EmptyActivity.class);
-        addItem("gradle配置（未完成）", EmptyActivity.class);
+        addItem("gradle配置（未完成）", GradleStudyActivity.class);
         addItem("Support Library（未完成）", SupportLibraryActivity.class);
     }
 
