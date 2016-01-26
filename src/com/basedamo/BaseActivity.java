@@ -2,6 +2,7 @@ package com.basedamo;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.TextView;
 
@@ -15,8 +16,16 @@ public abstract class BaseActivity extends Activity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setLeftbutton(true);
+        setDefaultTitle();
         initViews();
         initData();
+    }
+
+    private void setDefaultTitle() {
+        String title = getIntent().getStringExtra("title");
+        if (!TextUtils.isEmpty(title)) {
+            setTitleText(title);
+        }
     }
 
 

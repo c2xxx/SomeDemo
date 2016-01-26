@@ -43,8 +43,8 @@ import java.util.List;
 public class MainActivity extends BaseActivity implements OnItemClickListener {
 
     private ListView ll_list;
-    private List<String> listStrs = new ArrayList<String>();
-    private List<Intent> listIntents = new ArrayList<Intent>();
+    private List<String> listStrs = new ArrayList<>();
+    private List<Intent> listIntents = new ArrayList<>();
     private ListAdapter adapter;
 
     @Override
@@ -80,6 +80,8 @@ public class MainActivity extends BaseActivity implements OnItemClickListener {
         addItem("Gif图片播放（未完成）", GifActivity.class);
         addItem("视频播放（未完成）", EmptyActivity.class);
         addItem("JNI编程（未完成）", EmptyActivity.class);
+        addItem("图片选择（未完成）", EmptyActivity.class);
+        addItem("ImageCache（未完成）", EmptyActivity.class);
         addItem("Support Library（未完成）", SupportLibraryActivity.class);
 
     }
@@ -141,6 +143,8 @@ public class MainActivity extends BaseActivity implements OnItemClickListener {
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         Intent intent = listIntents.get(position);
+        String title = listStrs.get(position);
+        intent.putExtra("title", title);
         startActivity(intent);
     }
 }
