@@ -8,6 +8,18 @@ buildscript {
 }
 apply plugin: 'com.android.application'
 
+//获取编译时间
+def releaseTime() {
+    return new Date().format("yyyy-MM-dd HH:mm:ss")
+}
+
+//获取git版本号
+def getGitVersion() {
+//    println 'cmd'.execute().text.trim()
+    println 'getGitVersion HHHH';
+    return "ccc"
+}
+
 dependencies {
     compile fileTree(dir: 'libs', include: '*')
     compile 'com.android.support:support-v4:23.1.0'
@@ -19,7 +31,7 @@ dependencies {
 }
 
 android {
-    useLibrary 'org.apache.http.legacy'
+    useLibrary 'org.apache.http.legacy'//Android6.0,没有HttpClent,需要自行引入
     compileSdkVersion 23
     buildToolsVersion "23.0.2"
 
@@ -34,7 +46,7 @@ android {
             assets.srcDirs = ['assets']
             jniLibs.srcDirs = ['libs']
         }
- 
+
         instrumentTest.setRoot('tests')
 
         debug.setRoot('build-types/debug')
@@ -45,4 +57,35 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_7
         targetCompatibility JavaVersion.VERSION_1_7
     }
+    //签名信息
+    signingConfigs {
+        myConfig {
+            /*
+            storeFile file("gradle.keystore")
+            storePassword "gradle"
+            keyAlias "gradle"
+            keyPassword "gradle"*/
+        }
+    }
+
+
+
+    buildTypes {
+        release {
+            signingConfig signingConfigs.myConfig
+        }
+        debug {
+            def buildTime = releaseTime();
+            def gitVersion = getGitVersion();
+
+
+            buildConfigField "boolean", "CHEN_DEBUG", "false"
+            buildConfigField "String", "CHEN_VERSION_NAME", "\"AB\"+\"CD\""
+
+            buildConfigField "String", "BUILD_TIME", "\"${buildTime}\""
+            buildConfigField "String", "GIT_VERSION", "\"${gitVersion}\""
+
+        }
+    }
+
 }
