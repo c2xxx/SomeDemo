@@ -21,7 +21,7 @@ public class VoiceTalkAdapter extends BaseAdapter {
 
     private Context mContext;
     private List<VoiceTalk> mList;
-    private VoickeItemClickListener voickeItemClickListener;
+    private VoickeItemClickListener voickeItemClickListener;//点击语音，触发的监听
     private int playingPosition = -1;//当前播放的位置，用于播放时播放动画
 
     public VoiceTalkAdapter(Context mContext, List<VoiceTalk> mList, VoickeItemClickListener voickeItemClickListener) {
@@ -88,7 +88,7 @@ public class VoiceTalkAdapter extends BaseAdapter {
         vh.llLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                voickeItemClickListener.onClick(vh.ivImage, voiceTalk, position);
+                voickeItemClickListener.onClick(voiceTalk, position);
             }
         });
         return convertView;
@@ -107,6 +107,6 @@ public class VoiceTalkAdapter extends BaseAdapter {
     }
 
     public interface VoickeItemClickListener {
-        void onClick(ImageView imageView, VoiceTalk voiceTalk, int position);
+        void onClick(VoiceTalk voiceTalk, int position);
     }
 }

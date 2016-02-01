@@ -10,27 +10,38 @@ import android.widget.TextView;
 import com.basedamo.R;
 
 /**
- *
- * TODO 这个应该写单例，不用每次都new MediaRecorder 和new Dialog
+ * 录音弹窗
  * Created by hui on 2016/1/11.
  */
 public class MediaRecoderDialog {
-
-    private Dialog mDialog;
-    private ImageView mIcon;
-    private ImageView mVoice;
-    private TextView mLable;
-
+    /**
+     * 音频最大级别
+     */
+    public static final int MAX_VOICE_LEVEL = 7;
+    private final Dialog mDialog;
+    private final ImageView mIcon;
+    private final ImageView mVoice;
+    private final TextView mLable;
     private Context mContext;
 
-    public MediaRecoderDialog(Context mContext) {
-        this.mContext = mContext;
+    public MediaRecoderDialog(Context context) {
+        mContext = context;
+        mDialog = new Dialog(context, R.style.Theme_audioDialog);
+        // 用layoutinflater来引用布局
+        LayoutInflater inflater = LayoutInflater.from(context);
+        View view = inflater.inflate(R.layout.dialog_mediarecoder, null);
+        mDialog.setContentView(view);
+
+
+        mIcon = (ImageView) mDialog.findViewById(R.id.dialog_icon);
+        mVoice = (ImageView) mDialog.findViewById(R.id.dialog_voice);
+        mLable = (TextView) mDialog.findViewById(R.id.recorder_dialogtext);
     }
+
 
     public void dimissDialog() {
         if (mDialog != null && mDialog.isShowing()) {
             mDialog.dismiss();
-            mDialog = null;
         }
     }
 
@@ -38,7 +49,6 @@ public class MediaRecoderDialog {
      * 取消界面
      */
     public void wantToCancel() {
-        // TODO Auto-generated method stub
         if (mDialog != null && mDialog.isShowing()) {
             mIcon.setVisibility(View.VISIBLE);
             mVoice.setVisibility(View.GONE);
@@ -66,7 +76,6 @@ public class MediaRecoderDialog {
 
     // 时间过短
     public void tooShort() {
-        // TODO Auto-generated method stub
         if (mDialog != null && mDialog.isShowing()) {
             mIcon.setVisibility(View.VISIBLE);
             mVoice.setVisibility(View.GONE);
@@ -79,18 +88,9 @@ public class MediaRecoderDialog {
     }
 
     public void showRecordingDialog() {
-        // TODO Auto-generated method stub
-
-        mDialog = new Dialog(mContext, R.style.Theme_audioDialog);
-        // 用layoutinflater来引用布局
-        LayoutInflater inflater = LayoutInflater.from(mContext);
-        View view = inflater.inflate(R.layout.dialog_mediarecoder, null);
-        mDialog.setContentView(view);
-
-
-        mIcon = (ImageView) mDialog.findViewById(R.id.dialog_icon);
-        mVoice = (ImageView) mDialog.findViewById(R.id.dialog_voice);
-        mLable = (TextView) mDialog.findViewById(R.id.recorder_dialogtext);
+        mIcon.setVisibility(View.VISIBLE);
+        mVoice.setVisibility(View.VISIBLE);
+        mLable.setVisibility(View.VISIBLE);
         mDialog.setCancelable(false);
         mDialog.show();
 
@@ -111,8 +111,24 @@ public class MediaRecoderDialog {
     }
 
     public void setCancelable(boolean cancelAble) {
-        if(mDialog!=null){
+        if (mDialog != null) {
             this.mDialog.setCancelable(cancelAble);
         }
     }
 }
+
+
+//public class MediaRecoderDialog {
+//
+//    private Dialog mDialog;
+//    private ImageView mIcon;
+//    private ImageView mVoice;
+//    private TextView mLable;
+//
+//    private Context mContext;
+//
+//    public MediaRecoderDialog(Context mContext) {
+//        this.mContext = mContext;
+//    }
+//
+//}

@@ -1,6 +1,7 @@
 package com.basedamo.view;
 
 import android.annotation.TargetApi;
+import android.app.Activity;
 import android.content.Context;
 import android.os.Build;
 import android.util.AttributeSet;
@@ -12,9 +13,8 @@ import com.basedamo.media.MediaRecoderDialog;
 import com.basedamo.media.MediaRecoderHelper;
 import com.basedamo.utils.LogController;
 
-import java.util.Random;
-
 /**
+ * 声音录制按钮
  * Created by hui on 2016/1/11.
  */
 public class VoiceButton extends TextView {
@@ -25,8 +25,8 @@ public class VoiceButton extends TextView {
     private static final int MIN_TIME = 500;
     private int mCurrentState;
     private long startTime;//按下时间，用于计算最短时长
+    private Thread thrad_updateVoiceLevel = null;
 
-    //TODO 这两个应该写单例，不用每次都new MediaRecorder 和new Dialog
     private MediaRecoderDialog mediaRecoderDialog;
     private MediaRecoderHelper mediaRecoderHelper;
 
@@ -116,19 +116,21 @@ public class VoiceButton extends TextView {
                 } else {
                     changeState(STATE_RECORDING);
                 }
-                updateVoiceLevel();
+//                updateVoiceLevel();
                 break;
         }
         return true;
     }
 
-    Random random;
-
-    private void updateVoiceLevel() {
-        if (random == null) {
-            random = new Random();
+    /**
+     * 更新声音大小
+     */
+    public void updateVoiceLevel() {
+        if (mediaRecoderDialog != null && mediaRecoderHelper != null) {
+            int level = mediaRecoderHelper.getVoiceLevel(mediaRecoderDialog.MAX_VOICE_LEVEL);
+            LogController.d("声音大小：" + level);
+            mediaRecoderDialog.updateVoiceLevel(level);
         }
-        mediaRecoderDialog.updateVoiceLevel(random.nextInt(7) + 1);
     }
 
 
@@ -181,12 +183,16 @@ public class VoiceButton extends TextView {
     }
 
     /**
+     * onPause时，取消录音
      * 设置dialog可以取消
      * 防止有些情况有ACTION_DOWN事件，没有ACTION_UP
      */
-    public void setDialogCancelAble() {
+    public void onActivityPause() {
         if (mediaRecoderDialog != null) {
             mediaRecoderDialog.setCancelable(true);
+        }
+        if (mediaRecoderHelper != null) {
+            mediaRecoderHelper.cancel();
         }
     }
 }

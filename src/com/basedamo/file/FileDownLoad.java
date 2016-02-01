@@ -1,6 +1,5 @@
 package com.basedamo.file;
 
-import com.basedamo.utils.LogController;
 import com.lidroid.xutils.HttpUtils;
 import com.lidroid.xutils.exception.HttpException;
 import com.lidroid.xutils.http.ResponseInfo;
