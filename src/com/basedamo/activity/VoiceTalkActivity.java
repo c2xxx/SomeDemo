@@ -4,7 +4,6 @@ import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.ListView;
 
 import com.basedamo.BaseActivity;
@@ -24,6 +23,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * 仿微信语音聊天
  * Created by hui on 2016/1/11.
  */
 public class VoiceTalkActivity extends BaseActivity {
@@ -34,6 +34,7 @@ public class VoiceTalkActivity extends BaseActivity {
     private ListView lv_voice_talk_list;
     private VoiceTalkAdapter adapter;
     private List<VoiceTalk> mList;
+    private boolean isDestory = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,8 +54,8 @@ public class VoiceTalkActivity extends BaseActivity {
         mList = new ArrayList<>();
         VoiceTalkAdapter.VoickeItemClickListener voiceClick = new VoiceTalkAdapter.VoickeItemClickListener() {
             @Override
-            public void onClick(ImageView imageView, VoiceTalk voiceTalk, int position) {
-                doPlayVoice(imageView, voiceTalk.getUrl(), position);
+            public void onClick(VoiceTalk voiceTalk, int position) {
+                doPlayVoice(voiceTalk.getUrl(), position);
             }
         };
         adapter = new VoiceTalkAdapter(this, mList, voiceClick);
@@ -76,15 +77,33 @@ public class VoiceTalkActivity extends BaseActivity {
         };
         MediaRecoderHelper helper = new MediaRecoderHelper(listener);
         voiceButton.setMediaRecoderHelper(helper);
+        new Thread() {
+            @Override
+            public void run() {
+                while (!isDestory) {
+                    try {
+                        Thread.sleep(100);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            voiceButton.updateVoiceLevel();
+                        }
+                    });
+                }
+            }
+        }.start();
     }
 
     /**
      * 播放音乐
      *
-     * @param imageView 显示动态图的Imageview
-     * @param url       播放的url
+     * @param url      播放的url
+     * @param position id
      */
-    private void doPlayVoice(final ImageView imageView, String url, final int position) {
+    private void doPlayVoice(String url, final int position) {
         File voiceFile = new File(url);
 
         if (voiceFile == null || !voiceFile.exists()) {
@@ -131,9 +150,7 @@ public class VoiceTalkActivity extends BaseActivity {
         int time = player.getDuration();
         player.release();
         time = (int) Math.round(time / 1000.0);
-        if (time < 1) {
-            time = 1;
-        }
+        time = Math.max(time, 1);
         voiceTalk.setTime(time + "");
         mList.add(voiceTalk);
         adapter.notifyDataSetChanged();
@@ -184,6 +201,13 @@ public class VoiceTalkActivity extends BaseActivity {
     @Override
     public void onPause() {
         super.onPause();
-        voiceButton.setDialogCancelAble();
+        mediaPlayerHelper.release();
+        voiceButton.onActivityPause();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        isDestory = true;
     }
 }

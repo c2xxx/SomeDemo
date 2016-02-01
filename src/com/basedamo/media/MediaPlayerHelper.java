@@ -7,6 +7,7 @@ import android.text.TextUtils;
 import java.io.IOException;
 
 /**
+ * 音频播放
  * Created by hui on 2016/1/18.
  */
 public class MediaPlayerHelper {
@@ -116,7 +117,7 @@ public class MediaPlayerHelper {
         void onStart();
 
         /**
-         * @param isPlayComplete 是否播放结束(区别于被终止)
+         * @param isPlayComplete 是否播放完成，而不是继续播放下一段音频(区别于未播放完成被终止)
          */
         void onEnd(boolean isPlayComplete);
     }
