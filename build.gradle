@@ -13,11 +13,25 @@ def releaseTime() {
     return new Date().format("yyyy-MM-dd HH:mm:ss")
 }
 
+println "the project name is $name"
+task hello << {// 运行的时候可以用：gradle hello
+    println "the current task name is $name"
+    println "hello world"
+}
 //获取git版本号
 def getGitVersion() {
-//    println 'cmd'.execute().text.trim()
-    println 'getGitVersion HHHH';
-    return "ccc"
+    //获取git版本号，首先确保git命令能执行
+    return 'git rev-parse --short HEAD'.execute().text.trim();
+}
+//获取git分支号
+def getGitBranch() {
+    //获取git版本号，首先确保git命令能执行
+    def versionInfo = 'git branch'.execute().text.trim();
+    versionInfo = versionInfo.replace("*", "");
+    if (versionInfo.indexOf("\n") > -1) {
+        versionInfo = versionInfo.substring(0, versionInfo.indexOf("\n"));
+    }
+    return versionInfo.trim();
 }
 
 dependencies {
@@ -68,7 +82,15 @@ android {
         }
     }
 
-
+// 多渠道打包 配置方式一   开始
+    productFlavors {
+        qihu360 {
+            manifestPlaceholders = [CHANNEL_VALUE: "qihu360"]
+        }
+        baidu91 {
+            manifestPlaceholders = [CHANNEL_VALUE: "baidu91"]
+        }
+    }
 
     buildTypes {
         release {
@@ -77,6 +99,8 @@ android {
         debug {
             def buildTime = releaseTime();
             def gitVersion = getGitVersion();
+            def gitBranch = getGitBranch();
+
 
 
             buildConfigField "boolean", "CHEN_DEBUG", "false"
@@ -84,8 +108,10 @@ android {
 
             buildConfigField "String", "BUILD_TIME", "\"${buildTime}\""
             buildConfigField "String", "GIT_VERSION", "\"${gitVersion}\""
-
+            buildConfigField "String", "GIT_BRANCH", "\"${gitBranch}\""
+            buildConfigField "String", "TaskName", "\"$name\""
         }
     }
+
 
 }

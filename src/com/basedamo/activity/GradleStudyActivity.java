@@ -10,6 +10,8 @@ import com.basedamo.utils.ReadMainFestsInfo;
 
 /**
  * Created by hui on 2016/1/26.
+ * <p/>
+ * 内容查看Gradle脚本，BuildConfig由Gradle生成
  */
 public class GradleStudyActivity extends BaseActivity {
     private TextView tvMsg;
@@ -47,8 +49,63 @@ public class GradleStudyActivity extends BaseActivity {
         sb.append("\n BuildConfig.CHEN_DEBUG=" + BuildConfig.CHEN_DEBUG);
         sb.append("\n BuildConfig.BUILD_TYPE=" + BuildConfig.BUILD_TYPE);
         sb.append("\n BuildConfig.BUILD_TIME=" + BuildConfig.BUILD_TIME);
+        sb.append("\n BuildConfig.GIT_BRANCH=" + BuildConfig.GIT_BRANCH);
+        sb.append("\n BuildConfig.GIT_VERSION=" + BuildConfig.GIT_VERSION);
 
 
         tvMsg.setText(sb);
     }
 }
+/*
+* 部分代码：
+*
+*
+//获取编译时间
+def releaseTime() {
+    return new Date().format("yyyy-MM-dd HH:mm:ss")
+}
+
+println "the project name is $name"
+task hello << {// 运行的时候可以用：gradle hello
+    println "the current task name is $name"
+    println "hello world"
+}
+//获取git版本号
+def getGitVersion() {
+    //获取git版本号，首先确保git命令能执行
+    return 'git rev-parse --short HEAD'.execute().text.trim();
+}
+//获取git分支号
+def getGitBranch() {
+    //获取git版本号，首先确保git命令能执行
+    def versionInfo = 'git branch'.execute().text.trim();
+    versionInfo = versionInfo.replace("*", "");
+    if (versionInfo.indexOf("\n") > -1) {
+        versionInfo = versionInfo.substring(0, versionInfo.indexOf("\n"));
+    }
+    return versionInfo.trim();
+}
+
+
+
+    buildTypes {
+        release {
+            signingConfig signingConfigs.myConfig
+        }
+        debug {
+            def buildTime = releaseTime();
+            def gitVersion = getGitVersion();
+            def gitBranch = getGitBranch();
+
+
+
+            buildConfigField "boolean", "CHEN_DEBUG", "false"
+            buildConfigField "String", "CHEN_VERSION_NAME", "\"AB\"+\"CD\""
+
+            buildConfigField "String", "BUILD_TIME", "\"${buildTime}\""
+            buildConfigField "String", "GIT_VERSION", "\"${gitVersion}\""
+            buildConfigField "String", "GIT_BRANCH", "\"${gitBranch}\""
+            buildConfigField "String", "TaskName", "\"$name\""
+        }
+    }
+* */
