@@ -99,6 +99,7 @@
         <activity android:name=".activity.FileDownLoadActivity" />
         <activity android:name=".activity.PartControlActivity" />
         <activity android:name=".activity.PartControl2Activity" />
+        <activity android:name=".activity.PartControl3Activity" />
         <activity android:name=".activity.VoiceTalkActivity" />
         <activity
             android:name=".activity.SupportLibraryActivity"
@@ -108,6 +109,7 @@
         <activity android:name=".activity.SecurityDemoActivity" />
         <activity android:name=".activity.GifActivity" />
         <activity android:name=".activity.GradleStudyActivity" />
+        <activity android:name=".activity.SwipeRefreshLayoutActivity" />
     </application>
 
 </manifest>

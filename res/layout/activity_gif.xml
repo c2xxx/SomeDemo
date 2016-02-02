@@ -7,4 +7,21 @@
 
     <include layout="@layout/title_bar" />
 
+
+    <com.basedamo.view.GifView
+        android:id="@+id/gif1"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="10dp"
+        android:enabled="false" />
+
+    <com.basedamo.view.GifView
+        android:id="@+id/gif2"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="10dp"
+        android:enabled="false" />
+
 </LinearLayout>

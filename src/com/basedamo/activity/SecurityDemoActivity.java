@@ -8,8 +8,9 @@ import android.widget.TextView;
 
 import com.basedamo.BaseActivity;
 import com.basedamo.R;
-import com.basedamo.utils.LogController;
+import com.basedamo.utils.DESHelper;
 import com.basedamo.utils.MD5Util;
+import com.basedamo.utils.RSAHelper;
 import com.basedamo.utils.SHA1Util;
 
 /**
@@ -29,12 +30,13 @@ public class SecurityDemoActivity extends BaseActivity {
 
     @Override
     protected void initViews() {
-        setTitleText("加密解密");
         findViewById(R.id.btn_security_base64).setOnClickListener(this);
         findViewById(R.id.btn_security_md5).setOnClickListener(this);
         findViewById(R.id.btn_security_hash).setOnClickListener(this);
         findViewById(R.id.btn_security_sha1).setOnClickListener(this);
         findViewById(R.id.btn_security_hmac_sha1).setOnClickListener(this);
+        findViewById(R.id.btn_security_hmac_rsa).setOnClickListener(this);
+        findViewById(R.id.btn_security_hmac_des).setOnClickListener(this);
         etInput = (EditText) findViewById(R.id.et_security_input);
         tvResult = (TextView) findViewById(R.id.tv_security_result);
         tvResult2 = (TextView) findViewById(R.id.tv_security_result2);
@@ -63,7 +65,35 @@ public class SecurityDemoActivity extends BaseActivity {
             case R.id.btn_security_hmac_sha1:
                 hmac_sha1();
                 break;
+            case R.id.btn_security_hmac_rsa:
+                rsa();
+                break;
+            case R.id.btn_security_hmac_des:
+                des();
+                break;
         }
+    }
+
+    private void des() {
+        String text = getText();
+        try {
+            String str = DESHelper.desDemo(text);
+            showResult1(str);
+        } catch (Exception e) {
+            showResult1("err:\n" + e.getMessage());
+        }
+        showResult2("");
+    }
+
+    private void rsa() {
+        String text = getText();
+        try {
+            String str = RSAHelper.rsaDemo(text);
+            showResult1(str);
+        } catch (Exception e) {
+            showResult1("err:\n" + e.getMessage());
+        }
+        showResult2("");
     }
 
     private void hmac_sha1() {

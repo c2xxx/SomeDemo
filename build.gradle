@@ -21,17 +21,19 @@ task hello << {// 运行的时候可以用：gradle hello
 //获取git版本号
 def getGitVersion() {
     //获取git版本号，首先确保git命令能执行
-    return 'git rev-parse --short HEAD'.execute().text.trim();
+//    return 'git rev-parse --short HEAD'.execute().text.trim();
+    return  'getGitVersion'
 }
 //获取git分支号
 def getGitBranch() {
+    return  'getGitBranch'
     //获取git版本号，首先确保git命令能执行
-    def versionInfo = 'git branch'.execute().text.trim();
-    versionInfo = versionInfo.replace("*", "");
-    if (versionInfo.indexOf("\n") > -1) {
-        versionInfo = versionInfo.substring(0, versionInfo.indexOf("\n"));
-    }
-    return versionInfo.trim();
+//    def versionInfo = 'git branch'.execute().text.trim();
+//    versionInfo = versionInfo.replace("*", "");
+//    if (versionInfo.indexOf("\n") > -1) {
+//        versionInfo = versionInfo.substring(0, versionInfo.indexOf("\n"));
+//    }
+//    return versionInfo.trim();
 }
 
 dependencies {

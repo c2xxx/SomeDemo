@@ -26,6 +26,7 @@ import com.basedamo.activity.GradleStudyActivity;
 import com.basedamo.activity.HardWareActivity;
 import com.basedamo.activity.HardWareActivity2;
 import com.basedamo.activity.PartControl2Activity;
+import com.basedamo.activity.PartControl3Activity;
 import com.basedamo.activity.PartControlActivity;
 import com.basedamo.activity.QiniuUploadActivity;
 import com.basedamo.activity.RingToneActivity;
@@ -59,6 +60,7 @@ public class MainActivity extends BaseActivity implements OnItemClickListener {
     protected void initData() {
         addItem("控件1_基本控件", PartControlActivity.class);
         addItem("控件2_进阶", PartControl2Activity.class);
+        addItem("Support Library", PartControl3Activity.class);
         addItem("声音和振动", VolumActivity.class);
         addItem("电池、wifi、CPU信息", HardWareActivity.class);
         addItem("麦克风和距离传感器", HardWareActivity2.class);
@@ -75,16 +77,18 @@ public class MainActivity extends BaseActivity implements OnItemClickListener {
         addItem("录音 AudioRecoder", AudioRecoderActivity.class);
         addItem("录音 MediaRecoder 仿微信", VoiceTalkActivity.class);
         addItem("文件下载", FileDownLoadActivity.class);
+        addItem("Gif图片", GifActivity.class);
         addItem("网络访问 BaseRequest", BaseRequestDemoActivity.class);
+        addItem("gradle脚本", GradleStudyActivity.class);
+        addItem("安全机制（加密解密）", SecurityDemoActivity.class);
         addItem("七牛上传图片", QiniuUploadActivity.class);
-        addItem("安全机制（加密解密）（未完成RSA,DES）", SecurityDemoActivity.class);
-        addItem("Gif图片播放（未完成）", GifActivity.class);
         addItem("视频播放（未完成）", EmptyActivity.class);
         addItem("JNI编程（未完成）", EmptyActivity.class);
-        addItem("图片选择（未完成）", EmptyActivity.class);
+        addItem("自定义图片选择（未完成）", EmptyActivity.class);
         addItem("ImageCache（未完成）", EmptyActivity.class);
-        addItem("gradle配置（未完成）", GradleStudyActivity.class);
-        addItem("Support Library（未完成）", SupportLibraryActivity.class);
+        addItem("SQLite增删改查（未完成）", EmptyActivity.class);
+        addItem("Service（未完成）", EmptyActivity.class);
+        addItem("广播（未完成）", EmptyActivity.class);
     }
 
     @Override
