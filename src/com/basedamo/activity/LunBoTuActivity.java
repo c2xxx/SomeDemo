@@ -1,17 +1,18 @@
-package com.basedamo.slideviewpaper;
+package com.basedamo.activity;
 
 import com.basedamo.R;
+import com.basedamo.view.SlideShowView;
 
 import android.app.Activity;
 import android.os.Bundle;
 
-public class ViewPaperActivity extends Activity {
-	private com.basedamo.slideviewpaper.SlideShowView sv_photo;
+public class LunBoTuActivity extends Activity {
+	private SlideShowView sv_photo;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_viewpaper);
+		setContentView(R.layout.activity_lunbotu);
 		initViews();
 		initDatas();
 	}

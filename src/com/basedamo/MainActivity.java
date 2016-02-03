@@ -44,6 +44,7 @@ import java.util.List;
 
 public class MainActivity extends BaseActivity implements OnItemClickListener {
 
+
     private ListView ll_list;
     private List<String> listStrs = new ArrayList<>();
     private List<Intent> listIntents = new ArrayList<>();
@@ -60,6 +61,7 @@ public class MainActivity extends BaseActivity implements OnItemClickListener {
     protected void initData() {
         addItem("控件1_基本控件", PartControlActivity.class);
         addItem("控件2_进阶", PartControl2Activity.class);
+
         addItem("Support Library", PartControl3Activity.class);
         addItem("声音和振动", VolumActivity.class);
         addItem("电池、wifi、CPU信息", HardWareActivity.class);
@@ -68,7 +70,6 @@ public class MainActivity extends BaseActivity implements OnItemClickListener {
         addItem("XUtils使用", XUtilsActivity.class);
         addItem("桌面图标右上角数字", DesktopLogoNumberActivity.class);
         addItem("友盟反馈", UmengFeedBackActivity.class);
-//        addItem("分享功能（未完成）", EmptyActivity.class);
         addItem("科大讯飞——语音输入", XunFeiVoiceInputActivity.class);
         addItem("科大讯飞——语音合成", XunFeiVoiceReaderActivity.class);
         addItem("裁剪图片(系统功能)", CutImageActivity.class);
@@ -84,11 +85,12 @@ public class MainActivity extends BaseActivity implements OnItemClickListener {
         addItem("七牛上传图片", QiniuUploadActivity.class);
         addItem("视频播放（未完成）", EmptyActivity.class);
         addItem("JNI编程（未完成）", EmptyActivity.class);
-        addItem("自定义图片选择（未完成）", EmptyActivity.class);
-        addItem("ImageCache（未完成）", EmptyActivity.class);
-        addItem("SQLite增删改查（未完成）", EmptyActivity.class);
-        addItem("Service（未完成）", EmptyActivity.class);
-        addItem("广播（未完成）", EmptyActivity.class);
+        addItem("自定义图片选择（*）", EmptyActivity.class);
+        addItem("ImageCache,ImageLoader,LruChche（*）", EmptyActivity.class);
+        addItem("SQLite增删改查（*）", EmptyActivity.class);
+        addItem("Service（*）", EmptyActivity.class);
+        addItem("广播（*）", EmptyActivity.class);
+        addItem("上拉下拉刷新（*）", EmptyActivity.class);
     }
 
     @Override

@@ -5,10 +5,10 @@
     android:background="@android:color/white"
     android:orientation="vertical" >
 
-    <com.basedamo.slideviewpaper.SlideShowView
+    <com.basedamo.view.SlideShowView
         android:id="@+id/sv_photo"
         android:layout_width="match_parent"
         android:layout_height="120dp" >
-    </com.basedamo.slideviewpaper.SlideShowView>
+    </com.basedamo.view.SlideShowView>
 
 </LinearLayout>

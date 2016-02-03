@@ -55,7 +55,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.basedamo.slideviewpaper.ViewPaperActivity" />
+        <activity android:name=".activity.LunBoTuActivity" />
+        <activity android:name="com.basedamo.activity.LunBoTu2Activity" />
         <activity android:name="com.basedamo.volley.VolleyDemoActivity" />
         <activity android:name="com.basedamo.view.MyViewDemoActivity" />
         <activity android:name="com.basedamo.view.CircleImageActivity" />

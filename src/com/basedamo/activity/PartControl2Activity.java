@@ -1,8 +1,6 @@
 package com.basedamo.activity;
 
 import com.basedamo.MainActivity;
-import com.basedamo.view.CircleImageActivity;
-import com.basedamo.view.MyViewDemoActivity;
 
 /**
  * Created by hui on 2016/1/8.
@@ -21,6 +19,7 @@ public class PartControl2Activity extends MainActivity {
         addItem("图片放大", ShowImageViewActivity.class);
         addItem("图片模糊圆角黑白", BitMapActivity.class);
         addItem("侧滑", SlidingActivity.class);
-        addItem("轮播图", com.basedamo.slideviewpaper.ViewPaperActivity.class);
+        addItem("轮播图", LunBoTuActivity.class);
+        addItem("轮播图2", LunBoTu2Activity.class);
     }
 }
