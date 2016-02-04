@@ -2,6 +2,7 @@ package com.basedamo.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.View;
@@ -11,6 +12,7 @@ import android.widget.TextView;
 import com.basedamo.BaseActivity;
 import com.basedamo.R;
 import com.basedamo.utils.LogController;
+import com.basedamo.utils.ToastUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -44,9 +46,8 @@ public class LunBoTu2Activity extends BaseActivity {
         }
         modifyList(sourceList);
 
-        for (Integer i : sourceList) {
-            TextView tv = new TextView(this);
-            tv.setText("tv" + (i + 1));
+        for (final Integer i : sourceList) {
+            TextView tv = getItemView(i);
             mlist.add(tv);
         }
         adapter = new MyAdapter(mlist);
@@ -67,6 +68,7 @@ public class LunBoTu2Activity extends BaseActivity {
 
             @Override
             public void onPageSelected(int position) {
+                //被选中，滑动动作未完成
                 LogController.d("onPageSelected" + position);
 
                 current = position;
@@ -95,7 +97,7 @@ public class LunBoTu2Activity extends BaseActivity {
                     LogController.d("onPageScrollStateChanged" + state);
                 }
 
-                if (state == ViewPager.SCROLL_STATE_IDLE) {
+                if (state == ViewPager.SCROLL_STATE_IDLE) {//状态变化(滑动动作完成)
                     LogController.d("onPageScrollStateChanged" + state);
                     if (targetIndex != current) {
                         LogController.d("changet");
@@ -104,6 +106,20 @@ public class LunBoTu2Activity extends BaseActivity {
                 }
             }
         });
+    }
+
+    @NonNull
+    private TextView getItemView(Integer i) {
+        TextView tv = new TextView(this);
+        final String text = "tv" + (i + 1);
+        tv.setText(text);
+        tv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ToastUtil.show(text);
+            }
+        });
+        return tv;
     }
 
     private void modifyList(List list) {
