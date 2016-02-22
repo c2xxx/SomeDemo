@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/title_bar" />
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="startService、stopService(结果看Log)" />
+
+    <Button
+        android:id="@+id/btn_service_start"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="start（显式）" />
+
+    <Button
+        android:id="@+id/btn_service_start2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="start（隐式）" />
+
+    <Button
+        android:id="@+id/btn_service_stop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="stop（显式）" />
+
+    <Button
+        android:id="@+id/btn_service_stop2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="stop（隐式）" />
+</LinearLayout>

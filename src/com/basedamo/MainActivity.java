@@ -17,6 +17,7 @@ import android.widget.TextView;
 import com.basedamo.activity.AsyncTaskActivity;
 import com.basedamo.activity.AudioRecoderActivity;
 import com.basedamo.activity.BaseRequestDemoActivity;
+import com.basedamo.activity.BroadCastDemoActivity;
 import com.basedamo.activity.CutImageActivity;
 import com.basedamo.activity.DesktopLogoNumberActivity;
 import com.basedamo.activity.EmptyActivity;
@@ -31,7 +32,8 @@ import com.basedamo.activity.PartControlActivity;
 import com.basedamo.activity.QiniuUploadActivity;
 import com.basedamo.activity.RingToneActivity;
 import com.basedamo.activity.SecurityDemoActivity;
-import com.basedamo.activity.SupportLibraryActivity;
+import com.basedamo.activity.ServiceDemo2Activity;
+import com.basedamo.activity.ServiceDemoActivity;
 import com.basedamo.activity.UmengFeedBackActivity;
 import com.basedamo.activity.VoiceTalkActivity;
 import com.basedamo.activity.VolumActivity;
@@ -83,13 +85,15 @@ public class MainActivity extends BaseActivity implements OnItemClickListener {
         addItem("gradle脚本", GradleStudyActivity.class);
         addItem("安全机制（加密解密）", SecurityDemoActivity.class);
         addItem("七牛上传图片", QiniuUploadActivity.class);
-        addItem("视频播放（未完成）", EmptyActivity.class);
-        addItem("JNI编程（未完成）", EmptyActivity.class);
+        addItem("广播", BroadCastDemoActivity.class);
+        addItem("Service（一）", ServiceDemoActivity.class);
+        addItem("Service（二）", ServiceDemo2Activity.class);
+        addItem("视频播放（*）", EmptyActivity.class);
+        addItem("JNI编程（*）", EmptyActivity.class);
         addItem("自定义图片选择（*）", EmptyActivity.class);
         addItem("ImageCache,ImageLoader,LruChche（*）", EmptyActivity.class);
         addItem("SQLite增删改查（*）", EmptyActivity.class);
-        addItem("Service（*）", EmptyActivity.class);
-        addItem("广播（*）", EmptyActivity.class);
+        addItem("XML解析（*）", EmptyActivity.class);
         addItem("上拉下拉刷新（*）", EmptyActivity.class);
     }
 

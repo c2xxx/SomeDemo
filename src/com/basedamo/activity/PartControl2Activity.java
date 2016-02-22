@@ -20,6 +20,6 @@ public class PartControl2Activity extends MainActivity {
         addItem("图片模糊圆角黑白", BitMapActivity.class);
         addItem("侧滑", SlidingActivity.class);
         addItem("轮播图", LunBoTuActivity.class);
-        addItem("轮播图2", LunBoTu2Activity.class);
+        addItem("轮播图(循环)", LunBoTu2Activity.class);
     }
 }

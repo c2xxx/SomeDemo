@@ -64,6 +64,10 @@ public class VoiceTalkActivity extends BaseActivity {
         MediaRecoderHelper.RecoderListener listener = new MediaRecoderHelper.RecoderListener() {
 
             @Override
+            public void onStart() {
+                mediaPlayerHelper.release();
+            }
+            @Override
             public void onFinish(File voiceFile) {
                 LogController.d("录音完成:" + voiceFile.getAbsolutePath() + " " + voiceFile.exists());
                 sendVoice(voiceFile);
@@ -147,6 +151,9 @@ public class VoiceTalkActivity extends BaseActivity {
         VoiceTalk voiceTalk = new VoiceTalk();
         voiceTalk.setUrl("" + voiceFile.getAbsolutePath());
         MediaPlayer player = MediaPlayer.create(this, Uri.fromFile(voiceFile));
+        if (player == null) {//没有获取录音权限时，这里会为空
+            return;
+        }
         int time = player.getDuration();
         player.release();
         time = (int) Math.round(time / 1000.0);

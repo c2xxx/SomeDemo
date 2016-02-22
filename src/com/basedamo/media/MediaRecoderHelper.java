@@ -85,6 +85,14 @@ public class MediaRecoderHelper {
             }
             return null;
         }
+
+        @Override
+        protected void onPostExecute(Object o) {
+            super.onPostExecute(o);
+            if (mListener != null) {
+                mListener.onStart();//准备结束，开始录音
+            }
+        }
     }
 
     // 获得声音的level
@@ -151,6 +159,11 @@ public class MediaRecoderHelper {
      * @author nickming
      */
     public interface RecoderListener {
+        /**
+         * 录音开始
+         */
+        void onStart();
+
         /**
          * 结束录音
          *

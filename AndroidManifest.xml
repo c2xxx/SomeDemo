@@ -45,6 +45,13 @@
             android:value="baidu" />
 
 
+        <receiver android:name=".activity.BroadCastDemoActivity$MyReceiverB">
+            <intent-filter>
+                <action
+                    android:name="android.action.ACTION_B"
+                    android:priority="400" />
+            </intent-filter>
+        </receiver>
         <!-- android:theme="@style/AppTheme" > -->
         <activity
             android:name="com.basedamo.MainActivity"
@@ -55,6 +62,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity android:name=".activity.LunBoTuActivity" />
         <activity android:name="com.basedamo.activity.LunBoTu2Activity" />
         <activity android:name="com.basedamo.volley.VolleyDemoActivity" />
@@ -111,6 +119,15 @@
         <activity android:name=".activity.GifActivity" />
         <activity android:name=".activity.GradleStudyActivity" />
         <activity android:name=".activity.SwipeRefreshLayoutActivity" />
+        <activity android:name=".activity.BroadCastDemoActivity" />
+        <activity android:name=".activity.ServiceDemoActivity" />
+        <activity android:name=".activity.ServiceDemo2Activity" />
+
+        <service android:name=".service.DemoService">
+            <intent-filter>
+                <action android:name="com.basedamo.service.DemoService" />
+            </intent-filter>
+        </service>
     </application>
 
 </manifest>

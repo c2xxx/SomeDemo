@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/title_bar" />
+
+
+    <Button
+        android:id="@+id/btn_broadcasedemo_send_broadcast"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="发送全局广播（无序）" />
+
+    <Button
+        android:id="@+id/btn_broadcasedemo_send_order_broadcast"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="发送全局广播（有序）" />
+
+    <Button
+        android:id="@+id/btn_broadcasedemo_send_inner_broadcast"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="发送应用内广播" />
+
+</LinearLayout>

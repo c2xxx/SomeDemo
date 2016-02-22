@@ -2,7 +2,7 @@ package com.chen.utils;
 
 import android.graphics.Bitmap;
 /**
- * 
+ * 照片模糊处理
  * @author Author CH
  * @version CreateTime 2015-6-11  下午12:21:39
  */
