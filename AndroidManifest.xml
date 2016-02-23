@@ -122,6 +122,7 @@
         <activity android:name=".activity.BroadCastDemoActivity" />
         <activity android:name=".activity.ServiceDemoActivity" />
         <activity android:name=".activity.ServiceDemo2Activity" />
+        <activity android:name=".activity.PullToRefeshActivity" />
 
         <service android:name=".service.DemoService">
             <intent-filter>

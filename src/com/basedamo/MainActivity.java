@@ -29,6 +29,7 @@ import com.basedamo.activity.HardWareActivity2;
 import com.basedamo.activity.PartControl2Activity;
 import com.basedamo.activity.PartControl3Activity;
 import com.basedamo.activity.PartControlActivity;
+import com.basedamo.activity.PullToRefeshActivity;
 import com.basedamo.activity.QiniuUploadActivity;
 import com.basedamo.activity.RingToneActivity;
 import com.basedamo.activity.SecurityDemoActivity;
@@ -94,7 +95,7 @@ public class MainActivity extends BaseActivity implements OnItemClickListener {
         addItem("ImageCache,ImageLoader,LruChche（*）", EmptyActivity.class);
         addItem("SQLite增删改查（*）", EmptyActivity.class);
         addItem("XML解析（*）", EmptyActivity.class);
-        addItem("上拉下拉刷新（*）", EmptyActivity.class);
+        addItem("上拉下拉刷新（*）", PullToRefeshActivity.class);
     }
 
     @Override
