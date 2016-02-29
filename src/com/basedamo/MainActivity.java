@@ -39,6 +39,7 @@ import com.basedamo.activity.UmengFeedBackActivity;
 import com.basedamo.activity.VoiceTalkActivity;
 import com.basedamo.activity.VolumActivity;
 import com.basedamo.activity.XUtilsActivity;
+import com.basedamo.activity.XmlPullParseBookActivity;
 import com.basedamo.activity.XunFeiVoiceInputActivity;
 import com.basedamo.activity.XunFeiVoiceReaderActivity;
 
@@ -89,13 +90,15 @@ public class MainActivity extends BaseActivity implements OnItemClickListener {
         addItem("广播", BroadCastDemoActivity.class);
         addItem("Service（一）", ServiceDemoActivity.class);
         addItem("Service（二）", ServiceDemo2Activity.class);
+        addItem("上拉下拉刷新", PullToRefeshActivity.class);
         addItem("视频播放（*）", EmptyActivity.class);
         addItem("JNI编程（*）", EmptyActivity.class);
         addItem("自定义图片选择（*）", EmptyActivity.class);
         addItem("ImageCache,ImageLoader,LruChche（*）", EmptyActivity.class);
         addItem("SQLite增删改查（*）", EmptyActivity.class);
-        addItem("XML解析（*）", EmptyActivity.class);
-        addItem("上拉下拉刷新（*）", PullToRefeshActivity.class);
+        addItem("XML解析（一）Xml PullParser", XmlPullParseBookActivity.class);
+        addItem("XML解析（二）Xml SAX", XmlPullParseBookActivity.class);
+        addItem("XML解析（三）Xml DOM", XmlPullParseBookActivity.class);
     }
 
     @Override

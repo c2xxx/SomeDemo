@@ -123,6 +123,7 @@
         <activity android:name=".activity.ServiceDemoActivity" />
         <activity android:name=".activity.ServiceDemo2Activity" />
         <activity android:name=".activity.PullToRefeshActivity" />
+        <activity android:name=".activity.XmlPullParseBookActivity" />
 
         <service android:name=".service.DemoService">
             <intent-filter>
