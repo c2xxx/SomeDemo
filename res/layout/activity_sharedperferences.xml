@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/title_bar" />
+
+    <EditText
+        android:id="@+id/et_sharedperferences_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="要保存的内容" />
+
+    <Button
+        android:id="@+id/btn_sharedperferences_save"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="保存" />
+
+    <Button
+        android:id="@+id/btn_sharedperferences_read"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="读取" />
+
+    <TextView
+        android:id="@+id/tv_sharedperferences_result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+</LinearLayout>

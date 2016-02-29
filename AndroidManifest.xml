@@ -124,6 +124,7 @@
         <activity android:name=".activity.ServiceDemo2Activity" />
         <activity android:name=".activity.PullToRefeshActivity" />
         <activity android:name=".activity.XmlPullParseBookActivity" />
+        <activity android:name=".activity.SharedPerferencesActivity" />
 
         <service android:name=".service.DemoService">
             <intent-filter>
