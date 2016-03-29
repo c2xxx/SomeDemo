@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/title_bar" />
+
+    <Button
+        android:id="@+id/btn_typeface_type_a"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="默认字体1 ABCdef123"
+        android:textAllCaps="false"
+        android:typeface="sans" />
+
+    <Button
+        android:id="@+id/btn_typeface_type_b"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="默认字体2 ABCdef123"
+        android:textAllCaps="false"
+        android:typeface="serif" />
+
+    <Button
+        android:id="@+id/btn_typeface_type_c"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="默认字体3 ABCdef123"
+        android:textAllCaps="false"
+        android:typeface="monospace" />
+
+    <Button
+        android:id="@+id/btn_typeface_type_d"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="自定义1 ABCdef123"
+        android:textAllCaps="false"
+        android:typeface="normal" />
+
+    <Button
+        android:id="@+id/btn_typeface_type_e"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="自定义2 ABCdef123"
+        android:textAllCaps="false"
+        android:typeface="normal" />
+
+    <EditText
+        android:id="@+id/et_typeface_display"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:gravity="center"
+        android:text="恭喜发财ABCdef123"
+        android:textSize="24dp" />
+
+</LinearLayout>

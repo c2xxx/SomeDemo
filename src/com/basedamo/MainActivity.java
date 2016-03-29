@@ -36,6 +36,7 @@ import com.basedamo.activity.SecurityDemoActivity;
 import com.basedamo.activity.ServiceDemo2Activity;
 import com.basedamo.activity.ServiceDemoActivity;
 import com.basedamo.activity.SharedPerferencesActivity;
+import com.basedamo.activity.TypeFaceActivity;
 import com.basedamo.activity.UmengFeedBackActivity;
 import com.basedamo.activity.VoiceTalkActivity;
 import com.basedamo.activity.VolumActivity;
@@ -101,6 +102,7 @@ public class MainActivity extends BaseActivity implements OnItemClickListener {
         addItem("XML解析（一）Xml PullParser", XmlPullParseBookActivity.class);
         addItem("XML解析（二）Xml SAX", EmptyActivity.class);
         addItem("XML解析（三）Xml DOM", EmptyActivity.class);
+        addItem("字体", TypeFaceActivity.class);
     }
 
     @Override

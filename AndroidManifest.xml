@@ -125,6 +125,7 @@
         <activity android:name=".activity.PullToRefeshActivity" />
         <activity android:name=".activity.XmlPullParseBookActivity" />
         <activity android:name=".activity.SharedPerferencesActivity" />
+        <activity android:name=".activity.TypeFaceActivity" />
 
         <service android:name=".service.DemoService">
             <intent-filter>
