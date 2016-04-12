@@ -4,6 +4,9 @@ import android.util.Log;
 
 import com.basedamo.BuildConfig;
 
+import java.io.PrintWriter;
+import java.io.StringWriter;
+
 /**
  * Created by hui on 2015/11/20.
  */
@@ -55,5 +58,23 @@ public class LogController {
             }
             Log.d(TAG, "================END==================");
         }
+    }
+
+    /**
+     * 打印异常信息
+     *
+     * @param e
+     */
+    public static void printExceptionInfo(Exception e) {
+
+        StringWriter sw = new StringWriter();
+        PrintWriter pw = new PrintWriter(sw);
+        try {
+            e.printStackTrace(pw);
+            e("Error=" + e.getMessage() + "\n" + sw.toString());
+        } finally {
+            pw.close();
+        }
+        e.printStackTrace();
     }
 }

@@ -18,6 +18,8 @@ import com.basedamo.activity.AsyncTaskActivity;
 import com.basedamo.activity.AudioRecoderActivity;
 import com.basedamo.activity.BaseRequestDemoActivity;
 import com.basedamo.activity.BroadCastDemoActivity;
+import com.basedamo.activity.ColorPicker2Activity;
+import com.basedamo.activity.ColorPickerActivity;
 import com.basedamo.activity.CutImageActivity;
 import com.basedamo.activity.DesktopLogoNumberActivity;
 import com.basedamo.activity.EmptyActivity;
@@ -103,6 +105,8 @@ public class MainActivity extends BaseActivity implements OnItemClickListener {
         addItem("XML解析（二）Xml SAX", EmptyActivity.class);
         addItem("XML解析（三）Xml DOM", EmptyActivity.class);
         addItem("字体", TypeFaceActivity.class);
+        addItem("颜色拾取1", ColorPickerActivity.class);
+        addItem("颜色拾取2", ColorPicker2Activity.class);
     }
 
     @Override

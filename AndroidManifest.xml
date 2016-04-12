@@ -126,6 +126,8 @@
         <activity android:name=".activity.XmlPullParseBookActivity" />
         <activity android:name=".activity.SharedPerferencesActivity" />
         <activity android:name=".activity.TypeFaceActivity" />
+        <activity android:name=".activity.ColorPickerActivity" />
+        <activity android:name=".activity.ColorPicker2Activity" />
 
         <service android:name=".service.DemoService">
             <intent-filter>
