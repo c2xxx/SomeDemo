@@ -128,6 +128,8 @@
         <activity android:name=".activity.TypeFaceActivity" />
         <activity android:name=".activity.ColorPickerActivity" />
         <activity android:name=".activity.ColorPicker2Activity" />
+        <activity android:name=".activity.TouchImageViewActivity" />
+        <activity android:name=".activity.FragmentDemoActivity" />
 
         <service android:name=".service.DemoService">
             <intent-filter>

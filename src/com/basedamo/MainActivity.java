@@ -17,6 +17,7 @@ import android.widget.TextView;
 import com.basedamo.activity.AsyncTaskActivity;
 import com.basedamo.activity.AudioRecoderActivity;
 import com.basedamo.activity.BaseRequestDemoActivity;
+import com.basedamo.activity.BindViewActivity;
 import com.basedamo.activity.BroadCastDemoActivity;
 import com.basedamo.activity.ColorPicker2Activity;
 import com.basedamo.activity.ColorPickerActivity;
@@ -24,10 +25,12 @@ import com.basedamo.activity.CutImageActivity;
 import com.basedamo.activity.DesktopLogoNumberActivity;
 import com.basedamo.activity.EmptyActivity;
 import com.basedamo.activity.FileDownLoadActivity;
+import com.basedamo.activity.FragmentDemoActivity;
 import com.basedamo.activity.GifActivity;
 import com.basedamo.activity.GradleStudyActivity;
 import com.basedamo.activity.HardWareActivity;
 import com.basedamo.activity.HardWareActivity2;
+import com.basedamo.activity.OkHttpFinalActivity;
 import com.basedamo.activity.PartControl2Activity;
 import com.basedamo.activity.PartControl3Activity;
 import com.basedamo.activity.PartControlActivity;
@@ -107,6 +110,10 @@ public class MainActivity extends BaseActivity implements OnItemClickListener {
         addItem("字体", TypeFaceActivity.class);
         addItem("颜色拾取1", ColorPickerActivity.class);
         addItem("颜色拾取2", ColorPicker2Activity.class);
+        addItem("注解代替findViewById", BindViewActivity.class);
+        addItem("ViewFlipper", EmptyActivity.class);
+        addItem("Fragment", FragmentDemoActivity.class);
+        addItem("OkHttpFinal", OkHttpFinalActivity.class);
     }
 
     @Override

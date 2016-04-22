@@ -17,6 +17,7 @@ public class PartControl2Activity extends MainActivity {
         addItem("属性动画（中）", ProteryAnimation2.class);
         addItem("属性动画（下）", ProteryAnimation3.class);
         addItem("图片放大", ShowImageViewActivity.class);
+        addItem("图片放大", TouchImageViewActivity.class);
         addItem("图片模糊圆角黑白", BitMapActivity.class);
         addItem("侧滑", SlidingActivity.class);
         addItem("轮播图", LunBoTuActivity.class);

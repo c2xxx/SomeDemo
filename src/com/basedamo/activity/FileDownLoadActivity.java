@@ -46,7 +46,7 @@ public class FileDownLoadActivity extends BaseActivity {
     protected void initData() {
         urlMap.put("小", "http://7xpgb3.com1.z0.glb.clouddn.com/ffff.png");
         urlMap.put("中", "http://7xpgb3.com1.z0.glb.clouddn.com/meinv.png");
-        urlMap.put("大", "http://7xpgb3.com1.z0.glb.clouddn.com/img.jpg");
+        urlMap.put("大", "http://7xpgb3.com1.z0.glb.clouddn.com/IMG_20160407_072119.jpg");
         changeUrl("中");
         tvFileInfo.setText("url:文件B");
     }
