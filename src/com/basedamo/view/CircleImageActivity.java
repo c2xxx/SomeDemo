@@ -14,8 +14,8 @@ public class CircleImageActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_circle_img);
-		initViews();
-		initData();
+//		initViews();
+//		initData();
 	}
 
 	private void initData() {

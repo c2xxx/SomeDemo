@@ -65,7 +65,7 @@ public class LogController {
      *
      * @param e
      */
-    public static void printExceptionInfo(Exception e) {
+    public static void printExceptionInfo(Throwable e) {
 
         StringWriter sw = new StringWriter();
         PrintWriter pw = new PrintWriter(sw);

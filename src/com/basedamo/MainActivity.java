@@ -34,6 +34,7 @@ import com.basedamo.activity.OkHttpFinalActivity;
 import com.basedamo.activity.PartControl2Activity;
 import com.basedamo.activity.PartControl3Activity;
 import com.basedamo.activity.PartControlActivity;
+import com.basedamo.activity.PositionActivity;
 import com.basedamo.activity.PullToRefeshActivity;
 import com.basedamo.activity.QiniuUploadActivity;
 import com.basedamo.activity.RingToneActivity;
@@ -41,6 +42,7 @@ import com.basedamo.activity.SecurityDemoActivity;
 import com.basedamo.activity.ServiceDemo2Activity;
 import com.basedamo.activity.ServiceDemoActivity;
 import com.basedamo.activity.SharedPerferencesActivity;
+import com.basedamo.activity.TempTestActivity;
 import com.basedamo.activity.TypeFaceActivity;
 import com.basedamo.activity.UmengFeedBackActivity;
 import com.basedamo.activity.VoiceTalkActivity;
@@ -114,6 +116,8 @@ public class MainActivity extends BaseActivity implements OnItemClickListener {
         addItem("ViewFlipper", EmptyActivity.class);
         addItem("Fragment", FragmentDemoActivity.class);
         addItem("OkHttpFinal", OkHttpFinalActivity.class);
+        addItem("TempTest*", TempTestActivity.class);
+        addItem("获取位置", PositionActivity.class);
     }
 
     @Override

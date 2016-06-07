@@ -4,6 +4,7 @@ import android.app.Application;
 import android.content.Context;
 
 import com.basedamo.file.FileUtil;
+import com.basedamo.utils.MyCrashHandler;
 import com.iflytek.cloud.SpeechConstant;
 import com.iflytek.cloud.SpeechUtility;
 
@@ -21,6 +22,10 @@ public class MyApplication extends Application {
         SpeechUtility.createUtility(this, SpeechConstant.APPID + "=565807f9");//讯飞语音注册
 
         FileUtil.init(context);
+
+
+        //初始化全局异常
+//        MyCrashHandler.getInstance().init();
     }
 
 
