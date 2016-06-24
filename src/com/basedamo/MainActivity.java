@@ -51,9 +51,12 @@ import com.basedamo.activity.XUtilsActivity;
 import com.basedamo.activity.XmlPullParseBookActivity;
 import com.basedamo.activity.XunFeiVoiceInputActivity;
 import com.basedamo.activity.XunFeiVoiceReaderActivity;
+import com.umeng.analytics.MobclickAgent;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class MainActivity extends BaseActivity implements OnItemClickListener {
 
@@ -67,6 +70,7 @@ public class MainActivity extends BaseActivity implements OnItemClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         setContentView(R.layout.activity_main);
         super.onCreate(savedInstanceState);
+
     }
 
 
@@ -118,6 +122,8 @@ public class MainActivity extends BaseActivity implements OnItemClickListener {
         addItem("OkHttpFinal", OkHttpFinalActivity.class);
         addItem("TempTest*", TempTestActivity.class);
         addItem("获取位置", PositionActivity.class);
+        addItem("OOM跟踪*", EmptyActivity.class);
+        addItem("内存泄漏跟踪*", EmptyActivity.class);
     }
 
     @Override
@@ -180,5 +186,11 @@ public class MainActivity extends BaseActivity implements OnItemClickListener {
         String title = listStrs.get(position);
         intent.putExtra("title", title);
         startActivity(intent);
+
+        MobclickAgent.reportError(this, "ERR错误，啊哈哈哈哈哈XX" + System.currentTimeMillis());
+        MobclickAgent.onEvent(this, "event发生事件。。。");
+        Map<String, String> map = new HashMap<>();
+        map.put("title", title);
+        MobclickAgent.onEventValue(this, "SSS", map, 1);
     }
 }
