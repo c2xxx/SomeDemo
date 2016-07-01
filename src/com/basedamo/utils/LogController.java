@@ -4,9 +4,6 @@ import android.util.Log;
 
 import com.basedamo.BuildConfig;
 
-import java.io.PrintWriter;
-import java.io.StringWriter;
-
 /**
  * Created by hui on 2015/11/20.
  */
@@ -14,23 +11,33 @@ public class LogController {
     private static final String TAG = "BASEDEMO";
     private static boolean isDebug = BuildConfig.DEBUG;
 
-    public static void d(String tag, String msg) {
-        Log.d(TAG, tag + "\n" + msg);
-    }
-
     public static void d(String msg) {
+        if (!isDebug) {
+            return;
+        }
         Log.d(TAG, msg);
     }
 
 
-    public static void e(String tag, String msg) {
-        Log.e(TAG, tag + "\n" + msg);
-    }
-
     public static void e(String msg) {
+        if (!isDebug) {
+            return;
+        }
         Log.e(TAG, msg);
     }
 
+    /**
+     * 打印异常信息
+     *
+     * @param e
+     */
+    public static void printExceptionInfo(Throwable e) {
+        if (!isDebug) {
+            return;
+        }
+        String msg = Log.getStackTraceString(e);
+        Log.e(TAG, msg);
+    }
 
     /**
      * 打印完整的信息
@@ -60,21 +67,36 @@ public class LogController {
         }
     }
 
-    /**
-     * 打印异常信息
-     *
-     * @param e
-     */
-    public static void printExceptionInfo(Throwable e) {
 
-        StringWriter sw = new StringWriter();
-        PrintWriter pw = new PrintWriter(sw);
-        try {
-            e.printStackTrace(pw);
-            e("Error=" + e.getMessage() + "\n" + sw.toString());
-        } finally {
-            pw.close();
+    /**
+     * 获取调用位置
+     *
+     * @return
+     */
+    public static String getPosition() {
+        return getPosition(0, 10);
+    }
+
+    /**
+     * 获取调用位置
+     *
+     * @return
+     */
+    public static String getPosition(int start, int end) {
+        StackTraceElement[] elements = Thread.currentThread().getStackTrace();
+        int total = elements.length;
+        StringBuilder buffer = new StringBuilder();
+        for (int i = start; i < end; i++) {
+            if (total <= i || i < 0) {
+                break;
+            }
+            StackTraceElement stackTraceElement = elements[i];
+            buffer.append("(");
+            buffer.append(stackTraceElement.getFileName());
+            buffer.append(":");
+            buffer.append(stackTraceElement.getLineNumber());
+            buffer.append(")");
         }
-        e.printStackTrace();
+        return buffer.toString();
     }
 }

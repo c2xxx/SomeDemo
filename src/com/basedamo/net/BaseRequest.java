@@ -54,7 +54,7 @@ public class BaseRequest {
         if (url.startsWith("/")) {
             url = getApiServer() + url;
         }
-        LogController.d(TAG, url);
+        LogController.d(url);
 
         if (null == params) {
             params = new HashMap<>();
@@ -73,7 +73,7 @@ public class BaseRequest {
         Map<String, String> globalParams = getGlobalParams();
         for (Map.Entry<String, String> entry : globalParams.entrySet()) {
             requestParams.addBodyParameter(entry.getKey(), entry.getValue());
-            LogController.d(TAG, entry.getKey() + ": " + entry.getValue());
+            LogController.d(entry.getKey() + ": " + entry.getValue());
         }
 
         //add api params
@@ -89,7 +89,7 @@ public class BaseRequest {
                 File f = (File) obj;
                 requestParams.addBodyParameter(entry.getKey(), f);
             }
-            LogController.d(TAG, entry.getKey() + ": " + entry.getValue());
+            LogController.d(entry.getKey() + ": " + entry.getValue());
         }
 
         HttpUtils httpUtils = new HttpUtils(DEFAULT_TIMEOUT);
@@ -99,7 +99,7 @@ public class BaseRequest {
                 {
                     @Override
                     public void onSuccess(ResponseInfo<String> responseInfo) {
-                        LogController.d(TAG, "URL=" + finalUrl + "\n" + responseInfo.result);
+                        LogController.d("URL=" + finalUrl + "\n" + responseInfo.result);
                         if (null != list) {
                             for (OnParseHttpResponse onParseHttpResponse : list) {
                                 if (null != onParseHttpResponse) {
@@ -112,9 +112,9 @@ public class BaseRequest {
 
                     @Override
                     public void onFailure(HttpException e, String s) {
-                        LogController.e(TAG, e.getExceptionCode() + "");
-                        LogController.e(TAG, e.toString());
-                        LogController.e(TAG, s);
+                        LogController.e(e.getExceptionCode() + "");
+                        LogController.e(e.toString());
+                        LogController.e(s);
                         ToastUtil.show("网络繁忙，请稍后重试。\n[" + e.getExceptionCode() + "]");
 
 //                        if (null != list) {
