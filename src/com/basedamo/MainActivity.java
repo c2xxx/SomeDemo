@@ -30,6 +30,7 @@ import com.basedamo.activity.GifActivity;
 import com.basedamo.activity.GradleStudyActivity;
 import com.basedamo.activity.HardWareActivity;
 import com.basedamo.activity.HardWareActivity2;
+import com.basedamo.activity.HttpServerActivity;
 import com.basedamo.activity.OkHttpFinalActivity;
 import com.basedamo.activity.PartControl2Activity;
 import com.basedamo.activity.PartControl3Activity;
@@ -105,25 +106,32 @@ public class MainActivity extends BaseActivity implements OnItemClickListener {
         addItem("Service（二）", ServiceDemo2Activity.class);
         addItem("SharedPerferences", SharedPerferencesActivity.class);
         addItem("上拉下拉刷新", PullToRefeshActivity.class);
-        addItem("视频播放（*）", EmptyActivity.class);
-        addItem("JNI编程（*）", EmptyActivity.class);
-        addItem("自定义图片选择（*）", EmptyActivity.class);
-        addItem("ImageCache,ImageLoader,LruChche（*）", EmptyActivity.class);
-        addItem("SQLite增删改查（*）", EmptyActivity.class);
         addItem("XML解析（一）Xml PullParser", XmlPullParseBookActivity.class);
         addItem("XML解析（二）Xml SAX", EmptyActivity.class);
         addItem("XML解析（三）Xml DOM", EmptyActivity.class);
         addItem("字体", TypeFaceActivity.class);
         addItem("颜色拾取1", ColorPickerActivity.class);
         addItem("颜色拾取2", ColorPicker2Activity.class);
-        addItem("注解代替findViewById", BindViewActivity.class);
+        addItem("注解代替findViewById*", BindViewActivity.class);
         addItem("ViewFlipper", EmptyActivity.class);
         addItem("Fragment", FragmentDemoActivity.class);
         addItem("OkHttpFinal", OkHttpFinalActivity.class);
         addItem("TempTest*", TempTestActivity.class);
         addItem("获取位置", PositionActivity.class);
+        addItem("视频播放（*）", EmptyActivity.class);
+        addItem("JNI编程（*）", EmptyActivity.class);
+        addItem("自定义图片选择（*）", EmptyActivity.class);
+        addItem("ImageCache,ImageLoader,LruChche（*）", EmptyActivity.class);
+        addItem("SQLite增删改查（*）", EmptyActivity.class);
         addItem("OOM跟踪*", EmptyActivity.class);
         addItem("内存泄漏跟踪*", EmptyActivity.class);
+        addItem("热补丁/插件式开发*", EmptyActivity.class);
+        addItem("快速多渠道打包*", EmptyActivity.class);
+        addItem("学习Maven是什么东东*", EmptyActivity.class);
+        addItem("修改桌面图标*", EmptyActivity.class);
+        addItem("创建桌面快捷方式*", EmptyActivity.class);
+        addItem("自定义注解*", EmptyActivity.class);
+        addItem("HttpServer", HttpServerActivity.class);
     }
 
     @Override
