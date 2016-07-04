@@ -20,7 +20,7 @@ public class WebServer extends Service implements Runnable {
     private static Thread _serverThread = null;
     private ServerSocket _listenSocket = null;
     private MyLog _myLog = new MyLog(getClass().getName());
-    private static int _port = Defaults.getPort();
+//    private static int _port = Defaults.getPort();
     private TcpListener _tcpListener = null;
     private static final int WAKE_INTERVAL_MS = 1000;
 
@@ -35,7 +35,7 @@ public class WebServer extends Service implements Runnable {
     private void Init() throws IOException {
         _listenSocket = new ServerSocket();
         _listenSocket.setReuseAddress(true);
-        _listenSocket.bind(new InetSocketAddress(_port));
+        _listenSocket.bind(new InetSocketAddress(Defaults.getPort()));
     }
 
     public static void Start(Context context) {
@@ -173,6 +173,6 @@ public class WebServer extends Service implements Runnable {
     }
 
     public static int getPort() {
-        return _port;
+        return Defaults.getPort();
     }
 }

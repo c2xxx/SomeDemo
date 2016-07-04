@@ -16,7 +16,11 @@ import org.w3c.dom.Text;
 
 /**
  * Created by hui on 2015/11/19.
+ * <p>
+ * github上找了各demo:（附说明，华为不支持第三方角标，仅向大企业开放）
+ * https://github.com/lixiangers/BadgeUtil
  */
+
 public class DesktopLogoNumberActivity extends BaseActivity implements View.OnClickListener {
 
     private EditText editText;
@@ -41,6 +45,7 @@ public class DesktopLogoNumberActivity extends BaseActivity implements View.OnCl
     protected void initData() {
 
     }
+
 
     @Override
     public void onClick(View view) {

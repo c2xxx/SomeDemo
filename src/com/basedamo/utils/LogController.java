@@ -15,6 +15,7 @@ public class LogController {
         if (!isDebug) {
             return;
         }
+        msg = msg + getPosition();
         Log.d(TAG, msg);
     }
 
@@ -23,6 +24,7 @@ public class LogController {
         if (!isDebug) {
             return;
         }
+        msg = msg + getPosition();
         Log.e(TAG, msg);
     }
 
@@ -36,6 +38,7 @@ public class LogController {
             return;
         }
         String msg = Log.getStackTraceString(e);
+        msg = msg + getPosition();
         Log.e(TAG, msg);
     }
 
@@ -74,7 +77,7 @@ public class LogController {
      * @return
      */
     public static String getPosition() {
-        return getPosition(0, 10);
+        return getPosition(5, 6);
     }
 
     /**

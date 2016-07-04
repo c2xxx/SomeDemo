@@ -96,6 +96,20 @@ android {
 
     buildTypes {
         release {
+            def buildTime = releaseTime();
+            def gitVersion = getGitVersion();
+            def gitBranch = getGitBranch();
+
+
+
+            buildConfigField "boolean", "CHEN_DEBUG", "false"
+            buildConfigField "String", "CHEN_VERSION_NAME", "\"AB\"+\"CD\""
+
+            buildConfigField "String", "BUILD_TIME", "\"${buildTime}\""
+            buildConfigField "String", "GIT_VERSION", "\"${gitVersion}\""
+            buildConfigField "String", "GIT_BRANCH", "\"${gitBranch}\""
+            buildConfigField "String", "TaskName", "\"$name\""
+
             signingConfig signingConfigs.myConfig
         }
         debug {
