@@ -14,6 +14,7 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.basedamo.activity.AnnotationActivity;
 import com.basedamo.activity.AsyncTaskActivity;
 import com.basedamo.activity.AudioRecoderActivity;
 import com.basedamo.activity.BaseRequestDemoActivity;
@@ -130,7 +131,7 @@ public class MainActivity extends BaseActivity implements OnItemClickListener {
         addItem("学习Maven是什么东东*", EmptyActivity.class);
         addItem("修改桌面图标*", EmptyActivity.class);
         addItem("创建桌面快捷方式*", EmptyActivity.class);
-        addItem("自定义注解*", EmptyActivity.class);
+        addItem("自定义注解*", AnnotationActivity.class);
         addItem("HttpServer", HttpServerActivity.class);
     }
 

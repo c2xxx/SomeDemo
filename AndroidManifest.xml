@@ -140,6 +140,7 @@
         <activity android:name=".activity.TempTestActivity" />
         <activity android:name=".activity.PositionActivity" />
         <activity android:name=".activity.HttpServerActivity" />
+        <activity android:name=".activity.AnnotationActivity" />
 
         <service android:name=".service.DemoService">
             <intent-filter>
