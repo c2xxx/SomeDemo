@@ -3,6 +3,7 @@ package com.basedamo;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,6 +25,7 @@ import com.basedamo.activity.ColorPicker2Activity;
 import com.basedamo.activity.ColorPickerActivity;
 import com.basedamo.activity.CutImageActivity;
 import com.basedamo.activity.DesktopLogoNumberActivity;
+import com.basedamo.activity.DesktopShortcutActivity;
 import com.basedamo.activity.EmptyActivity;
 import com.basedamo.activity.FileDownLoadActivity;
 import com.basedamo.activity.FragmentDemoActivity;
@@ -53,6 +55,7 @@ import com.basedamo.activity.XUtilsActivity;
 import com.basedamo.activity.XmlPullParseBookActivity;
 import com.basedamo.activity.XunFeiVoiceInputActivity;
 import com.basedamo.activity.XunFeiVoiceReaderActivity;
+import com.basedamo.utils.ToastUtil;
 import com.umeng.analytics.MobclickAgent;
 
 import java.util.ArrayList;
@@ -72,9 +75,17 @@ public class MainActivity extends BaseActivity implements OnItemClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         setContentView(R.layout.activity_main);
         super.onCreate(savedInstanceState);
-
+        String startParm = getIntent().getStringExtra(DesktopShortcutActivity.PARAMS);
+        if (!TextUtils.isEmpty(startParm)) {
+            ToastUtil.show(startParm);
+        }
     }
 
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        ToastUtil.show("onNewIntent");
+    }
 
     @Override
     protected void initData() {
@@ -130,8 +141,8 @@ public class MainActivity extends BaseActivity implements OnItemClickListener {
         addItem("快速多渠道打包*", EmptyActivity.class);
         addItem("学习Maven是什么东东*", EmptyActivity.class);
         addItem("修改桌面图标*", EmptyActivity.class);
-        addItem("创建桌面快捷方式*", EmptyActivity.class);
-        addItem("自定义注解*", AnnotationActivity.class);
+        addItem("创建桌面快捷方式", DesktopShortcutActivity.class);
+        addItem("自定义注解", AnnotationActivity.class);
         addItem("HttpServer", HttpServerActivity.class);
     }
 

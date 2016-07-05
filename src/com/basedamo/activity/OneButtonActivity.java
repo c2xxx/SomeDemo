@@ -13,8 +13,6 @@ import com.basedamo.R;
  */
 public abstract class OneButtonActivity extends BaseActivity {
 
-    private Button testButton;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         setContentView(R.layout.activity_onebutton);
@@ -23,8 +21,7 @@ public abstract class OneButtonActivity extends BaseActivity {
 
     @Override
     protected void initViews() {
-        testButton = (Button) findViewById(R.id.btn_onebutton_test);
-        testButton.setOnClickListener(this);
+        findViewById(R.id.btn_onebutton_test).setOnClickListener(this);
     }
 
     @Override
