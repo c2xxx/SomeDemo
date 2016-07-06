@@ -17,4 +17,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="删除快捷方式" />
+
+    <Button
+        android:id="@+id/btn_shortcut_create2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="创建快捷方式（使用网络图片）" />
 </LinearLayout>

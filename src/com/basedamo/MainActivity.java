@@ -127,7 +127,8 @@ public class MainActivity extends BaseActivity implements OnItemClickListener {
         addItem("注解代替findViewById*", BindViewActivity.class);
         addItem("ViewFlipper", EmptyActivity.class);
         addItem("Fragment", FragmentDemoActivity.class);
-        addItem("OkHttpFinal", OkHttpFinalActivity.class);
+        addItem("OkHttpFinal*", OkHttpFinalActivity.class);
+        addItem("OkHttpUtils*", OkHttpFinalActivity.class);
         addItem("TempTest*", TempTestActivity.class);
         addItem("获取位置", PositionActivity.class);
         addItem("视频播放（*）", EmptyActivity.class);
