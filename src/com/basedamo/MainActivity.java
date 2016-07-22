@@ -46,6 +46,8 @@ import com.basedamo.activity.SecurityDemoActivity;
 import com.basedamo.activity.ServiceDemo2Activity;
 import com.basedamo.activity.ServiceDemoActivity;
 import com.basedamo.activity.SharedPerferencesActivity;
+import com.basedamo.activity.SoundPlayActivity;
+import com.basedamo.activity.SparseArrayActivity;
 import com.basedamo.activity.TempTestActivity;
 import com.basedamo.activity.TypeFaceActivity;
 import com.basedamo.activity.UmengFeedBackActivity;
@@ -124,8 +126,11 @@ public class MainActivity extends BaseActivity implements OnItemClickListener {
         addItem("字体", TypeFaceActivity.class);
         addItem("颜色拾取1", ColorPickerActivity.class);
         addItem("颜色拾取2", ColorPicker2Activity.class);
+        addItem("创建桌面快捷方式", DesktopShortcutActivity.class);
+        addItem("自定义注解", AnnotationActivity.class);
+        addItem("HttpServer", HttpServerActivity.class);
         addItem("注解代替findViewById*", BindViewActivity.class);
-        addItem("ViewFlipper", EmptyActivity.class);
+        addItem("ViewFlipper*", EmptyActivity.class);
         addItem("Fragment", FragmentDemoActivity.class);
         addItem("OkHttpFinal*", OkHttpFinalActivity.class);
         addItem("OkHttpUtils*", OkHttpFinalActivity.class);
@@ -141,10 +146,10 @@ public class MainActivity extends BaseActivity implements OnItemClickListener {
         addItem("热补丁/插件式开发*", EmptyActivity.class);
         addItem("快速多渠道打包*", EmptyActivity.class);
         addItem("学习Maven是什么东东*", EmptyActivity.class);
+        addItem("嵌入Groovy代码*", EmptyActivity.class);
         addItem("修改桌面图标*", EmptyActivity.class);
-        addItem("创建桌面快捷方式", DesktopShortcutActivity.class);
-        addItem("自定义注解", AnnotationActivity.class);
-        addItem("HttpServer", HttpServerActivity.class);
+        addItem("音效播放", SoundPlayActivity.class);
+        addItem("SparseArray与hashMap", SparseArrayActivity.class);
     }
 
     @Override

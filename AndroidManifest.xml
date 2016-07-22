@@ -49,6 +49,11 @@
         android:theme="@style/AppTheme">
 
         <meta-data
+            android:name="channel"
+            android:value="abcd" />
+
+
+        <meta-data
             android:name="UMENG_APPKEY"
             android:value="5656acc8e0f55ae1b7004393"></meta-data>
         <meta-data
@@ -146,6 +151,8 @@
         <activity android:name=".activity.HttpServerActivity" />
         <activity android:name=".activity.AnnotationActivity" />
         <activity android:name=".activity.DesktopShortcutActivity" />
+        <activity android:name=".activity.SoundPlayActivity" />
+        <activity android:name=".activity.SparseArrayActivity" />
 
         <service android:name=".service.DemoService">
             <intent-filter>
