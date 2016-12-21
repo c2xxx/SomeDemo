@@ -4,7 +4,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.2.0'
+        classpath 'com.android.tools.build:gradle:2.2.2'
     }
 }
 apply plugin: 'com.android.application'
@@ -23,11 +23,11 @@ task hello << {// 运行的时候可以用：gradle hello
 def getGitVersion() {
     //获取git版本号，首先确保git命令能执行
 //    return 'git rev-parse --short HEAD'.execute().text.trim();
-    return  'getGitVersion'
+    return 'getGitVersion'
 }
 //获取git分支号
 def getGitBranch() {
-    return  'getGitBranch'
+    return 'getGitBranch'
     //获取git版本号，首先确保git命令能执行
 //    def versionInfo = 'git branch'.execute().text.trim();
 //    versionInfo = versionInfo.replace("*", "");
@@ -55,6 +55,12 @@ dependencies {
     compile 'com.android.support:cardview-v7:23.1.0'
 
     compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.3'
+
+    compile 'com.alibaba:fastjson:1.2.20'
+
+    compile 'com.google.code.gson:gson:2.8.0'
+    compile 'com.squareup.retrofit2:retrofit:2.1.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.1.0'
 }
 
 android {

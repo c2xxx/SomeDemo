@@ -12,6 +12,7 @@ import android.net.wifi.ScanResult;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
 import android.os.BatteryManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -101,6 +102,12 @@ public class HardWareActivity extends BaseActivity {
 		String phoneInfo = "产品型号: " + android.os.Build.PRODUCT;
 		phoneInfo += "\r\n USER: " + android.os.Build.USER;
 		phoneInfo += "\r\n CPU_ABI: " + android.os.Build.CPU_ABI;
+		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+			phoneInfo += "\r\n SUPPORTED_ABIS: ";
+			for (int i = 0, len = Build.SUPPORTED_ABIS.length; i < len; i++) {
+				phoneInfo += "[" + Build.SUPPORTED_ABIS[i] + "]";
+			}
+		}
 		phoneInfo += "\r\n TAGS: " + android.os.Build.TAGS;
 		phoneInfo += "\r\n VERSION_CODES.BASE: "
 				+ android.os.Build.VERSION_CODES.BASE;

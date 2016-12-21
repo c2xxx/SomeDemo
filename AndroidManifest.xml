@@ -153,6 +153,7 @@
         <activity android:name=".activity.DesktopShortcutActivity" />
         <activity android:name=".activity.SoundPlayActivity" />
         <activity android:name=".activity.SparseArrayActivity" />
+        <activity android:name=".activity.RetrofitActivity" />
 
         <service android:name=".service.DemoService">
             <intent-filter>
