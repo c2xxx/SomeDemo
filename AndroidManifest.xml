@@ -154,6 +154,7 @@
         <activity android:name=".activity.SoundPlayActivity" />
         <activity android:name=".activity.SparseArrayActivity" />
         <activity android:name=".activity.RetrofitActivity" />
+        <activity android:name=".activity.SDCardPermissionActivity" />
 
         <service android:name=".service.DemoService">
             <intent-filter>

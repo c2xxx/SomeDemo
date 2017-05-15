@@ -41,8 +41,9 @@ import com.basedamo.activity.PartControlActivity;
 import com.basedamo.activity.PositionActivity;
 import com.basedamo.activity.PullToRefeshActivity;
 import com.basedamo.activity.QiniuUploadActivity;
-import com.basedamo.activity.RingToneActivity;
 import com.basedamo.activity.RetrofitActivity;
+import com.basedamo.activity.RingToneActivity;
+import com.basedamo.activity.SDCardPermissionActivity;
 import com.basedamo.activity.SecurityDemoActivity;
 import com.basedamo.activity.ServiceDemo2Activity;
 import com.basedamo.activity.ServiceDemoActivity;
@@ -152,6 +153,7 @@ public class MainActivity extends BaseActivity implements OnItemClickListener {
         addItem("修改桌面图标*", EmptyActivity.class);
         addItem("音效播放", SoundPlayActivity.class);
         addItem("SparseArray与hashMap", SparseArrayActivity.class);
+        addItem("Android6.0申请SD卡权限", SDCardPermissionActivity.class);
     }
 
     @Override
